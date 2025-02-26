@@ -1,0 +1,4 @@
+Server shutdown function not available. Forcing shutdown.
+Stream error: Failed to read frame
+Stream error: Failed to read frame
+Server error: [WinError 32] The process cannot access the file because it is being used by another process: 'V:\\Code\\ProjectCode\\SignLanguageDetector\\logs\\27-02-2025_00-53-47\\debug.log'

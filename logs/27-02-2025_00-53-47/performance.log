@@ -1,0 +1,6287 @@
+Camera read time: 2036.8ms
+RGB conversion: 2.0ms
+RGB conversion: 1.0ms
+Hand detection: 192.1ms
+Hand detection: 192.1ms
+Total frame time: 648.7ms
+Total frame time: 523.3ms
+--------------------------------------------------
+--------------------------------------------------
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.3ms
+Hand detection: 197.9ms
+Hand detection: 186.9ms
+Total frame time: 216.3ms
+Total frame time: 201.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 107.7ms
+Total frame time: 124.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 18.0ms
+RGB conversion: 0.0ms
+Hand detection: 105.9ms
+Total frame time: 123.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 220.0ms
+Hand detection: 190.2ms
+Total frame time: 235.8ms
+Total frame time: 206.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.3ms
+Hand detection: 110.5ms
+Total frame time: 129.9ms
+--------------------------------------------------
+RGB conversion: 1.1ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 213.5ms
+Hand detection: 185.3ms
+Total frame time: 237.5ms
+Total frame time: 203.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 127.6ms
+Total frame time: 141.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 203.5ms
+Hand detection: 184.5ms
+Total frame time: 222.7ms
+Total frame time: 206.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 81.0ms
+Total frame time: 89.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.1ms
+RGB conversion: 0.0ms
+Hand detection: 149.7ms
+Total frame time: 157.4ms
+--------------------------------------------------
+Hand detection: 99.4ms
+Total frame time: 111.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.2ms
+Total frame time: 78.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+Hand detection: 151.3ms
+Hand detection: 76.8ms
+Total frame time: 161.2ms
+Total frame time: 84.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 56.6ms
+Total frame time: 64.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 1.1ms
+Hand detection: 70.4ms
+Total frame time: 84.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 142.6ms
+Total frame time: 151.7ms
+--------------------------------------------------
+Hand detection: 128.6ms
+Total frame time: 137.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.6ms
+Total frame time: 91.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 173.4ms
+Hand detection: 134.4ms
+Total frame time: 189.5ms
+Total frame time: 143.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 124.2ms
+Total frame time: 134.2ms
+--------------------------------------------------
+Camera read time: 7.5ms
+RGB conversion: 1.2ms
+RGB conversion: 1.2ms
+Hand detection: 126.7ms
+Hand detection: 117.7ms
+Total frame time: 135.6ms
+Total frame time: 135.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 83.7ms
+Total frame time: 99.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.9ms
+RGB conversion: 0.0ms
+Hand detection: 144.1ms
+Hand detection: 95.9ms
+Total frame time: 154.0ms
+Total frame time: 105.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 72.1ms
+Total frame time: 85.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.6ms
+RGB conversion: 0.0ms
+Hand detection: 161.0ms
+Hand detection: 107.3ms
+Total frame time: 169.7ms
+Total frame time: 120.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.6ms
+Total frame time: 87.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.6ms
+RGB conversion: 0.0ms
+Hand detection: 129.0ms
+Total frame time: 136.1ms
+--------------------------------------------------
+Hand detection: 79.1ms
+Total frame time: 90.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 1.0ms
+Hand detection: 336.6ms
+Hand detection: 185.9ms
+Total frame time: 350.6ms
+Total frame time: 195.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 149.7ms
+Landmark processing: 0.0ms
+Model prediction: 28.2ms
+RGB conversion: 1.1ms
+Hand detection: 285.5ms
+Hand detection: 269.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.8ms
+Model prediction: 39.8ms
+RGB conversion: 0.0ms
+Hand detection: 148.2ms
+Landmark processing: 0.0ms
+Model prediction: 23.7ms
+Camera read time: 25.5ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 287.3ms
+Hand detection: 270.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.1ms
+Model prediction: 41.1ms
+RGB conversion: 0.0ms
+Camera read time: 11.1ms
+RGB conversion: 0.9ms
+Hand detection: 255.8ms
+Hand detection: 108.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+Model prediction: 25.5ms
+RGB conversion: 1.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.2ms
+Hand detection: 345.8ms
+Hand detection: 168.2ms
+Landmark processing: 0.0ms
+Model prediction: 8.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.4ms
+RGB conversion: 1.0ms
+Camera read time: 16.0ms
+RGB conversion: 1.0ms
+Hand detection: 397.1ms
+Hand detection: 218.9ms
+Landmark processing: 0.0ms
+Model prediction: 11.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.5ms
+RGB conversion: 0.0ms
+Hand detection: 89.5ms
+Landmark processing: 0.0ms
+Model prediction: 19.1ms
+Camera read time: 5.9ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 333.1ms
+Hand detection: 321.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+Model prediction: 32.0ms
+RGB conversion: 0.0ms
+Camera read time: 11.7ms
+RGB conversion: 1.0ms
+Hand detection: 487.4ms
+Hand detection: 314.5ms
+Landmark processing: 0.0ms
+Model prediction: 33.5ms
+Landmark processing: 0.0ms
+Model prediction: 48.3ms
+RGB conversion: 0.0ms
+Hand detection: 128.2ms
+Landmark processing: 0.0ms
+Model prediction: 13.9ms
+Camera read time: 5.9ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 260.4ms
+Hand detection: 251.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.8ms
+Model prediction: 17.5ms
+RGB conversion: 0.0ms
+Hand detection: 46.1ms
+Landmark processing: 0.0ms
+Model prediction: 27.1ms
+RGB conversion: 0.0ms
+Camera read time: 8.8ms
+RGB conversion: 0.0ms
+Hand detection: 271.9ms
+Hand detection: 220.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.3ms
+Model prediction: 33.2ms
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+Hand detection: 152.9ms
+Landmark processing: 0.0ms
+Model prediction: 24.7ms
+RGB conversion: 0.0ms
+Hand detection: 233.6ms
+Hand detection: 201.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.7ms
+Model prediction: 27.2ms
+RGB conversion: 0.0ms
+Hand detection: 137.6ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 398.3ms
+Hand detection: 394.6ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+Landmark processing: 0.0ms
+Model prediction: 18.4ms
+RGB conversion: 0.0ms
+Hand detection: 59.9ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Camera read time: 9.5ms
+RGB conversion: 0.0ms
+Hand detection: 234.5ms
+Hand detection: 185.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+Model prediction: 29.5ms
+RGB conversion: 0.0ms
+Camera read time: 14.3ms
+RGB conversion: 0.0ms
+Hand detection: 354.8ms
+Landmark processing: 0.0ms
+Hand detection: 192.9ms
+Landmark processing: 0.0ms
+Model prediction: 33.8ms
+Model prediction: 21.5ms
+RGB conversion: 0.0ms
+Hand detection: 140.7ms
+Landmark processing: 0.0ms
+Camera read time: 19.8ms
+RGB conversion: 6.7ms
+Model prediction: 25.6ms
+RGB conversion: 0.0ms
+Hand detection: 313.2ms
+Hand detection: 280.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 41.8ms
+Model prediction: 18.9ms
+RGB conversion: 1.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 380.6ms
+Hand detection: 223.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 30.3ms
+Model prediction: 34.3ms
+RGB conversion: 0.0ms
+Hand detection: 88.0ms
+Landmark processing: 0.0ms
+Model prediction: 14.9ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 338.8ms
+Hand detection: 324.8ms
+Landmark processing: 0.0ms
+Model prediction: 26.2ms
+Landmark processing: 0.0ms
+Model prediction: 26.7ms
+RGB conversion: 0.0ms
+Hand detection: 149.7ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+Hand detection: 236.0ms
+Hand detection: 233.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 49.0ms
+Model prediction: 40.8ms
+RGB conversion: 0.0ms
+Hand detection: 125.8ms
+Landmark processing: 0.0ms
+Model prediction: 21.2ms
+RGB conversion: 0.0ms
+Camera read time: 16.5ms
+RGB conversion: 0.0ms
+Hand detection: 228.7ms
+Hand detection: 226.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 34.0ms
+Model prediction: 31.1ms
+RGB conversion: 0.0ms
+Hand detection: 119.8ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Camera read time: 25.9ms
+RGB conversion: 1.0ms
+Hand detection: 260.0ms
+Hand detection: 247.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 34.5ms
+Model prediction: 13.6ms
+RGB conversion: 1.0ms
+Hand detection: 144.3ms
+Landmark processing: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 12.1ms
+Model prediction: 22.4ms
+RGB conversion: 0.0ms
+Hand detection: 272.5ms
+Hand detection: 266.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 26.9ms
+Model prediction: 44.0ms
+RGB conversion: 0.9ms
+Hand detection: 143.1ms
+Total frame time: 149.6ms
+--------------------------------------------------
+Camera read time: 11.9ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 127.6ms
+Total frame time: 142.6ms
+--------------------------------------------------
+Hand detection: 123.2ms
+Total frame time: 144.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 109.7ms
+Total frame time: 119.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+Hand detection: 192.8ms
+Hand detection: 178.5ms
+Landmark processing: 0.0ms
+Model prediction: 18.3ms
+Landmark processing: 0.0ms
+Model prediction: 25.9ms
+RGB conversion: 0.0ms
+Hand detection: 139.8ms
+Landmark processing: 0.0ms
+Model prediction: 15.7ms
+Camera read time: 16.0ms
+RGB conversion: 1.4ms
+RGB conversion: 0.0ms
+Hand detection: 239.0ms
+Hand detection: 224.6ms
+Landmark processing: 0.0ms
+Model prediction: 21.9ms
+Landmark processing: 0.0ms
+Model prediction: 23.7ms
+RGB conversion: 0.0ms
+Camera read time: 9.4ms
+RGB conversion: 0.0ms
+Hand detection: 306.7ms
+Hand detection: 165.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.3ms
+Model prediction: 47.3ms
+RGB conversion: 1.0ms
+Hand detection: 136.8ms
+Landmark processing: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 15.0ms
+Model prediction: 28.1ms
+RGB conversion: 0.0ms
+Hand detection: 246.9ms
+Hand detection: 217.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.9ms
+Model prediction: 42.9ms
+RGB conversion: 0.0ms
+Camera read time: 18.0ms
+RGB conversion: 1.0ms
+Hand detection: 175.6ms
+Landmark processing: 0.0ms
+Model prediction: 26.9ms
+RGB conversion: 0.0ms
+Hand detection: 352.1ms
+Hand detection: 285.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 49.6ms
+Model prediction: 39.1ms
+RGB conversion: 0.0ms
+Hand detection: 148.8ms
+Landmark processing: 0.0ms
+Camera read time: 20.0ms
+RGB conversion: 2.0ms
+Model prediction: 23.0ms
+RGB conversion: 0.0ms
+Hand detection: 258.0ms
+Hand detection: 241.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 42.0ms
+Model prediction: 54.2ms
+RGB conversion: 0.0ms
+Hand detection: 102.1ms
+Landmark processing: 0.0ms
+Model prediction: 11.0ms
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 271.1ms
+Hand detection: 262.1ms
+Landmark processing: 0.0ms
+Model prediction: 25.0ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 356.7ms
+Hand detection: 177.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Model prediction: 16.5ms
+RGB conversion: 0.0ms
+Hand detection: 64.9ms
+Landmark processing: 0.0ms
+Model prediction: 28.8ms
+RGB conversion: 0.0ms
+Camera read time: 16.0ms
+RGB conversion: 1.0ms
+Hand detection: 276.6ms
+Hand detection: 235.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 28.0ms
+Model prediction: 46.0ms
+RGB conversion: 0.0ms
+Hand detection: 110.0ms
+Landmark processing: 0.0ms
+Model prediction: 14.4ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 249.2ms
+Hand detection: 231.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 51.7ms
+Model prediction: 42.1ms
+RGB conversion: 0.0ms
+Hand detection: 122.9ms
+Landmark processing: 0.0ms
+Model prediction: 21.0ms
+Camera read time: 17.0ms
+RGB conversion: 1.0ms
+RGB conversion: 1.0ms
+Hand detection: 319.8ms
+Hand detection: 308.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 42.1ms
+Model prediction: 23.6ms
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 328.1ms
+Hand detection: 180.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+Model prediction: 30.1ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+Hand detection: 298.3ms
+Hand detection: 148.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 41.0ms
+Model prediction: 18.0ms
+RGB conversion: 0.0ms
+Hand detection: 122.5ms
+Landmark processing: 0.0ms
+Model prediction: 25.3ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 231.2ms
+Hand detection: 227.2ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Landmark processing: 0.0ms
+Model prediction: 13.4ms
+RGB conversion: 0.0ms
+Hand detection: 119.9ms
+Landmark processing: 0.0ms
+Model prediction: 9.2ms
+RGB conversion: 0.0ms
+Camera read time: 47.7ms
+RGB conversion: 0.0ms
+Hand detection: 270.8ms
+Hand detection: 225.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 40.2ms
+Model prediction: 40.7ms
+RGB conversion: 0.0ms
+Hand detection: 140.5ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 26.4ms
+RGB conversion: 1.0ms
+Hand detection: 270.9ms
+Hand detection: 248.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 33.0ms
+Model prediction: 26.0ms
+RGB conversion: 0.0ms
+Hand detection: 97.2ms
+Landmark processing: 0.0ms
+Model prediction: 13.5ms
+RGB conversion: 0.0ms
+Camera read time: 26.0ms
+RGB conversion: 0.0ms
+Hand detection: 219.7ms
+Hand detection: 188.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 13.0ms
+Model prediction: 28.4ms
+RGB conversion: 1.0ms
+Hand detection: 115.6ms
+Total frame time: 127.6ms
+--------------------------------------------------
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 367.3ms
+Hand detection: 356.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 28.4ms
+Model prediction: 43.2ms
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 342.7ms
+Hand detection: 166.2ms
+Landmark processing: 0.0ms
+Model prediction: 23.2ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+RGB conversion: 0.0ms
+Hand detection: 114.2ms
+Landmark processing: 0.0ms
+Model prediction: 21.5ms
+Camera read time: 7.5ms
+RGB conversion: 1.0ms
+RGB conversion: 1.0ms
+Hand detection: 234.0ms
+Hand detection: 234.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.2ms
+Model prediction: 57.8ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 1.0ms
+Hand detection: 145.3ms
+Landmark processing: 0.0ms
+Model prediction: 36.6ms
+RGB conversion: 0.0ms
+Hand detection: 285.8ms
+Hand detection: 257.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 34.1ms
+Model prediction: 32.9ms
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+Hand detection: 146.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.3ms
+RGB conversion: 1.0ms
+Hand detection: 225.4ms
+Hand detection: 182.2ms
+Landmark processing: 0.0ms
+Model prediction: 11.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.2ms
+RGB conversion: 0.6ms
+Camera read time: 2.0ms
+RGB conversion: 0.0ms
+Hand detection: 121.1ms
+Landmark processing: 0.0ms
+Model prediction: 25.8ms
+RGB conversion: 1.0ms
+Hand detection: 211.2ms
+Hand detection: 185.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.9ms
+Model prediction: 19.9ms
+RGB conversion: 0.0ms
+Hand detection: 105.0ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 165.7ms
+Hand detection: 148.1ms
+Landmark processing: 0.0ms
+Model prediction: 43.6ms
+Landmark processing: 0.0ms
+Model prediction: 23.0ms
+RGB conversion: 0.0ms
+Hand detection: 114.4ms
+Landmark processing: 0.0ms
+Model prediction: 30.2ms
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 1.1ms
+Hand detection: 238.2ms
+Hand detection: 235.4ms
+Landmark processing: 0.0ms
+Model prediction: 38.3ms
+Landmark processing: 0.0ms
+Model prediction: 12.5ms
+RGB conversion: 0.0ms
+Hand detection: 111.1ms
+Landmark processing: 0.0ms
+Model prediction: 16.0ms
+RGB conversion: 0.0ms
+Camera read time: 13.6ms
+RGB conversion: 1.0ms
+Hand detection: 246.4ms
+Hand detection: 234.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 31.8ms
+Model prediction: 35.0ms
+RGB conversion: 0.0ms
+Hand detection: 107.6ms
+Landmark processing: 0.0ms
+Model prediction: 24.1ms
+RGB conversion: 0.0ms
+Camera read time: 10.9ms
+RGB conversion: 0.0ms
+Hand detection: 198.8ms
+Hand detection: 190.7ms
+Landmark processing: 0.0ms
+Model prediction: 20.3ms
+Landmark processing: 0.0ms
+Model prediction: 18.7ms
+RGB conversion: 0.0ms
+Hand detection: 124.2ms
+Landmark processing: 0.0ms
+Camera read time: 23.3ms
+RGB conversion: 7.5ms
+Model prediction: 21.3ms
+RGB conversion: 0.0ms
+Hand detection: 338.5ms
+Hand detection: 325.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+Model prediction: 28.2ms
+RGB conversion: 1.0ms
+Camera read time: 6.1ms
+RGB conversion: 0.0ms
+Hand detection: 144.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.0ms
+RGB conversion: 0.0ms
+Hand detection: 220.0ms
+Hand detection: 198.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 28.6ms
+Model prediction: 35.7ms
+RGB conversion: 0.0ms
+Hand detection: 123.2ms
+Landmark processing: 0.0ms
+Model prediction: 11.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 252.8ms
+Hand detection: 234.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.3ms
+Model prediction: 40.8ms
+RGB conversion: 0.0ms
+Hand detection: 100.6ms
+Landmark processing: 0.0ms
+Model prediction: 12.3ms
+RGB conversion: 1.0ms
+Camera read time: 8.6ms
+RGB conversion: 1.0ms
+Hand detection: 279.3ms
+Hand detection: 250.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.6ms
+Model prediction: 45.2ms
+RGB conversion: 0.0ms
+Hand detection: 143.1ms
+Landmark processing: 0.0ms
+Camera read time: 17.6ms
+RGB conversion: 12.6ms
+Model prediction: 31.3ms
+RGB conversion: 0.9ms
+Hand detection: 220.4ms
+Hand detection: 201.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 16.8ms
+Model prediction: 44.1ms
+RGB conversion: 0.6ms
+Hand detection: 141.0ms
+Landmark processing: 0.0ms
+Model prediction: 16.3ms
+Camera read time: 23.2ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 226.8ms
+Hand detection: 206.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 15.3ms
+Model prediction: 23.4ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 150.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+RGB conversion: 0.0ms
+Hand detection: 287.4ms
+Hand detection: 268.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 50.8ms
+Model prediction: 79.8ms
+RGB conversion: 0.0ms
+Camera read time: 13.4ms
+RGB conversion: 0.0ms
+Hand detection: 172.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+RGB conversion: 0.0ms
+Hand detection: 292.3ms
+Hand detection: 252.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.5ms
+Model prediction: 29.5ms
+RGB conversion: 1.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 336.9ms
+Hand detection: 174.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+Model prediction: 52.5ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+Hand detection: 287.5ms
+Hand detection: 144.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 60.3ms
+Model prediction: 69.3ms
+RGB conversion: 1.0ms
+Camera read time: 9.3ms
+RGB conversion: 0.0ms
+Hand detection: 340.8ms
+Hand detection: 185.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.5ms
+Model prediction: 32.5ms
+RGB conversion: 0.0ms
+Hand detection: 138.4ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+Camera read time: 16.1ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 237.8ms
+Hand detection: 212.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Model prediction: 25.0ms
+RGB conversion: 0.0ms
+Hand detection: 93.0ms
+Landmark processing: 0.0ms
+Model prediction: 7.0ms
+RGB conversion: 0.0ms
+Camera read time: 17.5ms
+RGB conversion: 0.0ms
+Hand detection: 188.5ms
+Hand detection: 155.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 14.6ms
+Model prediction: 27.5ms
+RGB conversion: 0.0ms
+Hand detection: 143.2ms
+Landmark processing: 0.0ms
+Camera read time: 18.8ms
+Model prediction: 21.3ms
+RGB conversion: 10.5ms
+RGB conversion: 0.0ms
+Hand detection: 307.3ms
+Hand detection: 280.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.9ms
+Model prediction: 30.5ms
+RGB conversion: 0.0ms
+Hand detection: 132.0ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+Camera read time: 16.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 215.3ms
+Hand detection: 210.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 34.9ms
+Model prediction: 27.6ms
+RGB conversion: 0.0ms
+Hand detection: 123.1ms
+Landmark processing: 0.0ms
+Model prediction: 17.0ms
+RGB conversion: 0.0ms
+Camera read time: 14.2ms
+RGB conversion: 0.0ms
+Hand detection: 278.7ms
+Landmark processing: 0.0ms
+Hand detection: 279.3ms
+Landmark processing: 0.0ms
+Model prediction: 32.6ms
+Model prediction: 16.5ms
+RGB conversion: 0.0ms
+Hand detection: 132.5ms
+Landmark processing: 0.0ms
+Model prediction: 14.7ms
+Camera read time: 12.0ms
+RGB conversion: 1.0ms
+RGB conversion: 1.0ms
+Hand detection: 273.9ms
+Hand detection: 262.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 37.0ms
+Model prediction: 57.9ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 154.2ms
+Landmark processing: 0.0ms
+Model prediction: 23.1ms
+RGB conversion: 0.0ms
+Hand detection: 316.7ms
+Hand detection: 278.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+Model prediction: 46.1ms
+RGB conversion: 0.0ms
+Hand detection: 139.8ms
+Landmark processing: 0.0ms
+Model prediction: 29.7ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 238.1ms
+Hand detection: 236.1ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.1ms
+RGB conversion: 0.0ms
+Hand detection: 142.5ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+Camera read time: 14.8ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 252.6ms
+Hand detection: 252.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 18.7ms
+Model prediction: 34.9ms
+RGB conversion: 0.0ms
+Hand detection: 159.9ms
+Landmark processing: 0.0ms
+Camera read time: 31.4ms
+Model prediction: 26.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 268.5ms
+Hand detection: 252.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 43.0ms
+Model prediction: 50.0ms
+RGB conversion: 0.0ms
+Hand detection: 130.5ms
+Landmark processing: 0.0ms
+Model prediction: 16.0ms
+Camera read time: 11.1ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 233.0ms
+Hand detection: 209.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.9ms
+Model prediction: 21.8ms
+RGB conversion: 0.0ms
+Hand detection: 116.1ms
+Landmark processing: 0.0ms
+Model prediction: 11.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 320.2ms
+Hand detection: 300.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.0ms
+Model prediction: 33.5ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 310.4ms
+Hand detection: 159.3ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.9ms
+RGB conversion: 0.0ms
+Hand detection: 136.2ms
+Landmark processing: 0.0ms
+Model prediction: 17.9ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 279.3ms
+Hand detection: 255.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 42.7ms
+Model prediction: 48.0ms
+RGB conversion: 1.0ms
+Hand detection: 120.9ms
+Landmark processing: 0.0ms
+Model prediction: 17.1ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 292.4ms
+Hand detection: 281.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 44.4ms
+Model prediction: 68.9ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 1.0ms
+Hand detection: 281.7ms
+Hand detection: 461.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 57.8ms
+Model prediction: 49.8ms
+RGB conversion: 0.0ms
+Hand detection: 134.1ms
+Landmark processing: 0.0ms
+Model prediction: 29.7ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 224.3ms
+Hand detection: 223.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 24.5ms
+Model prediction: 28.5ms
+RGB conversion: 0.0ms
+Hand detection: 99.0ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+RGB conversion: 0.0ms
+Camera read time: 16.0ms
+RGB conversion: 0.0ms
+Hand detection: 207.5ms
+Hand detection: 190.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 23.0ms
+Model prediction: 40.6ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 405.6ms
+Hand detection: 252.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 37.9ms
+Model prediction: 34.0ms
+RGB conversion: 0.0ms
+Hand detection: 107.9ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+Hand detection: 349.8ms
+Hand detection: 338.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.2ms
+Model prediction: 30.2ms
+RGB conversion: 0.0ms
+Hand detection: 49.4ms
+Landmark processing: 0.0ms
+Model prediction: 12.5ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 212.2ms
+Hand detection: 132.4ms
+Landmark processing: 0.0ms
+Model prediction: 40.6ms
+Landmark processing: 0.0ms
+Model prediction: 10.0ms
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+Hand detection: 353.3ms
+Hand detection: 197.9ms
+Landmark processing: 0.0ms
+Model prediction: 14.5ms
+Landmark processing: 0.0ms
+Model prediction: 18.4ms
+RGB conversion: 0.0ms
+Hand detection: 89.8ms
+Landmark processing: 0.0ms
+Model prediction: 16.5ms
+RGB conversion: 0.0ms
+Camera read time: 4.6ms
+RGB conversion: 1.0ms
+Hand detection: 303.2ms
+Hand detection: 288.0ms
+Landmark processing: 0.0ms
+Model prediction: 13.1ms
+Landmark processing: 0.0ms
+Model prediction: 17.0ms
+RGB conversion: 1.3ms
+Hand detection: 149.3ms
+Landmark processing: 0.0ms
+Model prediction: 13.0ms
+Camera read time: 14.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 264.0ms
+Hand detection: 254.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 26.4ms
+Model prediction: 19.3ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 284.6ms
+Hand detection: 144.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.4ms
+Model prediction: 53.6ms
+RGB conversion: 0.0ms
+Hand detection: 128.9ms
+Landmark processing: 0.0ms
+Camera read time: 21.7ms
+RGB conversion: 0.0ms
+Model prediction: 17.6ms
+RGB conversion: 0.0ms
+Hand detection: 202.9ms
+Hand detection: 177.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 26.5ms
+Model prediction: 28.5ms
+RGB conversion: 0.0ms
+Hand detection: 81.9ms
+Landmark processing: 0.0ms
+Model prediction: 14.5ms
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 1.0ms
+Hand detection: 207.8ms
+Hand detection: 178.6ms
+Landmark processing: 0.0ms
+Model prediction: 21.8ms
+Landmark processing: 0.0ms
+Model prediction: 19.5ms
+RGB conversion: 0.0ms
+Hand detection: 121.3ms
+Landmark processing: 0.0ms
+Model prediction: 24.2ms
+Camera read time: 16.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 247.5ms
+Hand detection: 241.6ms
+Landmark processing: 0.0ms
+Model prediction: 21.5ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+RGB conversion: 0.0ms
+Hand detection: 121.2ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Camera read time: 24.5ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 254.7ms
+Hand detection: 233.1ms
+Landmark processing: 0.0ms
+Model prediction: 32.6ms
+Landmark processing: 0.0ms
+Model prediction: 18.8ms
+RGB conversion: 1.0ms
+Hand detection: 125.6ms
+Landmark processing: 0.0ms
+Model prediction: 9.0ms
+Camera read time: 18.5ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 246.2ms
+Hand detection: 231.8ms
+Landmark processing: 0.0ms
+Model prediction: 29.6ms
+Landmark processing: 0.0ms
+Model prediction: 26.0ms
+RGB conversion: 0.0ms
+Hand detection: 123.3ms
+Landmark processing: 0.0ms
+Model prediction: 18.5ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.9ms
+Hand detection: 210.6ms
+Hand detection: 189.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.0ms
+Model prediction: 17.0ms
+RGB conversion: 0.0ms
+Hand detection: 121.1ms
+Landmark processing: 0.0ms
+Camera read time: 14.5ms
+RGB conversion: 4.0ms
+Model prediction: 22.5ms
+RGB conversion: 1.0ms
+Hand detection: 282.9ms
+Hand detection: 268.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 27.0ms
+Model prediction: 16.0ms
+RGB conversion: 0.8ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 235.4ms
+Total frame time: 250.2ms
+Hand detection: 75.3ms
+--------------------------------------------------
+Total frame time: 93.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 79.8ms
+Total frame time: 86.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 149.2ms
+Hand detection: 97.5ms
+Total frame time: 156.8ms
+Total frame time: 108.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 146.6ms
+Total frame time: 163.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 272.9ms
+Hand detection: 240.4ms
+Landmark processing: 0.0ms
+Model prediction: 22.5ms
+Landmark processing: 0.0ms
+Model prediction: 36.0ms
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+Hand detection: 318.7ms
+Hand detection: 139.5ms
+Total frame time: 326.4ms
+Total frame time: 154.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 107.9ms
+Total frame time: 115.8ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+Hand detection: 256.2ms
+Hand detection: 230.0ms
+Total frame time: 271.9ms
+Total frame time: 240.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 122.1ms
+Total frame time: 129.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.6ms
+RGB conversion: 1.0ms
+Hand detection: 248.5ms
+Hand detection: 218.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 24.9ms
+Model prediction: 29.7ms
+RGB conversion: 0.0ms
+Hand detection: 111.9ms
+Landmark processing: 0.0ms
+Model prediction: 18.9ms
+RGB conversion: 0.0ms
+Camera read time: 31.0ms
+RGB conversion: 0.0ms
+Hand detection: 272.4ms
+Hand detection: 245.7ms
+Landmark processing: 0.0ms
+Model prediction: 20.9ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 339.4ms
+Hand detection: 210.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.2ms
+Model prediction: 29.2ms
+RGB conversion: 1.0ms
+Hand detection: 117.8ms
+Landmark processing: 0.0ms
+Model prediction: 27.0ms
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.2ms
+Hand detection: 283.7ms
+Hand detection: 273.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 27.0ms
+Model prediction: 38.0ms
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.9ms
+Hand detection: 329.4ms
+Hand detection: 156.8ms
+Landmark processing: 0.0ms
+Model prediction: 15.4ms
+Landmark processing: 0.0ms
+Model prediction: 26.0ms
+RGB conversion: 1.0ms
+Hand detection: 127.9ms
+Landmark processing: 0.0ms
+Model prediction: 18.0ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.1ms
+Hand detection: 242.3ms
+Hand detection: 223.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 39.8ms
+Model prediction: 31.3ms
+RGB conversion: 0.0ms
+Hand detection: 124.7ms
+Landmark processing: 0.0ms
+Model prediction: 33.3ms
+RGB conversion: 0.0ms
+Camera read time: 10.7ms
+RGB conversion: 0.0ms
+Hand detection: 230.8ms
+Hand detection: 230.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 30.8ms
+Model prediction: 28.5ms
+RGB conversion: 0.0ms
+Hand detection: 114.3ms
+Landmark processing: 0.0ms
+Model prediction: 12.9ms
+RGB conversion: 0.0ms
+Camera read time: 27.0ms
+RGB conversion: 1.0ms
+Hand detection: 250.8ms
+Hand detection: 228.7ms
+Landmark processing: 0.0ms
+Model prediction: 26.3ms
+Landmark processing: 0.0ms
+Model prediction: 37.2ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 131.7ms
+Landmark processing: 0.0ms
+Model prediction: 21.0ms
+RGB conversion: 0.0ms
+Hand detection: 252.8ms
+Hand detection: 201.8ms
+Landmark processing: 0.0ms
+Model prediction: 22.1ms
+Landmark processing: 0.0ms
+Model prediction: 23.7ms
+RGB conversion: 0.0ms
+Hand detection: 99.9ms
+Landmark processing: 0.0ms
+Model prediction: 16.5ms
+RGB conversion: 1.0ms
+Camera read time: 17.0ms
+RGB conversion: 0.0ms
+Hand detection: 235.6ms
+Hand detection: 202.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+Model prediction: 34.0ms
+RGB conversion: 0.0ms
+Hand detection: 112.9ms
+Landmark processing: 0.0ms
+Model prediction: 17.7ms
+RGB conversion: 0.0ms
+Camera read time: 41.6ms
+RGB conversion: 0.0ms
+Hand detection: 211.8ms
+Hand detection: 180.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 18.5ms
+Model prediction: 22.0ms
+RGB conversion: 0.0ms
+Hand detection: 99.5ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 272.9ms
+Hand detection: 252.0ms
+Landmark processing: 0.0ms
+Model prediction: 14.4ms
+Landmark processing: 0.0ms
+Model prediction: 13.9ms
+RGB conversion: 0.0ms
+Hand detection: 99.0ms
+Landmark processing: 0.0ms
+Model prediction: 16.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 210.5ms
+Hand detection: 208.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.0ms
+Model prediction: 40.0ms
+RGB conversion: 0.0ms
+Hand detection: 101.7ms
+Landmark processing: 0.0ms
+Model prediction: 15.7ms
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.9ms
+Hand detection: 237.9ms
+Hand detection: 202.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.4ms
+Model prediction: 36.7ms
+RGB conversion: 0.0ms
+Hand detection: 105.4ms
+Landmark processing: 0.0ms
+Model prediction: 14.9ms
+Camera read time: 4.4ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 250.4ms
+Hand detection: 248.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.9ms
+Model prediction: 60.5ms
+RGB conversion: 1.0ms
+Hand detection: 154.9ms
+Landmark processing: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 4.1ms
+Model prediction: 19.3ms
+RGB conversion: 0.0ms
+Hand detection: 196.3ms
+Hand detection: 182.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.5ms
+Model prediction: 38.6ms
+RGB conversion: 0.0ms
+Hand detection: 104.2ms
+Landmark processing: 0.0ms
+Model prediction: 16.2ms
+RGB conversion: 0.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 223.8ms
+Hand detection: 208.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.6ms
+Model prediction: 44.5ms
+RGB conversion: 0.0ms
+Hand detection: 131.6ms
+Landmark processing: 0.0ms
+Model prediction: 16.1ms
+Camera read time: 12.7ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 258.9ms
+Hand detection: 246.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.9ms
+Model prediction: 55.4ms
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 162.2ms
+Landmark processing: 0.0ms
+Model prediction: 24.1ms
+RGB conversion: 0.0ms
+Hand detection: 244.6ms
+Hand detection: 210.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 23.0ms
+Model prediction: 18.7ms
+RGB conversion: 1.3ms
+Hand detection: 137.3ms
+Landmark processing: 0.0ms
+Model prediction: 16.5ms
+Camera read time: 22.5ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 265.2ms
+Hand detection: 247.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.5ms
+Model prediction: 21.5ms
+RGB conversion: 0.0ms
+Hand detection: 113.1ms
+Landmark processing: 0.0ms
+Model prediction: 19.1ms
+Camera read time: 14.4ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 239.6ms
+Hand detection: 235.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.5ms
+Model prediction: 55.2ms
+RGB conversion: 0.0ms
+Hand detection: 128.9ms
+Landmark processing: 0.0ms
+Model prediction: 37.5ms
+Camera read time: 7.3ms
+RGB conversion: 1.2ms
+RGB conversion: 0.0ms
+Hand detection: 322.4ms
+Hand detection: 310.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+Model prediction: 33.0ms
+RGB conversion: 1.0ms
+Hand detection: 98.3ms
+Landmark processing: 0.0ms
+Model prediction: 13.1ms
+Camera read time: 3.0ms
+RGB conversion: 1.0ms
+RGB conversion: 1.0ms
+Hand detection: 211.4ms
+Hand detection: 206.4ms
+Landmark processing: 0.0ms
+Model prediction: 13.9ms
+Landmark processing: 0.0ms
+Model prediction: 34.7ms
+RGB conversion: 0.0ms
+Camera read time: 16.0ms
+RGB conversion: 0.0ms
+Hand detection: 229.2ms
+Hand detection: 104.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.3ms
+Model prediction: 37.6ms
+RGB conversion: 0.0ms
+Hand detection: 104.7ms
+Landmark processing: 0.0ms
+Model prediction: 6.5ms
+RGB conversion: 0.0ms
+Camera read time: 14.5ms
+RGB conversion: 0.0ms
+Hand detection: 227.7ms
+Hand detection: 192.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 23.2ms
+Model prediction: 47.2ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 138.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+RGB conversion: 0.0ms
+Hand detection: 244.3ms
+Hand detection: 180.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 70.0ms
+Model prediction: 43.0ms
+RGB conversion: 0.0ms
+Hand detection: 124.0ms
+Landmark processing: 0.0ms
+Model prediction: 24.5ms
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.1ms
+Hand detection: 205.9ms
+Hand detection: 179.3ms
+Landmark processing: 0.0ms
+Model prediction: 16.3ms
+Landmark processing: 0.0ms
+Model prediction: 17.8ms
+RGB conversion: 0.0ms
+Hand detection: 123.8ms
+Landmark processing: 0.0ms
+Model prediction: 10.8ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 246.0ms
+Hand detection: 247.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.8ms
+Model prediction: 31.1ms
+RGB conversion: 0.0ms
+Hand detection: 131.8ms
+Landmark processing: 0.0ms
+Model prediction: 15.6ms
+Camera read time: 5.1ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 263.0ms
+Hand detection: 244.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.0ms
+Model prediction: 62.3ms
+RGB conversion: 1.0ms
+Hand detection: 81.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.0ms
+RGB conversion: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 0.8ms
+Hand detection: 277.8ms
+Hand detection: 250.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 26.1ms
+Model prediction: 25.0ms
+RGB conversion: 0.0ms
+Hand detection: 113.8ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+RGB conversion: 0.0ms
+Camera read time: 9.6ms
+RGB conversion: 0.0ms
+Hand detection: 307.9ms
+Hand detection: 293.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 46.4ms
+Model prediction: 55.4ms
+RGB conversion: 0.0ms
+Hand detection: 128.0ms
+Landmark processing: 0.0ms
+Model prediction: 25.2ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 308.3ms
+Hand detection: 306.3ms
+Landmark processing: 0.0ms
+Model prediction: 31.9ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+RGB conversion: 0.0ms
+Hand detection: 110.2ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+Camera read time: 3.6ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 272.0ms
+Hand detection: 291.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.7ms
+Model prediction: 40.7ms
+RGB conversion: 0.0ms
+Hand detection: 127.7ms
+Landmark processing: 0.0ms
+Model prediction: 14.8ms
+Camera read time: 9.0ms
+RGB conversion: 0.9ms
+RGB conversion: 0.0ms
+Hand detection: 273.1ms
+Hand detection: 268.4ms
+Landmark processing: 0.0ms
+Model prediction: 40.0ms
+Landmark processing: 0.0ms
+Model prediction: 34.0ms
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+Hand detection: 347.4ms
+Hand detection: 225.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.2ms
+Model prediction: 16.0ms
+RGB conversion: 1.0ms
+Hand detection: 145.4ms
+Landmark processing: 0.0ms
+Model prediction: 16.1ms
+Camera read time: 10.2ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 355.2ms
+Hand detection: 336.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 17.1ms
+Model prediction: 15.6ms
+RGB conversion: 0.0ms
+Hand detection: 121.7ms
+Landmark processing: 0.0ms
+Model prediction: 13.8ms
+Camera read time: 2.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 280.5ms
+Hand detection: 276.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 41.5ms
+Model prediction: 28.6ms
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 1.0ms
+Hand detection: 434.5ms
+Hand detection: 263.6ms
+Landmark processing: 0.0ms
+Model prediction: 17.6ms
+Landmark processing: 0.0ms
+Model prediction: 15.1ms
+RGB conversion: 0.0ms
+Hand detection: 149.7ms
+Total frame time: 158.2ms
+--------------------------------------------------
+Camera read time: 8.8ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 301.3ms
+Hand detection: 290.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 41.6ms
+Model prediction: 59.2ms
+RGB conversion: 0.0ms
+Hand detection: 125.4ms
+Landmark processing: 0.0ms
+Model prediction: 12.6ms
+Camera read time: 7.2ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 260.8ms
+Hand detection: 258.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 31.7ms
+Model prediction: 48.8ms
+RGB conversion: 0.0ms
+Hand detection: 141.0ms
+Total frame time: 146.9ms
+--------------------------------------------------
+Camera read time: 10.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 279.3ms
+Hand detection: 260.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 12.0ms
+Model prediction: 27.4ms
+RGB conversion: 0.0ms
+Hand detection: 116.2ms
+Landmark processing: 0.0ms
+Model prediction: 26.8ms
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 355.1ms
+Hand detection: 354.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 22.8ms
+Model prediction: 17.0ms
+RGB conversion: 1.1ms
+Hand detection: 127.6ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 387.2ms
+Hand detection: 365.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 38.3ms
+Model prediction: 31.7ms
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 1.0ms
+Hand detection: 168.3ms
+Landmark processing: 0.0ms
+Model prediction: 24.2ms
+RGB conversion: 0.0ms
+Hand detection: 260.2ms
+Hand detection: 206.9ms
+Landmark processing: 0.0ms
+Model prediction: 25.4ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+RGB conversion: 0.0ms
+Camera read time: 10.7ms
+RGB conversion: 0.0ms
+Hand detection: 326.5ms
+Hand detection: 188.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 55.3ms
+Model prediction: 42.2ms
+RGB conversion: 0.0ms
+Camera read time: 5.3ms
+RGB conversion: 0.0ms
+Hand detection: 369.0ms
+Hand detection: 220.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 53.5ms
+Model prediction: 66.5ms
+RGB conversion: 0.0ms
+Camera read time: 8.5ms
+RGB conversion: 0.0ms
+Hand detection: 165.5ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+RGB conversion: 0.0ms
+Hand detection: 266.6ms
+Hand detection: 246.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.0ms
+Model prediction: 31.0ms
+RGB conversion: 0.0ms
+Hand detection: 91.8ms
+Landmark processing: 0.0ms
+Model prediction: 13.1ms
+RGB conversion: 0.0ms
+Camera read time: 10.1ms
+RGB conversion: 0.9ms
+Hand detection: 134.6ms
+Hand detection: 166.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 17.9ms
+Model prediction: 33.5ms
+RGB conversion: 0.0ms
+Hand detection: 106.6ms
+Landmark processing: 0.0ms
+Model prediction: 18.0ms
+RGB conversion: 0.0ms
+Camera read time: 16.5ms
+RGB conversion: 0.0ms
+Hand detection: 330.0ms
+Hand detection: 311.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 23.5ms
+Model prediction: 37.8ms
+RGB conversion: 0.0ms
+Hand detection: 158.8ms
+Total frame time: 166.9ms
+--------------------------------------------------
+Camera read time: 12.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 171.4ms
+Hand detection: 158.5ms
+Total frame time: 178.2ms
+Total frame time: 163.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.0ms
+Total frame time: 66.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 184.4ms
+Hand detection: 96.4ms
+Total frame time: 207.0ms
+Total frame time: 112.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.1ms
+Total frame time: 68.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.2ms
+Total frame time: 74.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 27.4ms
+RGB conversion: 0.0ms
+Hand detection: 130.8ms
+Hand detection: 115.0ms
+Total frame time: 125.9ms
+Total frame time: 142.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.7ms
+Total frame time: 68.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.1ms
+RGB conversion: 0.0ms
+Hand detection: 70.7ms
+Total frame time: 83.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 144.7ms
+Hand detection: 116.7ms
+Total frame time: 159.4ms
+Total frame time: 127.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.2ms
+Total frame time: 74.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 89.1ms
+Total frame time: 101.2ms
+Hand detection: 175.2ms
+--------------------------------------------------
+Total frame time: 182.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.7ms
+Total frame time: 76.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.3ms
+Total frame time: 65.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.7ms
+RGB conversion: 0.0ms
+Hand detection: 139.2ms
+Hand detection: 138.2ms
+Total frame time: 147.2ms
+Total frame time: 146.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.6ms
+Total frame time: 83.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.3ms
+Total frame time: 72.3ms
+--------------------------------------------------
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 198.0ms
+Hand detection: 180.1ms
+Total frame time: 206.3ms
+Total frame time: 190.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.5ms
+Total frame time: 73.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 54.7ms
+Total frame time: 68.8ms
+--------------------------------------------------
+Camera read time: 14.1ms
+RGB conversion: 0.9ms
+RGB conversion: 0.0ms
+Hand detection: 144.2ms
+Total frame time: 151.2ms
+Hand detection: 138.2ms
+--------------------------------------------------
+Total frame time: 153.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 85.9ms
+Total frame time: 92.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 128.7ms
+Hand detection: 83.7ms
+Total frame time: 144.7ms
+Total frame time: 97.7ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 85.3ms
+Total frame time: 90.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.4ms
+RGB conversion: 1.0ms
+Hand detection: 216.9ms
+Landmark processing: 0.0ms
+Hand detection: 167.0ms
+Model prediction: 28.6ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+RGB conversion: 0.0ms
+Hand detection: 149.4ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Camera read time: 2.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 256.9ms
+Hand detection: 236.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 44.3ms
+Model prediction: 42.7ms
+RGB conversion: 0.0ms
+Hand detection: 119.6ms
+Landmark processing: 0.0ms
+Model prediction: 24.9ms
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 184.7ms
+Hand detection: 182.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 29.0ms
+Model prediction: 49.0ms
+RGB conversion: 0.0ms
+Hand detection: 140.4ms
+Landmark processing: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 1.0ms
+Model prediction: 26.5ms
+RGB conversion: 0.7ms
+Hand detection: 391.2ms
+Hand detection: 368.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 33.8ms
+Model prediction: 27.8ms
+RGB conversion: 0.0ms
+Camera read time: 2.0ms
+RGB conversion: 0.0ms
+Hand detection: 424.6ms
+Hand detection: 254.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 32.1ms
+Model prediction: 37.3ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 318.9ms
+Hand detection: 159.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 24.8ms
+Model prediction: 19.0ms
+RGB conversion: 0.0ms
+Hand detection: 90.9ms
+Landmark processing: 0.0ms
+Model prediction: 25.9ms
+RGB conversion: 0.0ms
+Camera read time: 14.1ms
+RGB conversion: 1.0ms
+Hand detection: 323.5ms
+Hand detection: 286.4ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.7ms
+Model prediction: 35.1ms
+RGB conversion: 0.0ms
+Camera read time: 16.0ms
+RGB conversion: 1.0ms
+Hand detection: 273.2ms
+Hand detection: 124.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.2ms
+Model prediction: 43.0ms
+RGB conversion: 0.0ms
+Hand detection: 129.4ms
+Landmark processing: 0.0ms
+Model prediction: 15.0ms
+Camera read time: 16.3ms
+RGB conversion: 0.5ms
+RGB conversion: 0.6ms
+Hand detection: 311.8ms
+Hand detection: 310.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 33.8ms
+Model prediction: 44.9ms
+RGB conversion: 0.0ms
+Hand detection: 41.6ms
+Landmark processing: 0.0ms
+Model prediction: 14.5ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 392.7ms
+Hand detection: 319.8ms
+Landmark processing: 0.0ms
+Model prediction: 22.0ms
+Landmark processing: 0.0ms
+Model prediction: 18.6ms
+RGB conversion: 0.9ms
+Hand detection: 131.3ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Camera read time: 13.3ms
+RGB conversion: 0.0ms
+RGB conversion: 0.7ms
+Hand detection: 370.7ms
+Hand detection: 353.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Model prediction: 34.0ms
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 304.5ms
+Hand detection: 131.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 28.3ms
+Model prediction: 41.3ms
+RGB conversion: 0.0ms
+Camera read time: 8.1ms
+RGB conversion: 1.0ms
+Hand detection: 318.8ms
+Hand detection: 166.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.5ms
+Model prediction: 23.4ms
+RGB conversion: 0.0ms
+Hand detection: 143.8ms
+Landmark processing: 0.0ms
+Model prediction: 11.7ms
+Camera read time: 19.2ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 271.1ms
+Hand detection: 251.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 37.0ms
+Model prediction: 21.0ms
+RGB conversion: 0.0ms
+Hand detection: 102.6ms
+Landmark processing: 0.0ms
+Model prediction: 14.9ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 251.6ms
+Hand detection: 229.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 22.5ms
+Model prediction: 37.7ms
+RGB conversion: 0.0ms
+Hand detection: 127.7ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Camera read time: 25.8ms
+RGB conversion: 0.0ms
+Hand detection: 250.6ms
+Hand detection: 228.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 37.9ms
+Model prediction: 28.9ms
+RGB conversion: 0.0ms
+Hand detection: 127.1ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+Camera read time: 12.2ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 276.4ms
+Hand detection: 262.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 40.0ms
+Model prediction: 60.6ms
+RGB conversion: 0.0ms
+Hand detection: 161.3ms
+Landmark processing: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 10.0ms
+Model prediction: 44.0ms
+RGB conversion: 0.0ms
+Hand detection: 223.0ms
+Hand detection: 194.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 23.4ms
+Model prediction: 31.5ms
+RGB conversion: 0.0ms
+Hand detection: 110.9ms
+Landmark processing: 0.0ms
+Model prediction: 13.3ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 229.3ms
+Hand detection: 225.3ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+Landmark processing: 0.0ms
+Model prediction: 13.0ms
+RGB conversion: 0.0ms
+Hand detection: 109.5ms
+Landmark processing: 0.0ms
+Model prediction: 37.1ms
+Camera read time: 13.3ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 312.2ms
+Hand detection: 309.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.3ms
+Model prediction: 34.3ms
+RGB conversion: 0.0ms
+Hand detection: 137.8ms
+Total frame time: 153.2ms
+--------------------------------------------------
+Camera read time: 4.0ms
+RGB conversion: 0.9ms
+RGB conversion: 0.9ms
+Hand detection: 149.7ms
+Hand detection: 109.7ms
+Total frame time: 155.6ms
+Total frame time: 124.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.4ms
+Total frame time: 67.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 134.4ms
+Hand detection: 59.1ms
+Total frame time: 142.8ms
+Total frame time: 65.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.4ms
+Total frame time: 76.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 54.0ms
+Total frame time: 60.3ms
+--------------------------------------------------
+Camera read time: 4.9ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 125.0ms
+Hand detection: 112.6ms
+Total frame time: 135.0ms
+--------------------------------------------------
+Total frame time: 121.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 116.2ms
+Landmark processing: 0.0ms
+Model prediction: 19.2ms
+Camera read time: 6.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 284.0ms
+Hand detection: 281.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.8ms
+Model prediction: 50.7ms
+RGB conversion: 0.0ms
+Camera read time: 12.0ms
+RGB conversion: 1.0ms
+Hand detection: 164.4ms
+Landmark processing: 0.0ms
+Model prediction: 22.3ms
+RGB conversion: 0.0ms
+Hand detection: 301.1ms
+Hand detection: 237.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 41.7ms
+Model prediction: 31.6ms
+RGB conversion: 0.0ms
+Hand detection: 115.8ms
+Landmark processing: 0.0ms
+Model prediction: 34.1ms
+Camera read time: 8.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 356.5ms
+Hand detection: 346.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.5ms
+Model prediction: 8.5ms
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 157.1ms
+Landmark processing: 0.0ms
+Model prediction: 35.9ms
+RGB conversion: 0.0ms
+Hand detection: 283.4ms
+Landmark processing: 0.0ms
+Hand detection: 229.9ms
+Landmark processing: 0.0ms
+Model prediction: 33.0ms
+Model prediction: 33.0ms
+RGB conversion: 0.0ms
+Hand detection: 145.0ms
+Landmark processing: 0.0ms
+Model prediction: 22.1ms
+Camera read time: 6.5ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 254.0ms
+Hand detection: 222.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 18.0ms
+Model prediction: 25.1ms
+RGB conversion: 0.0ms
+Hand detection: 132.6ms
+Landmark processing: 0.0ms
+Model prediction: 23.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 264.9ms
+Hand detection: 248.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 37.7ms
+Model prediction: 25.8ms
+RGB conversion: 0.0ms
+Hand detection: 98.9ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 244.2ms
+Hand detection: 230.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 35.2ms
+Model prediction: 47.4ms
+RGB conversion: 0.0ms
+Hand detection: 117.1ms
+Landmark processing: 0.0ms
+Model prediction: 31.2ms
+Camera read time: 19.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 268.5ms
+Hand detection: 275.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 31.1ms
+Model prediction: 32.6ms
+RGB conversion: 0.0ms
+Hand detection: 128.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 291.1ms
+Hand detection: 289.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.8ms
+Model prediction: 22.5ms
+RGB conversion: 0.0ms
+Hand detection: 114.2ms
+Landmark processing: 0.0ms
+Model prediction: 28.3ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 328.6ms
+Hand detection: 319.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 24.4ms
+Model prediction: 37.4ms
+RGB conversion: 0.0ms
+Hand detection: 128.3ms
+Landmark processing: 0.0ms
+Camera read time: 8.1ms
+RGB conversion: 0.0ms
+Model prediction: 18.7ms
+RGB conversion: 0.0ms
+Hand detection: 207.9ms
+Total frame time: 226.0ms
+Hand detection: 190.2ms
+--------------------------------------------------
+Total frame time: 198.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 142.5ms
+Total frame time: 149.6ms
+--------------------------------------------------
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 158.3ms
+Total frame time: 164.4ms
+--------------------------------------------------
+Hand detection: 142.9ms
+Total frame time: 151.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 89.1ms
+Total frame time: 97.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.1ms
+RGB conversion: 0.0ms
+Hand detection: 102.6ms
+Total frame time: 110.6ms
+Hand detection: 59.2ms
+--------------------------------------------------
+Total frame time: 65.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 54.3ms
+Total frame time: 68.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.5ms
+Total frame time: 75.3ms
+--------------------------------------------------
+Camera read time: 17.9ms
+RGB conversion: 0.9ms
+RGB conversion: 0.9ms
+Hand detection: 140.3ms
+Total frame time: 152.3ms
+--------------------------------------------------
+Hand detection: 138.3ms
+Total frame time: 153.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 93.6ms
+Total frame time: 101.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 171.6ms
+Total frame time: 179.0ms
+--------------------------------------------------
+Hand detection: 128.8ms
+Total frame time: 136.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.6ms
+Total frame time: 77.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.1ms
+RGB conversion: 0.0ms
+Hand detection: 173.2ms
+Total frame time: 180.5ms
+--------------------------------------------------
+Hand detection: 90.1ms
+Total frame time: 102.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.1ms
+Total frame time: 79.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 130.4ms
+Total frame time: 139.0ms
+--------------------------------------------------
+Hand detection: 69.4ms
+Total frame time: 79.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.2ms
+Total frame time: 70.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.6ms
+Hand detection: 55.9ms
+Total frame time: 63.4ms
+RGB conversion: 0.0ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 150.3ms
+Hand detection: 137.6ms
+Total frame time: 170.3ms
+Total frame time: 155.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.2ms
+Total frame time: 82.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 89.6ms
+Total frame time: 96.6ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 166.3ms
+Hand detection: 134.1ms
+Total frame time: 190.2ms
+--------------------------------------------------
+Total frame time: 144.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 78.2ms
+Total frame time: 96.6ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 126.8ms
+Total frame time: 133.9ms
+--------------------------------------------------
+Hand detection: 79.8ms
+Total frame time: 87.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 71.9ms
+Total frame time: 79.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.1ms
+Total frame time: 74.2ms
+--------------------------------------------------
+Camera read time: 5.7ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 114.6ms
+Total frame time: 120.8ms
+--------------------------------------------------
+Hand detection: 98.8ms
+Total frame time: 107.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.2ms
+Total frame time: 66.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.9ms
+Total frame time: 75.3ms
+--------------------------------------------------
+Camera read time: 8.6ms
+RGB conversion: 0.0ms
+RGB conversion: 1.3ms
+Hand detection: 142.9ms
+Hand detection: 141.9ms
+Total frame time: 152.8ms
+Total frame time: 152.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.4ms
+Total frame time: 69.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.9ms
+Total frame time: 68.9ms
+--------------------------------------------------
+Camera read time: 7.0ms
+RGB conversion: 1.0ms
+RGB conversion: 1.0ms
+Hand detection: 125.3ms
+Hand detection: 124.3ms
+Total frame time: 139.3ms
+Total frame time: 139.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 81.9ms
+Total frame time: 89.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 17.3ms
+RGB conversion: 0.0ms
+Hand detection: 196.6ms
+Hand detection: 126.8ms
+Total frame time: 206.7ms
+Total frame time: 142.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 93.1ms
+Total frame time: 107.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.2ms
+RGB conversion: 0.0ms
+Hand detection: 139.7ms
+Hand detection: 92.8ms
+Total frame time: 154.6ms
+Total frame time: 106.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 63.9ms
+Total frame time: 73.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+Hand detection: 183.2ms
+Hand detection: 120.9ms
+Total frame time: 194.0ms
+Total frame time: 131.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 107.5ms
+Total frame time: 119.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+Hand detection: 169.6ms
+Total frame time: 180.4ms
+--------------------------------------------------
+Hand detection: 138.5ms
+Total frame time: 150.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.9ms
+Total frame time: 69.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.6ms
+Total frame time: 69.6ms
+--------------------------------------------------
+Camera read time: 18.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 160.2ms
+Total frame time: 179.2ms
+--------------------------------------------------
+Hand detection: 163.2ms
+Total frame time: 180.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 91.3ms
+Total frame time: 100.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 18.5ms
+RGB conversion: 0.6ms
+Hand detection: 378.7ms
+Hand detection: 305.8ms
+Total frame time: 394.0ms
+Total frame time: 329.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 170.5ms
+Total frame time: 195.4ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 22.0ms
+RGB conversion: 1.7ms
+Hand detection: 274.6ms
+Hand detection: 244.1ms
+Total frame time: 298.8ms
+Total frame time: 269.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 116.7ms
+Total frame time: 132.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 114.9ms
+Total frame time: 130.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 115.3ms
+Total frame time: 131.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 99.7ms
+Total frame time: 121.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 17.0ms
+RGB conversion: 1.0ms
+Hand detection: 208.9ms
+Hand detection: 146.2ms
+Total frame time: 228.9ms
+Total frame time: 164.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 131.9ms
+Total frame time: 148.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 88.1ms
+Total frame time: 105.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 92.8ms
+Total frame time: 101.8ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 97.5ms
+Total frame time: 109.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 101.1ms
+Total frame time: 113.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.2ms
+RGB conversion: 0.6ms
+Hand detection: 236.0ms
+Hand detection: 111.5ms
+Total frame time: 251.6ms
+Total frame time: 127.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 92.0ms
+Total frame time: 104.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 101.0ms
+Total frame time: 118.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 118.9ms
+Total frame time: 130.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 124.6ms
+Total frame time: 139.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 118.2ms
+Total frame time: 130.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 85.1ms
+Total frame time: 106.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+Hand detection: 160.6ms
+Hand detection: 128.2ms
+Total frame time: 170.0ms
+Total frame time: 140.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 70.4ms
+Total frame time: 82.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.5ms
+Total frame time: 69.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 89.9ms
+Total frame time: 100.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.4ms
+Total frame time: 80.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.4ms
+Total frame time: 83.8ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 86.5ms
+Total frame time: 103.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 70.6ms
+Total frame time: 84.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.5ms
+Total frame time: 77.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.4ms
+RGB conversion: 0.0ms
+Hand detection: 183.8ms
+Total frame time: 189.3ms
+--------------------------------------------------
+Hand detection: 136.6ms
+Total frame time: 144.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 70.9ms
+Total frame time: 84.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 57.8ms
+Total frame time: 66.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 101.1ms
+Total frame time: 111.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 79.0ms
+Total frame time: 91.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 92.1ms
+Total frame time: 101.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 109.0ms
+Total frame time: 119.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.7ms
+Total frame time: 82.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 14.5ms
+RGB conversion: 0.0ms
+Hand detection: 152.1ms
+Hand detection: 74.1ms
+Total frame time: 161.4ms
+Total frame time: 81.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 29.8ms
+Total frame time: 35.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 28.9ms
+Total frame time: 35.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 29.0ms
+Total frame time: 36.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 34.6ms
+Total frame time: 40.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 33.0ms
+Total frame time: 39.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 32.6ms
+Total frame time: 38.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 31.4ms
+Total frame time: 38.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 33.1ms
+Total frame time: 39.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 31.4ms
+Total frame time: 38.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 38.0ms
+Total frame time: 46.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 42.0ms
+Total frame time: 49.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 37.8ms
+Total frame time: 44.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.5ms
+RGB conversion: 0.0ms
+Hand detection: 173.4ms
+Hand detection: 87.5ms
+Total frame time: 186.5ms
+Total frame time: 121.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.9ms
+Total frame time: 91.4ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 4.1ms
+RGB conversion: 0.0ms
+Hand detection: 200.5ms
+Hand detection: 106.8ms
+Total frame time: 221.3ms
+Total frame time: 123.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.3ms
+Hand detection: 96.0ms
+Total frame time: 112.1ms
+--------------------------------------------------
+RGB conversion: 0.6ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 209.7ms
+Total frame time: 225.3ms
+--------------------------------------------------
+Hand detection: 117.4ms
+Total frame time: 131.6ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 50.0ms
+Total frame time: 61.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.9ms
+Total frame time: 69.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 51.4ms
+Total frame time: 64.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.2ms
+RGB conversion: 0.0ms
+Hand detection: 158.7ms
+Hand detection: 143.5ms
+Total frame time: 169.7ms
+Total frame time: 154.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 150.6ms
+Total frame time: 164.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 1.0ms
+Hand detection: 183.5ms
+Hand detection: 172.3ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Model prediction: 15.9ms
+RGB conversion: 0.0ms
+Hand detection: 118.4ms
+Landmark processing: 0.0ms
+Model prediction: 9.1ms
+RGB conversion: 0.0ms
+Camera read time: 2.0ms
+RGB conversion: 0.0ms
+Hand detection: 125.8ms
+Hand detection: 101.6ms
+Landmark processing: 0.0ms
+Model prediction: 12.9ms
+Landmark processing: 0.0ms
+Model prediction: 11.2ms
+RGB conversion: 0.9ms
+Hand detection: 99.7ms
+Landmark processing: 0.0ms
+Model prediction: 11.1ms
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.9ms
+Hand detection: 169.9ms
+Hand detection: 128.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 21.4ms
+Model prediction: 32.9ms
+RGB conversion: 1.0ms
+Hand detection: 92.7ms
+Landmark processing: 0.0ms
+Model prediction: 11.4ms
+RGB conversion: 0.0ms
+Camera read time: 2.0ms
+RGB conversion: 1.0ms
+Hand detection: 159.3ms
+Hand detection: 120.7ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 11.0ms
+Model prediction: 13.0ms
+RGB conversion: 0.0ms
+Hand detection: 67.9ms
+Landmark processing: 0.0ms
+Model prediction: 7.9ms
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 143.1ms
+Hand detection: 73.9ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 19.0ms
+Model prediction: 33.0ms
+RGB conversion: 0.0ms
+Hand detection: 106.1ms
+Landmark processing: 0.0ms
+Model prediction: 12.4ms
+RGB conversion: 0.6ms
+Camera read time: 1.9ms
+RGB conversion: 0.0ms
+Hand detection: 166.5ms
+Hand detection: 128.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 10.9ms
+Model prediction: 30.8ms
+RGB conversion: 0.0ms
+Hand detection: 115.9ms
+Landmark processing: 0.0ms
+Model prediction: 10.0ms
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 1.0ms
+Hand detection: 166.4ms
+Hand detection: 148.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Model prediction: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 97.0ms
+Total frame time: 108.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 2.5ms
+RGB conversion: 0.3ms
+Hand detection: 158.5ms
+Hand detection: 93.5ms
+Total frame time: 170.9ms
+Total frame time: 104.1ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 159.5ms
+Total frame time: 176.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 111.4ms
+Total frame time: 124.4ms
+--------------------------------------------------
+Hand detection: 100.9ms
+Total frame time: 113.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 87.8ms
+Total frame time: 98.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 47.3ms
+Total frame time: 56.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 69.7ms
+Hand detection: 93.8ms
+Total frame time: 102.8ms
+Total frame time: 80.7ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 43.3ms
+Total frame time: 54.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 47.8ms
+Total frame time: 56.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 43.6ms
+Total frame time: 53.6ms
+--------------------------------------------------
+Camera read time: 3.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 83.6ms
+Total frame time: 93.7ms
+--------------------------------------------------
+Hand detection: 81.6ms
+Total frame time: 91.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 123.8ms
+Total frame time: 132.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.1ms
+RGB conversion: 0.0ms
+Hand detection: 355.7ms
+Hand detection: 334.6ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 30.6ms
+Model prediction: 67.8ms
+RGB conversion: 0.0ms
+Camera read time: 9.6ms
+RGB conversion: 0.0ms
+Hand detection: 424.4ms
+Hand detection: 247.4ms
+Landmark processing: 0.0ms
+Model prediction: 21.1ms
+Landmark processing: 0.0ms
+Model prediction: 16.2ms
+RGB conversion: 1.0ms
+Hand detection: 67.5ms
+Total frame time: 79.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 445.6ms
+Hand detection: 369.5ms
+Landmark processing: 0.0ms
+Model prediction: 16.3ms
+Landmark processing: 0.0ms
+Model prediction: 13.7ms
+RGB conversion: 0.0ms
+Hand detection: 105.2ms
+Landmark processing: 0.0ms
+Model prediction: 28.0ms
+RGB conversion: 0.0ms
+Camera read time: 13.9ms
+RGB conversion: 0.0ms
+Hand detection: 302.7ms
+Hand detection: 287.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 36.1ms
+Model prediction: 34.0ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 168.1ms
+Landmark processing: 0.0ms
+Model prediction: 23.0ms
+RGB conversion: 0.0ms
+Hand detection: 247.7ms
+Hand detection: 193.5ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+Model prediction: 11.9ms
+RGB conversion: 0.0ms
+Hand detection: 105.9ms
+Landmark processing: 0.0ms
+Model prediction: 15.6ms
+RGB conversion: 0.9ms
+Camera read time: 15.1ms
+RGB conversion: 0.0ms
+Hand detection: 243.5ms
+Hand detection: 212.6ms
+Landmark processing: 0.0ms
+Model prediction: 19.5ms
+Landmark processing: 0.0ms
+Model prediction: 44.9ms
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 290.1ms
+Hand detection: 132.4ms
+Landmark processing: 0.0ms
+Model prediction: 19.2ms
+Landmark processing: 0.0ms
+Model prediction: 12.2ms
+RGB conversion: 0.0ms
+Hand detection: 42.1ms
+Landmark processing: 0.0ms
+Model prediction: 13.9ms
+RGB conversion: 0.0ms
+Camera read time: 7.6ms
+RGB conversion: 0.0ms
+Hand detection: 347.3ms
+Hand detection: 286.2ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 26.1ms
+Model prediction: 52.0ms
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+Hand detection: 269.6ms
+Hand detection: 122.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 20.0ms
+Model prediction: 16.0ms
+RGB conversion: 0.0ms
+Camera read time: 18.0ms
+RGB conversion: 1.0ms
+Hand detection: 295.6ms
+Hand detection: 120.0ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 18.1ms
+Model prediction: 35.0ms
+RGB conversion: 0.0ms
+Hand detection: 125.3ms
+Landmark processing: 0.0ms
+Model prediction: 13.0ms
+RGB conversion: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 0.0ms
+Hand detection: 360.7ms
+Hand detection: 378.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 34.6ms
+Model prediction: 30.6ms
+RGB conversion: 0.0ms
+Camera read time: 11.7ms
+RGB conversion: 0.0ms
+Hand detection: 367.0ms
+Hand detection: 232.6ms
+Landmark processing: 0.0ms
+Model prediction: 13.4ms
+Landmark processing: 0.0ms
+Model prediction: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 146.8ms
+Landmark processing: 0.0ms
+Camera read time: 20.6ms
+RGB conversion: 1.0ms
+Model prediction: 18.9ms
+RGB conversion: 0.0ms
+Hand detection: 212.5ms
+Hand detection: 198.1ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 15.4ms
+Model prediction: 23.3ms
+RGB conversion: 0.0ms
+Hand detection: 120.4ms
+Landmark processing: 0.0ms
+Model prediction: 15.8ms
+Camera read time: 16.3ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 271.9ms
+Hand detection: 253.8ms
+Landmark processing: 0.0ms
+Landmark processing: 0.0ms
+Model prediction: 43.6ms
+Model prediction: 34.4ms
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.9ms
+Hand detection: 154.2ms
+Landmark processing: 0.0ms
+Model prediction: 14.1ms
+RGB conversion: 0.0ms
+Hand detection: 269.3ms
+Total frame time: 287.5ms
+Hand detection: 216.2ms
+--------------------------------------------------
+Total frame time: 226.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 48.4ms
+Total frame time: 55.4ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 8.3ms
+RGB conversion: 0.0ms
+Hand detection: 79.0ms
+Total frame time: 87.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 157.6ms
+Hand detection: 129.3ms
+Total frame time: 175.7ms
+Total frame time: 147.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 48.6ms
+Total frame time: 54.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 51.2ms
+Total frame time: 58.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 145.5ms
+Hand detection: 121.9ms
+Total frame time: 153.5ms
+Total frame time: 138.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.4ms
+Total frame time: 63.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.1ms
+RGB conversion: 0.0ms
+Hand detection: 170.9ms
+Hand detection: 79.9ms
+Total frame time: 179.1ms
+Total frame time: 85.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 82.0ms
+Total frame time: 88.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 74.8ms
+Total frame time: 80.8ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Hand detection: 191.6ms
+Total frame time: 199.9ms
+--------------------------------------------------
+Hand detection: 175.3ms
+Total frame time: 186.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 80.9ms
+Total frame time: 87.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 125.9ms
+Total frame time: 139.9ms
+Hand detection: 67.5ms
+--------------------------------------------------
+Total frame time: 78.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 109.2ms
+Total frame time: 115.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 122.4ms
+Total frame time: 129.9ms
+--------------------------------------------------
+Hand detection: 91.5ms
+Total frame time: 97.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.6ms
+Total frame time: 68.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.3ms
+Total frame time: 83.2ms
+--------------------------------------------------
+Camera read time: 11.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 146.0ms
+Total frame time: 153.8ms
+--------------------------------------------------
+Hand detection: 134.2ms
+Total frame time: 141.9ms
+--------------------------------------------------
+RGB conversion: 1.1ms
+Hand detection: 75.0ms
+Total frame time: 86.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 1.0ms
+Hand detection: 186.2ms
+Hand detection: 115.6ms
+Total frame time: 195.4ms
+Total frame time: 133.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 96.4ms
+Total frame time: 109.9ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 158.3ms
+Hand detection: 110.2ms
+Total frame time: 166.3ms
+Total frame time: 119.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.5ms
+Total frame time: 81.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 145.7ms
+Hand detection: 80.7ms
+Total frame time: 153.9ms
+Total frame time: 89.7ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 78.7ms
+Total frame time: 89.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.1ms
+RGB conversion: 0.0ms
+Hand detection: 160.9ms
+Total frame time: 171.8ms
+--------------------------------------------------
+Hand detection: 104.2ms
+Total frame time: 111.3ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Hand detection: 89.9ms
+Total frame time: 98.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.1ms
+RGB conversion: 1.0ms
+Hand detection: 131.2ms
+Hand detection: 80.6ms
+Total frame time: 141.2ms
+Total frame time: 93.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.7ms
+Total frame time: 70.6ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.9ms
+Hand detection: 65.2ms
+Total frame time: 80.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 122.3ms
+Total frame time: 139.5ms
+Hand detection: 99.0ms
+--------------------------------------------------
+Total frame time: 112.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.0ms
+Total frame time: 79.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.3ms
+RGB conversion: 0.5ms
+Hand detection: 188.8ms
+Hand detection: 109.7ms
+Total frame time: 200.7ms
+--------------------------------------------------
+Total frame time: 121.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 78.9ms
+Total frame time: 95.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.1ms
+RGB conversion: 0.0ms
+Hand detection: 126.0ms
+Total frame time: 134.7ms
+--------------------------------------------------
+Hand detection: 75.3ms
+Total frame time: 86.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.6ms
+Total frame time: 74.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 59.0ms
+Total frame time: 67.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.4ms
+Total frame time: 62.4ms
+--------------------------------------------------
+Hand detection: 65.5ms
+Total frame time: 76.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 65.3ms
+Total frame time: 72.2ms
+--------------------------------------------------
+Camera read time: 5.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 117.3ms
+Hand detection: 99.4ms
+Total frame time: 127.4ms
+Total frame time: 110.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 47.3ms
+Total frame time: 55.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 50.0ms
+Total frame time: 57.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 121.5ms
+Total frame time: 127.5ms
+--------------------------------------------------
+Hand detection: 104.9ms
+Total frame time: 114.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 63.1ms
+Total frame time: 70.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.9ms
+RGB conversion: 0.5ms
+Hand detection: 188.7ms
+Hand detection: 135.3ms
+Total frame time: 204.0ms
+Total frame time: 141.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 64.9ms
+Total frame time: 72.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.4ms
+Total frame time: 66.3ms
+--------------------------------------------------
+Camera read time: 10.1ms
+RGB conversion: 0.0ms
+Hand detection: 67.5ms
+Total frame time: 74.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.1ms
+Total frame time: 69.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.0ms
+Total frame time: 66.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.9ms
+RGB conversion: 0.0ms
+Hand detection: 153.5ms
+Hand detection: 147.1ms
+Total frame time: 165.7ms
+Total frame time: 164.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.6ms
+Total frame time: 76.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 53.0ms
+Total frame time: 59.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.2ms
+RGB conversion: 0.7ms
+Hand detection: 148.1ms
+Total frame time: 156.6ms
+--------------------------------------------------
+Hand detection: 141.6ms
+Total frame time: 155.9ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 64.0ms
+Total frame time: 73.4ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Hand detection: 58.0ms
+Total frame time: 73.8ms
+--------------------------------------------------
+Camera read time: 15.1ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 122.7ms
+Total frame time: 135.9ms
+--------------------------------------------------
+Hand detection: 110.6ms
+Total frame time: 120.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 51.7ms
+Total frame time: 56.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.9ms
+RGB conversion: 0.0ms
+Hand detection: 166.9ms
+Total frame time: 184.5ms
+--------------------------------------------------
+Hand detection: 96.9ms
+Total frame time: 106.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 54.3ms
+Total frame time: 69.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 164.5ms
+Hand detection: 89.8ms
+Total frame time: 179.0ms
+Total frame time: 99.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 65.8ms
+Total frame time: 75.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.1ms
+RGB conversion: 0.0ms
+Hand detection: 69.6ms
+Total frame time: 82.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 102.8ms
+Hand detection: 86.8ms
+Total frame time: 110.9ms
+Total frame time: 95.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.7ms
+Total frame time: 63.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.7ms
+Total frame time: 77.8ms
+--------------------------------------------------
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 110.7ms
+Total frame time: 121.7ms
+--------------------------------------------------
+Hand detection: 130.2ms
+Total frame time: 139.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 52.4ms
+Total frame time: 58.0ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 61.0ms
+Total frame time: 68.8ms
+--------------------------------------------------
+Camera read time: 10.3ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 118.2ms
+Hand detection: 114.1ms
+Total frame time: 124.1ms
+--------------------------------------------------
+Total frame time: 125.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 43.2ms
+Total frame time: 51.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 65.4ms
+Total frame time: 74.4ms
+--------------------------------------------------
+Camera read time: 8.1ms
+RGB conversion: 0.9ms
+RGB conversion: 0.9ms
+Hand detection: 150.7ms
+Total frame time: 158.7ms
+Hand detection: 145.7ms
+Total frame time: 159.7ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 41.4ms
+Total frame time: 50.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.7ms
+Total frame time: 88.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.3ms
+RGB conversion: 0.0ms
+Hand detection: 143.0ms
+Hand detection: 142.1ms
+Total frame time: 152.0ms
+--------------------------------------------------
+Total frame time: 154.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.2ms
+Total frame time: 64.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.3ms
+Total frame time: 72.3ms
+--------------------------------------------------
+Camera read time: 53.6ms
+RGB conversion: 0.9ms
+RGB conversion: 0.0ms
+Hand detection: 142.7ms
+Hand detection: 141.7ms
+Total frame time: 147.7ms
+Total frame time: 148.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.5ms
+Total frame time: 69.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 52.4ms
+Total frame time: 58.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 24.0ms
+RGB conversion: 0.0ms
+Hand detection: 113.0ms
+Total frame time: 120.1ms
+--------------------------------------------------
+Hand detection: 99.0ms
+Total frame time: 106.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.6ms
+Total frame time: 66.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 42.7ms
+Total frame time: 48.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 116.8ms
+Total frame time: 124.7ms
+--------------------------------------------------
+Hand detection: 85.5ms
+Total frame time: 94.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.6ms
+Total frame time: 80.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 174.4ms
+Hand detection: 115.4ms
+Total frame time: 184.3ms
+Total frame time: 122.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.2ms
+Total frame time: 79.5ms
+--------------------------------------------------
+RGB conversion: 1.1ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 148.2ms
+Hand detection: 80.4ms
+Total frame time: 156.4ms
+Total frame time: 93.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.1ms
+Total frame time: 80.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.5ms
+RGB conversion: 1.2ms
+Hand detection: 132.7ms
+Total frame time: 140.7ms
+--------------------------------------------------
+Hand detection: 56.2ms
+Total frame time: 63.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.7ms
+Total frame time: 73.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 163.5ms
+Hand detection: 119.5ms
+Total frame time: 173.3ms
+Total frame time: 125.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 86.0ms
+Total frame time: 92.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.9ms
+RGB conversion: 0.5ms
+Hand detection: 56.1ms
+Total frame time: 63.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 178.9ms
+Total frame time: 187.1ms
+--------------------------------------------------
+Hand detection: 83.4ms
+Total frame time: 94.4ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 76.6ms
+Total frame time: 84.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 163.9ms
+Total frame time: 170.0ms
+--------------------------------------------------
+Hand detection: 116.8ms
+Total frame time: 125.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 72.2ms
+Total frame time: 78.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 77.9ms
+Total frame time: 92.9ms
+--------------------------------------------------
+Camera read time: 55.6ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 114.9ms
+Total frame time: 121.9ms
+--------------------------------------------------
+Hand detection: 113.9ms
+Total frame time: 123.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 76.0ms
+Total frame time: 84.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 34.9ms
+Total frame time: 41.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 55.9ms
+RGB conversion: 0.9ms
+Hand detection: 102.8ms
+Hand detection: 58.1ms
+Total frame time: 111.9ms
+Total frame time: 66.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.9ms
+Hand detection: 46.0ms
+Total frame time: 54.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.1ms
+Total frame time: 65.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 23.5ms
+RGB conversion: 0.0ms
+Hand detection: 147.3ms
+Hand detection: 132.4ms
+Total frame time: 155.9ms
+Total frame time: 139.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.9ms
+Total frame time: 87.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 141.5ms
+Total frame time: 146.7ms
+--------------------------------------------------
+Hand detection: 75.5ms
+Total frame time: 84.0ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 53.0ms
+Total frame time: 61.9ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 73.6ms
+Total frame time: 83.7ms
+--------------------------------------------------
+Camera read time: 23.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 164.4ms
+Hand detection: 160.5ms
+Total frame time: 176.4ms
+Total frame time: 175.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 95.5ms
+Total frame time: 101.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 157.6ms
+Hand detection: 130.9ms
+Total frame time: 170.0ms
+Total frame time: 138.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.7ms
+Hand detection: 75.3ms
+Total frame time: 83.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 125.0ms
+Total frame time: 133.1ms
+--------------------------------------------------
+Hand detection: 63.4ms
+Total frame time: 69.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.0ms
+Total frame time: 80.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.9ms
+Total frame time: 68.7ms
+--------------------------------------------------
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 119.6ms
+Hand detection: 88.8ms
+Total frame time: 126.6ms
+Total frame time: 95.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 76.9ms
+Total frame time: 83.7ms
+--------------------------------------------------
+RGB conversion: 1.1ms
+Camera read time: 15.0ms
+RGB conversion: 1.0ms
+Hand detection: 116.9ms
+Total frame time: 126.0ms
+--------------------------------------------------
+Hand detection: 197.7ms
+Total frame time: 207.8ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 8.1ms
+RGB conversion: 1.0ms
+Hand detection: 242.2ms
+Hand detection: 86.6ms
+Total frame time: 255.1ms
+Total frame time: 95.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 104.1ms
+Total frame time: 114.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 17.0ms
+RGB conversion: 0.0ms
+Hand detection: 152.8ms
+Total frame time: 162.2ms
+--------------------------------------------------
+Hand detection: 111.3ms
+Total frame time: 117.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.0ms
+Total frame time: 64.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.0ms
+RGB conversion: 0.0ms
+Hand detection: 59.8ms
+Total frame time: 74.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 142.5ms
+Hand detection: 114.3ms
+Total frame time: 157.5ms
+Total frame time: 128.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.0ms
+Total frame time: 69.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 80.0ms
+Total frame time: 90.0ms
+--------------------------------------------------
+Camera read time: 7.0ms
+RGB conversion: 1.2ms
+RGB conversion: 1.0ms
+Hand detection: 139.9ms
+Total frame time: 151.1ms
+--------------------------------------------------
+Hand detection: 121.4ms
+Total frame time: 136.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.1ms
+Total frame time: 80.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 58.9ms
+Total frame time: 67.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 163.0ms
+Total frame time: 171.9ms
+--------------------------------------------------
+Hand detection: 144.9ms
+Total frame time: 155.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 93.0ms
+Total frame time: 99.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.5ms
+RGB conversion: 0.5ms
+Hand detection: 124.6ms
+Hand detection: 94.9ms
+Total frame time: 132.6ms
+Total frame time: 102.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 51.8ms
+Total frame time: 59.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 158.9ms
+Hand detection: 65.0ms
+Total frame time: 165.8ms
+Total frame time: 73.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.1ms
+Total frame time: 62.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.3ms
+Total frame time: 73.6ms
+--------------------------------------------------
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 115.5ms
+Total frame time: 122.1ms
+--------------------------------------------------
+Hand detection: 100.5ms
+Total frame time: 107.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.8ms
+Total frame time: 63.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.1ms
+Total frame time: 63.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 23.7ms
+RGB conversion: 0.5ms
+Hand detection: 112.0ms
+Hand detection: 97.5ms
+Total frame time: 120.1ms
+Total frame time: 104.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.4ms
+Total frame time: 70.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.1ms
+Total frame time: 74.8ms
+--------------------------------------------------
+Camera read time: 4.7ms
+RGB conversion: 0.6ms
+RGB conversion: 0.0ms
+Hand detection: 161.4ms
+Hand detection: 144.5ms
+Total frame time: 170.5ms
+Total frame time: 157.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.2ms
+Total frame time: 89.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 1.0ms
+Hand detection: 169.3ms
+Total frame time: 179.7ms
+--------------------------------------------------
+Hand detection: 102.2ms
+Total frame time: 119.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.8ms
+Total frame time: 80.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.3ms
+Total frame time: 85.3ms
+--------------------------------------------------
+Camera read time: 15.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 148.9ms
+Total frame time: 158.1ms
+--------------------------------------------------
+Hand detection: 136.6ms
+Total frame time: 144.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 122.5ms
+Total frame time: 137.0ms
+--------------------------------------------------
+Camera read time: 3.6ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 148.9ms
+Hand detection: 141.9ms
+Total frame time: 157.9ms
+Total frame time: 157.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 107.9ms
+Total frame time: 117.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 162.1ms
+Total frame time: 169.1ms
+--------------------------------------------------
+Hand detection: 128.0ms
+Total frame time: 139.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.3ms
+Total frame time: 75.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+Hand detection: 197.5ms
+Total frame time: 205.3ms
+--------------------------------------------------
+Hand detection: 132.7ms
+Total frame time: 144.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 83.9ms
+Total frame time: 91.3ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 187.0ms
+Total frame time: 198.9ms
+--------------------------------------------------
+Hand detection: 126.4ms
+Total frame time: 136.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 96.9ms
+Total frame time: 108.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 138.1ms
+Total frame time: 147.3ms
+Hand detection: 102.2ms
+--------------------------------------------------
+Total frame time: 117.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 78.6ms
+Total frame time: 87.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.8ms
+Total frame time: 65.8ms
+--------------------------------------------------
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 161.7ms
+Total frame time: 170.7ms
+Hand detection: 121.9ms
+--------------------------------------------------
+Total frame time: 141.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.3ms
+Total frame time: 68.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 51.0ms
+Total frame time: 59.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 25.1ms
+RGB conversion: 0.9ms
+Hand detection: 112.4ms
+Total frame time: 118.4ms
+--------------------------------------------------
+Hand detection: 96.9ms
+Total frame time: 103.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.6ms
+Total frame time: 84.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.9ms
+RGB conversion: 0.0ms
+Hand detection: 130.2ms
+Hand detection: 65.2ms
+Total frame time: 139.2ms
+Total frame time: 76.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 83.5ms
+Total frame time: 94.5ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 12.0ms
+RGB conversion: 1.0ms
+Hand detection: 172.8ms
+Total frame time: 180.8ms
+--------------------------------------------------
+Hand detection: 111.9ms
+Total frame time: 120.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 82.7ms
+Total frame time: 92.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 155.0ms
+Total frame time: 170.9ms
+--------------------------------------------------
+Hand detection: 114.8ms
+Total frame time: 124.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.2ms
+Total frame time: 73.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.4ms
+RGB conversion: 0.0ms
+Hand detection: 160.4ms
+Hand detection: 79.2ms
+Total frame time: 168.0ms
+Total frame time: 89.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.3ms
+Total frame time: 75.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.3ms
+RGB conversion: 0.0ms
+Hand detection: 128.9ms
+Total frame time: 136.8ms
+--------------------------------------------------
+Hand detection: 60.7ms
+Total frame time: 75.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 65.8ms
+Total frame time: 80.8ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 9.5ms
+RGB conversion: 1.0ms
+Hand detection: 52.4ms
+Total frame time: 69.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 158.4ms
+Hand detection: 145.5ms
+Total frame time: 168.7ms
+Total frame time: 154.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 63.5ms
+Total frame time: 72.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 3.2ms
+RGB conversion: 0.0ms
+Hand detection: 175.6ms
+Total frame time: 182.5ms
+--------------------------------------------------
+Hand detection: 116.4ms
+Total frame time: 122.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 92.6ms
+Total frame time: 109.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 1.1ms
+Hand detection: 149.5ms
+Total frame time: 158.5ms
+--------------------------------------------------
+Hand detection: 133.5ms
+Total frame time: 143.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.1ms
+Total frame time: 90.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 17.0ms
+RGB conversion: 0.9ms
+Hand detection: 141.5ms
+Total frame time: 148.7ms
+--------------------------------------------------
+Hand detection: 68.8ms
+Total frame time: 85.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 56.9ms
+Total frame time: 64.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 50.6ms
+Total frame time: 57.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.5ms
+RGB conversion: 0.0ms
+Hand detection: 265.8ms
+Total frame time: 273.3ms
+--------------------------------------------------
+Hand detection: 252.0ms
+Total frame time: 259.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 107.4ms
+Total frame time: 117.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 138.2ms
+Hand detection: 90.6ms
+Total frame time: 148.2ms
+Total frame time: 100.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 128.6ms
+Total frame time: 136.9ms
+--------------------------------------------------
+Camera read time: 6.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 133.8ms
+Hand detection: 129.8ms
+Total frame time: 142.0ms
+Total frame time: 142.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.3ms
+Total frame time: 70.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 1.0ms
+Hand detection: 144.1ms
+Hand detection: 69.5ms
+Total frame time: 157.4ms
+Total frame time: 78.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 92.6ms
+Total frame time: 108.6ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 204.8ms
+Hand detection: 158.1ms
+Total frame time: 221.8ms
+Total frame time: 175.1ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.0ms
+Total frame time: 71.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.8ms
+RGB conversion: 0.5ms
+Hand detection: 63.0ms
+Total frame time: 78.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 111.6ms
+Hand detection: 97.0ms
+Total frame time: 118.6ms
+Total frame time: 105.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 56.7ms
+Total frame time: 65.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.3ms
+Total frame time: 71.3ms
+--------------------------------------------------
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 125.4ms
+Hand detection: 121.1ms
+Total frame time: 137.9ms
+Total frame time: 138.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 139.6ms
+Total frame time: 150.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.6ms
+RGB conversion: 1.0ms
+Hand detection: 291.5ms
+Total frame time: 300.1ms
+--------------------------------------------------
+Hand detection: 275.5ms
+Total frame time: 286.5ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Hand detection: 88.7ms
+Total frame time: 102.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 134.0ms
+Total frame time: 143.6ms
+--------------------------------------------------
+Hand detection: 82.8ms
+Total frame time: 97.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.1ms
+Total frame time: 69.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.8ms
+Total frame time: 66.7ms
+--------------------------------------------------
+Camera read time: 17.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 165.8ms
+Total frame time: 174.2ms
+--------------------------------------------------
+Hand detection: 163.9ms
+Total frame time: 174.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 97.7ms
+Total frame time: 110.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.5ms
+RGB conversion: 0.0ms
+Hand detection: 143.5ms
+Total frame time: 151.5ms
+--------------------------------------------------
+Hand detection: 89.0ms
+Total frame time: 105.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 89.6ms
+Total frame time: 104.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 1.3ms
+Hand detection: 169.4ms
+Hand detection: 140.0ms
+Total frame time: 178.9ms
+Total frame time: 149.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 97.7ms
+Total frame time: 106.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.7ms
+RGB conversion: 0.0ms
+Hand detection: 121.4ms
+Total frame time: 128.6ms
+--------------------------------------------------
+Hand detection: 88.0ms
+Total frame time: 98.1ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Hand detection: 63.0ms
+Total frame time: 72.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.8ms
+Total frame time: 72.6ms
+--------------------------------------------------
+Camera read time: 2.1ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 140.7ms
+Total frame time: 154.4ms
+--------------------------------------------------
+Hand detection: 130.7ms
+Total frame time: 141.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.5ms
+Total frame time: 67.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 161.3ms
+Hand detection: 85.5ms
+Total frame time: 178.3ms
+Total frame time: 101.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.5ms
+Total frame time: 76.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 0.0ms
+Hand detection: 145.2ms
+Total frame time: 152.2ms
+--------------------------------------------------
+Hand detection: 81.6ms
+Total frame time: 90.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 107.9ms
+Total frame time: 128.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.3ms
+RGB conversion: 1.0ms
+Hand detection: 166.5ms
+Hand detection: 154.2ms
+Total frame time: 177.5ms
+Total frame time: 162.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 71.7ms
+Total frame time: 78.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 53.4ms
+Total frame time: 64.4ms
+--------------------------------------------------
+Camera read time: 16.2ms
+RGB conversion: 0.0ms
+RGB conversion: 0.5ms
+Hand detection: 115.3ms
+Hand detection: 113.2ms
+Total frame time: 130.4ms
+Total frame time: 130.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 99.7ms
+Total frame time: 111.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.6ms
+RGB conversion: 1.0ms
+Hand detection: 157.3ms
+Hand detection: 126.7ms
+Total frame time: 165.5ms
+Total frame time: 135.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.6ms
+Hand detection: 88.9ms
+Total frame time: 95.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 138.5ms
+Total frame time: 160.9ms
+--------------------------------------------------
+Hand detection: 103.7ms
+Total frame time: 114.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 82.6ms
+Total frame time: 97.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.3ms
+RGB conversion: 1.0ms
+Hand detection: 172.2ms
+Total frame time: 180.9ms
+--------------------------------------------------
+Hand detection: 105.2ms
+Total frame time: 120.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 77.6ms
+Total frame time: 93.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.5ms
+RGB conversion: 1.0ms
+Hand detection: 158.2ms
+Hand detection: 110.5ms
+Total frame time: 174.1ms
+Total frame time: 126.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.4ms
+Total frame time: 81.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 147.3ms
+Total frame time: 162.4ms
+--------------------------------------------------
+Hand detection: 91.5ms
+Total frame time: 99.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 45.0ms
+Total frame time: 54.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 70.6ms
+Total frame time: 87.3ms
+--------------------------------------------------
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 121.6ms
+Total frame time: 135.6ms
+--------------------------------------------------
+Hand detection: 117.3ms
+Total frame time: 135.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 76.7ms
+Total frame time: 89.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 164.5ms
+Hand detection: 119.2ms
+Total frame time: 175.4ms
+Total frame time: 130.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 123.3ms
+Total frame time: 138.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.7ms
+RGB conversion: 0.0ms
+Hand detection: 168.7ms
+Hand detection: 140.6ms
+Total frame time: 177.3ms
+Total frame time: 160.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.6ms
+Total frame time: 81.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 74.8ms
+Total frame time: 87.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 184.2ms
+Total frame time: 200.2ms
+--------------------------------------------------
+Hand detection: 160.5ms
+Total frame time: 168.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 82.2ms
+Total frame time: 97.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 0.0ms
+Hand detection: 154.3ms
+Hand detection: 104.4ms
+Total frame time: 160.4ms
+Total frame time: 112.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 63.3ms
+Total frame time: 70.3ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 138.4ms
+Total frame time: 152.2ms
+--------------------------------------------------
+Hand detection: 59.0ms
+Total frame time: 74.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.4ms
+Total frame time: 68.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 129.6ms
+Total frame time: 141.8ms
+--------------------------------------------------
+Hand detection: 69.5ms
+Total frame time: 80.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 54.1ms
+Total frame time: 65.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 52.8ms
+Total frame time: 60.7ms
+--------------------------------------------------
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.3ms
+Hand detection: 90.4ms
+Hand detection: 88.5ms
+Total frame time: 101.0ms
+Total frame time: 101.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.0ms
+Total frame time: 67.0ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+Hand detection: 172.0ms
+Total frame time: 188.0ms
+--------------------------------------------------
+Hand detection: 90.0ms
+Total frame time: 107.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 93.6ms
+Total frame time: 100.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 161.0ms
+Total frame time: 171.1ms
+--------------------------------------------------
+Hand detection: 118.6ms
+Total frame time: 126.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 65.2ms
+Total frame time: 78.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 163.4ms
+Hand detection: 92.3ms
+Total frame time: 170.6ms
+Total frame time: 108.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 87.4ms
+Total frame time: 102.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 121.9ms
+Total frame time: 130.1ms
+--------------------------------------------------
+Hand detection: 87.6ms
+Total frame time: 100.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 72.0ms
+Total frame time: 90.0ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 3.0ms
+RGB conversion: 0.0ms
+Hand detection: 115.1ms
+Total frame time: 125.1ms
+--------------------------------------------------
+Hand detection: 71.0ms
+Total frame time: 80.0ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 68.4ms
+Total frame time: 84.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 69.4ms
+Total frame time: 76.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 240.5ms
+Hand detection: 217.2ms
+Total frame time: 257.5ms
+--------------------------------------------------
+Total frame time: 226.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 85.9ms
+Total frame time: 97.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 149.7ms
+Hand detection: 117.9ms
+Total frame time: 158.7ms
+Total frame time: 127.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.5ms
+Total frame time: 75.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 58.6ms
+Total frame time: 65.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 173.4ms
+Hand detection: 135.4ms
+Total frame time: 181.5ms
+Total frame time: 149.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 120.4ms
+Total frame time: 135.8ms
+--------------------------------------------------
+Camera read time: 2.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 120.3ms
+Hand detection: 118.3ms
+Total frame time: 130.4ms
+Total frame time: 131.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 139.5ms
+Total frame time: 150.4ms
+--------------------------------------------------
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 131.4ms
+Hand detection: 164.0ms
+Total frame time: 143.3ms
+Total frame time: 175.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 84.1ms
+Total frame time: 93.6ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+Hand detection: 132.1ms
+Total frame time: 144.1ms
+--------------------------------------------------
+Hand detection: 78.2ms
+Total frame time: 83.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.6ms
+Total frame time: 72.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+Hand detection: 68.9ms
+Total frame time: 79.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 148.5ms
+Total frame time: 164.2ms
+--------------------------------------------------
+Hand detection: 133.6ms
+Total frame time: 150.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 45.1ms
+Total frame time: 51.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.9ms
+Total frame time: 68.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.0ms
+RGB conversion: 0.0ms
+Hand detection: 163.6ms
+Total frame time: 174.1ms
+--------------------------------------------------
+Hand detection: 134.9ms
+Total frame time: 142.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.8ms
+Total frame time: 73.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 0.0ms
+Hand detection: 67.7ms
+Total frame time: 83.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 134.2ms
+Total frame time: 148.1ms
+--------------------------------------------------
+Hand detection: 110.6ms
+Total frame time: 118.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.2ms
+Total frame time: 67.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 70.1ms
+Total frame time: 81.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 167.0ms
+Hand detection: 159.1ms
+Total frame time: 181.9ms
+Total frame time: 168.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 84.2ms
+Total frame time: 91.6ms
+--------------------------------------------------
+RGB conversion: 1.1ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 167.4ms
+Total frame time: 174.3ms
+--------------------------------------------------
+Hand detection: 120.3ms
+Total frame time: 129.7ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 90.9ms
+Total frame time: 109.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 1.0ms
+Hand detection: 170.0ms
+Hand detection: 117.1ms
+Total frame time: 181.0ms
+Total frame time: 135.1ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 84.6ms
+Total frame time: 94.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 19.3ms
+RGB conversion: 1.0ms
+Hand detection: 190.6ms
+Hand detection: 120.1ms
+Total frame time: 201.9ms
+Total frame time: 138.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 92.0ms
+Total frame time: 101.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.7ms
+RGB conversion: 0.0ms
+Hand detection: 222.4ms
+Total frame time: 231.6ms
+--------------------------------------------------
+Hand detection: 171.7ms
+Total frame time: 185.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 98.5ms
+Total frame time: 113.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 18.0ms
+RGB conversion: 0.0ms
+Hand detection: 174.1ms
+Hand detection: 142.0ms
+Total frame time: 200.5ms
+Total frame time: 155.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 102.7ms
+Total frame time: 113.8ms
+--------------------------------------------------
+RGB conversion: 0.6ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 302.5ms
+Hand detection: 253.5ms
+Total frame time: 318.5ms
+Total frame time: 272.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 92.8ms
+Total frame time: 105.1ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 133.4ms
+Total frame time: 148.4ms
+--------------------------------------------------
+Hand detection: 89.2ms
+Total frame time: 100.4ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 75.4ms
+Total frame time: 85.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.8ms
+Total frame time: 62.8ms
+--------------------------------------------------
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 149.6ms
+Total frame time: 159.5ms
+--------------------------------------------------
+Hand detection: 102.0ms
+Total frame time: 114.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.7ms
+Total frame time: 67.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+Hand detection: 186.1ms
+Total frame time: 197.1ms
+--------------------------------------------------
+Hand detection: 99.6ms
+Total frame time: 120.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 76.5ms
+Total frame time: 84.4ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 7.9ms
+RGB conversion: 0.0ms
+Hand detection: 205.8ms
+Total frame time: 217.3ms
+--------------------------------------------------
+Hand detection: 144.8ms
+Total frame time: 156.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 78.8ms
+Total frame time: 90.2ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 13.0ms
+RGB conversion: 1.0ms
+Hand detection: 156.7ms
+Total frame time: 164.6ms
+--------------------------------------------------
+Hand detection: 94.4ms
+Total frame time: 102.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 135.0ms
+Total frame time: 141.0ms
+--------------------------------------------------
+Camera read time: 4.5ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 149.2ms
+Total frame time: 157.8ms
+--------------------------------------------------
+Hand detection: 127.8ms
+Total frame time: 143.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 63.9ms
+Total frame time: 73.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.0ms
+Total frame time: 69.5ms
+--------------------------------------------------
+Camera read time: 10.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 139.6ms
+Total frame time: 152.8ms
+--------------------------------------------------
+Hand detection: 132.6ms
+Total frame time: 139.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 85.7ms
+Total frame time: 94.0ms
+--------------------------------------------------
+RGB conversion: 1.3ms
+Camera read time: 9.1ms
+RGB conversion: 0.0ms
+Hand detection: 153.4ms
+Total frame time: 161.9ms
+Hand detection: 101.9ms
+--------------------------------------------------
+Total frame time: 112.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 86.6ms
+Total frame time: 104.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+Hand detection: 154.7ms
+Total frame time: 160.8ms
+--------------------------------------------------
+Hand detection: 122.7ms
+Total frame time: 130.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 95.9ms
+Total frame time: 102.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 135.9ms
+Total frame time: 145.9ms
+--------------------------------------------------
+Hand detection: 70.9ms
+Total frame time: 82.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 87.2ms
+Total frame time: 93.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 1.0ms
+Hand detection: 134.6ms
+Hand detection: 68.8ms
+Total frame time: 142.1ms
+Total frame time: 79.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.6ms
+Total frame time: 81.5ms
+--------------------------------------------------
+RGB conversion: 0.6ms
+Hand detection: 65.0ms
+Total frame time: 75.8ms
+--------------------------------------------------
+Camera read time: 18.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 212.0ms
+Hand detection: 201.0ms
+Total frame time: 222.5ms
+Total frame time: 208.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 152.9ms
+Total frame time: 160.7ms
+--------------------------------------------------
+Camera read time: 8.7ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 230.9ms
+Total frame time: 239.9ms
+--------------------------------------------------
+Hand detection: 213.9ms
+Total frame time: 240.9ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 150.6ms
+Total frame time: 160.6ms
+--------------------------------------------------
+Camera read time: 16.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 155.5ms
+Hand detection: 137.0ms
+Total frame time: 166.1ms
+Total frame time: 151.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 72.9ms
+Total frame time: 80.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+Hand detection: 149.9ms
+Total frame time: 163.0ms
+--------------------------------------------------
+Hand detection: 92.9ms
+Total frame time: 100.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.0ms
+Total frame time: 65.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 58.9ms
+Total frame time: 71.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 130.2ms
+Total frame time: 139.2ms
+--------------------------------------------------
+Hand detection: 117.2ms
+Total frame time: 125.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.0ms
+Total frame time: 75.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.0ms
+RGB conversion: 0.0ms
+Hand detection: 172.5ms
+Hand detection: 110.7ms
+Total frame time: 181.0ms
+Total frame time: 119.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 135.9ms
+Total frame time: 148.5ms
+--------------------------------------------------
+Camera read time: 15.1ms
+RGB conversion: 0.0ms
+RGB conversion: 1.3ms
+Hand detection: 133.2ms
+Hand detection: 107.9ms
+Total frame time: 142.2ms
+Total frame time: 127.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.3ms
+Total frame time: 74.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 17.0ms
+RGB conversion: 0.0ms
+Hand detection: 151.6ms
+Total frame time: 158.8ms
+--------------------------------------------------
+Hand detection: 76.6ms
+Total frame time: 81.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 80.8ms
+Total frame time: 87.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.1ms
+RGB conversion: 0.0ms
+Hand detection: 139.9ms
+Total frame time: 148.1ms
+--------------------------------------------------
+Hand detection: 79.0ms
+Total frame time: 85.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 89.4ms
+Total frame time: 100.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 2.0ms
+RGB conversion: 1.0ms
+Hand detection: 122.8ms
+Hand detection: 104.8ms
+Total frame time: 130.5ms
+Total frame time: 115.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 73.5ms
+Total frame time: 86.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.4ms
+Total frame time: 62.6ms
+--------------------------------------------------
+Camera read time: 17.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 173.9ms
+Hand detection: 159.0ms
+Total frame time: 187.4ms
+Total frame time: 173.7ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 1.0ms
+Hand detection: 309.4ms
+Total frame time: 318.9ms
+Hand detection: 151.4ms
+--------------------------------------------------
+Total frame time: 164.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 141.7ms
+Total frame time: 149.7ms
+--------------------------------------------------
+Camera read time: 8.5ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 233.1ms
+Total frame time: 243.1ms
+--------------------------------------------------
+Hand detection: 229.1ms
+Total frame time: 244.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 139.2ms
+Total frame time: 152.2ms
+--------------------------------------------------
+Camera read time: 17.1ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 123.1ms
+Total frame time: 130.5ms
+--------------------------------------------------
+Hand detection: 91.6ms
+Total frame time: 103.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 104.2ms
+Total frame time: 111.6ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 17.0ms
+RGB conversion: 0.0ms
+Hand detection: 162.1ms
+Total frame time: 170.0ms
+--------------------------------------------------
+Hand detection: 131.5ms
+Total frame time: 138.1ms
+--------------------------------------------------
+RGB conversion: 0.7ms
+Hand detection: 103.2ms
+Total frame time: 111.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.5ms
+RGB conversion: 0.0ms
+Hand detection: 134.7ms
+Total frame time: 144.8ms
+Hand detection: 107.2ms
+Total frame time: 114.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 74.1ms
+Total frame time: 85.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 2.0ms
+RGB conversion: 1.0ms
+Hand detection: 69.8ms
+Total frame time: 82.1ms
+--------------------------------------------------
+RGB conversion: 1.2ms
+Hand detection: 164.1ms
+Total frame time: 177.8ms
+--------------------------------------------------
+Hand detection: 124.2ms
+Total frame time: 137.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 56.0ms
+Total frame time: 66.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.1ms
+Total frame time: 67.3ms
+--------------------------------------------------
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 130.8ms
+Hand detection: 111.9ms
+Total frame time: 138.9ms
+Total frame time: 124.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 57.1ms
+Total frame time: 68.2ms
+--------------------------------------------------
+RGB conversion: 0.6ms
+Hand detection: 70.2ms
+Total frame time: 76.5ms
+--------------------------------------------------
+Camera read time: 5.2ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 132.6ms
+Total frame time: 142.5ms
+--------------------------------------------------
+Hand detection: 115.9ms
+Total frame time: 129.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 87.2ms
+Total frame time: 93.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.9ms
+RGB conversion: 0.0ms
+Hand detection: 145.0ms
+Total frame time: 156.3ms
+--------------------------------------------------
+Hand detection: 83.1ms
+Total frame time: 96.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 91.7ms
+Total frame time: 102.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.1ms
+RGB conversion: 0.0ms
+Hand detection: 175.2ms
+Hand detection: 126.2ms
+Total frame time: 182.3ms
+--------------------------------------------------
+Total frame time: 136.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 82.5ms
+Total frame time: 97.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 1.0ms
+Hand detection: 154.4ms
+Hand detection: 107.2ms
+Total frame time: 162.7ms
+Total frame time: 116.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 94.4ms
+Total frame time: 111.4ms
+--------------------------------------------------
+RGB conversion: 0.9ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 162.4ms
+Hand detection: 115.3ms
+Total frame time: 175.0ms
+Total frame time: 127.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 95.2ms
+Total frame time: 107.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 9.6ms
+RGB conversion: 0.0ms
+Hand detection: 162.5ms
+Total frame time: 169.5ms
+--------------------------------------------------
+Hand detection: 131.8ms
+Total frame time: 138.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 86.1ms
+Total frame time: 100.3ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 10.0ms
+RGB conversion: 1.0ms
+Hand detection: 118.0ms
+Total frame time: 133.7ms
+--------------------------------------------------
+Hand detection: 88.9ms
+Total frame time: 103.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 82.6ms
+Total frame time: 95.6ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 17.8ms
+RGB conversion: 0.0ms
+Hand detection: 136.8ms
+Hand detection: 88.0ms
+Total frame time: 154.8ms
+Total frame time: 94.1ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.2ms
+Total frame time: 84.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 57.8ms
+Total frame time: 67.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 11.4ms
+RGB conversion: 0.0ms
+Hand detection: 168.4ms
+Hand detection: 163.8ms
+Total frame time: 180.4ms
+Total frame time: 179.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 102.9ms
+Total frame time: 113.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.9ms
+RGB conversion: 0.0ms
+Hand detection: 130.8ms
+Hand detection: 86.4ms
+Total frame time: 95.4ms
+Total frame time: 140.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.8ms
+Total frame time: 77.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 16.0ms
+RGB conversion: 1.0ms
+Hand detection: 72.5ms
+Total frame time: 78.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 141.9ms
+Hand detection: 129.9ms
+Total frame time: 159.1ms
+Total frame time: 144.1ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 56.3ms
+Total frame time: 64.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.8ms
+Total frame time: 75.8ms
+--------------------------------------------------
+Camera read time: 9.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 123.0ms
+Hand detection: 103.9ms
+Total frame time: 128.3ms
+Total frame time: 113.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 100.3ms
+Total frame time: 108.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+Hand detection: 218.7ms
+Total frame time: 229.8ms
+Hand detection: 192.7ms
+--------------------------------------------------
+Total frame time: 198.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 83.7ms
+Total frame time: 91.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 10.0ms
+RGB conversion: 0.0ms
+Hand detection: 181.4ms
+Total frame time: 189.8ms
+--------------------------------------------------
+Hand detection: 128.0ms
+Total frame time: 144.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 56.3ms
+Total frame time: 62.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 77.7ms
+Total frame time: 88.7ms
+--------------------------------------------------
+Camera read time: 13.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 118.4ms
+Total frame time: 130.4ms
+--------------------------------------------------
+Hand detection: 108.3ms
+Total frame time: 115.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.9ms
+Total frame time: 69.3ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 73.7ms
+Total frame time: 80.7ms
+--------------------------------------------------
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 134.8ms
+Hand detection: 133.8ms
+Total frame time: 144.3ms
+Total frame time: 144.3ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.2ms
+Total frame time: 69.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.3ms
+Total frame time: 70.4ms
+--------------------------------------------------
+Camera read time: 9.0ms
+RGB conversion: 1.0ms
+RGB conversion: 0.0ms
+Hand detection: 146.3ms
+Total frame time: 158.0ms
+--------------------------------------------------
+Hand detection: 129.9ms
+Total frame time: 142.4ms
+--------------------------------------------------
+RGB conversion: 1.5ms
+Hand detection: 85.8ms
+Total frame time: 96.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 15.0ms
+RGB conversion: 0.0ms
+Hand detection: 150.1ms
+Hand detection: 92.3ms
+Total frame time: 162.1ms
+Total frame time: 98.5ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 101.7ms
+Total frame time: 110.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 14.1ms
+RGB conversion: 0.0ms
+Hand detection: 147.5ms
+Hand detection: 97.4ms
+Total frame time: 157.4ms
+Total frame time: 110.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 78.8ms
+Total frame time: 86.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.5ms
+RGB conversion: 1.0ms
+Hand detection: 217.8ms
+Hand detection: 166.8ms
+Total frame time: 230.7ms
+Total frame time: 182.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.8ms
+Total frame time: 65.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.5ms
+Total frame time: 60.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 22.0ms
+RGB conversion: 1.0ms
+Hand detection: 113.0ms
+Hand detection: 97.6ms
+Total frame time: 121.0ms
+Total frame time: 105.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 72.7ms
+Total frame time: 80.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.0ms
+RGB conversion: 1.0ms
+Hand detection: 124.4ms
+Hand detection: 68.4ms
+Total frame time: 137.9ms
+Total frame time: 76.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.6ms
+Total frame time: 68.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.0ms
+Total frame time: 70.3ms
+--------------------------------------------------
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 108.1ms
+Hand detection: 93.1ms
+Total frame time: 117.5ms
+Total frame time: 102.1ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 55.1ms
+Total frame time: 66.8ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 5.8ms
+Hand detection: 69.9ms
+Total frame time: 80.2ms
+RGB conversion: 1.1ms
+--------------------------------------------------
+RGB conversion: 0.7ms
+Hand detection: 120.9ms
+Hand detection: 92.4ms
+Total frame time: 132.1ms
+Total frame time: 102.4ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 64.7ms
+Total frame time: 76.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 12.0ms
+RGB conversion: 0.0ms
+Hand detection: 186.6ms
+Total frame time: 193.6ms
+--------------------------------------------------
+Hand detection: 108.8ms
+Total frame time: 117.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 115.3ms
+Total frame time: 124.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 0.0ms
+Hand detection: 149.1ms
+Hand detection: 110.6ms
+Total frame time: 157.4ms
+Total frame time: 126.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 71.9ms
+Total frame time: 79.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 1.0ms
+Hand detection: 150.2ms
+Hand detection: 93.5ms
+Total frame time: 165.5ms
+Total frame time: 102.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 190.0ms
+Total frame time: 202.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 62.4ms
+Total frame time: 74.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 71.7ms
+Total frame time: 80.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 71.4ms
+Total frame time: 83.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.4ms
+Total frame time: 84.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.0ms
+Total frame time: 76.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.0ms
+Total frame time: 77.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.5ms
+Total frame time: 75.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 60.5ms
+Total frame time: 68.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 66.5ms
+Total frame time: 75.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 91.6ms
+Total frame time: 109.0ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 75.0ms
+Total frame time: 86.3ms
+--------------------------------------------------
+Camera read time: 598.5ms
+RGB conversion: 1.0ms
+Hand detection: 64.3ms
+Total frame time: 75.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 64.2ms
+Total frame time: 71.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 77.6ms
+Total frame time: 88.9ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 58.4ms
+Total frame time: 68.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 70.4ms
+Total frame time: 78.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 83.6ms
+Total frame time: 92.6ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 72.7ms
+Total frame time: 82.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 83.8ms
+Total frame time: 96.7ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Camera read time: 12.9ms
+RGB conversion: 0.0ms
+Hand detection: 181.9ms
+Hand detection: 69.7ms
+Total frame time: 195.0ms
+Total frame time: 84.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 79.9ms
+Total frame time: 95.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+Hand detection: 154.1ms
+Hand detection: 106.9ms
+Total frame time: 163.2ms
+Total frame time: 115.9ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 55.7ms
+Total frame time: 62.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 59.7ms
+Total frame time: 67.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 14.0ms
+RGB conversion: 0.0ms
+Hand detection: 110.8ms
+Hand detection: 96.8ms
+Total frame time: 120.1ms
+Total frame time: 104.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 65.2ms
+Total frame time: 74.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 6.1ms
+RGB conversion: 0.0ms
+Hand detection: 135.5ms
+Total frame time: 143.5ms
+--------------------------------------------------
+Hand detection: 69.5ms
+Total frame time: 81.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 71.8ms
+Total frame time: 82.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 68.0ms
+Total frame time: 76.0ms
+--------------------------------------------------
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+RGB conversion: 0.0ms
+Hand detection: 148.5ms
+Hand detection: 132.8ms
+Total frame time: 157.8ms
+Total frame time: 145.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 63.6ms
+Total frame time: 73.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 61.7ms
+Total frame time: 72.5ms
+--------------------------------------------------
+Camera read time: 8.0ms
+RGB conversion: 0.0ms
+RGB conversion: 1.0ms
+Hand detection: 190.6ms
+Hand detection: 168.5ms
+Total frame time: 201.6ms
+Total frame time: 185.6ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 69.2ms
+Total frame time: 80.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 7.5ms
+RGB conversion: 0.0ms
+Hand detection: 169.3ms
+Total frame time: 189.2ms
+--------------------------------------------------
+Hand detection: 102.2ms
+Total frame time: 113.2ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 104.7ms
+Total frame time: 123.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 4.0ms
+RGB conversion: 0.0ms
+Hand detection: 212.2ms
+Hand detection: 180.2ms
+Total frame time: 225.7ms
+Total frame time: 194.0ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 122.0ms
+Total frame time: 141.3ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 19.1ms
+RGB conversion: 1.0ms
+Hand detection: 207.6ms
+Hand detection: 191.0ms
+Total frame time: 224.7ms
+Total frame time: 212.2ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 117.8ms
+Total frame time: 132.6ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Camera read time: 5.0ms
+RGB conversion: 1.0ms
+Hand detection: 129.3ms
+Total frame time: 145.7ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 231.1ms
+Hand detection: 191.2ms
+Total frame time: 256.5ms
+Total frame time: 209.8ms
+--------------------------------------------------
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 121.1ms
+Total frame time: 139.1ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 85.2ms
+Total frame time: 98.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 91.6ms
+Total frame time: 102.8ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 70.3ms
+Total frame time: 83.2ms
+--------------------------------------------------
+RGB conversion: 1.0ms
+Hand detection: 72.9ms
+Total frame time: 81.4ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 77.5ms
+Total frame time: 86.5ms
+--------------------------------------------------
+RGB conversion: 0.0ms
+Hand detection: 67.5ms
+Total frame time: 74.5ms
+--------------------------------------------------

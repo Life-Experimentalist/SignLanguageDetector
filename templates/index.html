@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Language Detector</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Explicit Light Mode Styles */
+      .light-mode {
+        background-color: #f4f4f9;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .light-mode .container {
+        background-color: #fff;
+        color: #333;
+      }
+      .light-mode #predictionDisplay {
+        color: #007bff;
+      }
+      .light-mode .error {
+        color: red;
+      }
+      .light-mode .remark,
+      .light-mode .brightness {
+        color: #007bff;
+      }
+
+      /* Explicit Dark Mode Styles */
+      .dark-mode {
+        background-color: #333;
+        color: #f4f4f9;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .dark-mode .container {
+        background-color: #444;
+        color: #f4f4f9;
+      }
+      .dark-mode #predictionDisplay {
+        color: #66b2ff;
+      }
+      .dark-mode .error {
+        color: #ff6666;
+      }
+      .dark-mode .remark,
+      .dark-mode .brightness {
+        color: #ffcc66;
+      }
+
+      /* Dark mode dropdown adjustments */
+      .dark-mode .form-select {
+        background-color: #444 !important;
+        color: #f4f4f9 !important;
+        border-color: #777 !important;
+      }
+      .dark-mode .form-select option {
+        background-color: #444;
+        color: #f4f4f9;
+      }
+
+      /* Common styles */
+      body,
+      .container {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 50px; /* Added padding for better visibility of the switch */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 800px;
+        width: 100%;
+        margin: 20px;
+        text-align: center;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: inherit;
+      }
+      #predictionDisplay {
+        font-size: 2em;
+        margin: 20px 0;
+        min-height: 60px;
+      }
+      .video-container {
+        margin-top: 20px;
+      }
+      #videoFeed {
+        max-width: 100%;
+        border: 2px solid #333;
+        border-radius: 8px;
+      }
+      .error {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+      .remark {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+      .brightness {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.2em;
+      }
+      .contrast {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        font-size: 1.2em;
+      }
+      footer {
+        margin-top: 20px;
+        font-size: 0.9em;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      footer a {
+        text-decoration: none;
+        color: #ff6666;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Custom Switch Styles */
+      .switch {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 20px; /* Positioned to match your previous toggle placement */
+      }
+      .switch__input {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      }
+      .switch__label {
+        position: relative;
+        display: inline-block;
+        width: 120px;
+        height: 60px;
+        background-color: #2b2b2b; /* Dark mode background */
+        border: 5px solid #5b5b5b;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+      }
+      .switch__indicator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(-72%);
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: #7b7b7b; /* Moon color for dark mode */
+        border-radius: 9999px;
+        box-shadow: 10px 0px 0 0 rgba(0, 0, 0, 0.2) inset;
+        transition: all 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+      }
+      .switch__indicator::before,
+      .switch__indicator::after {
+        position: absolute;
+        content: "";
+        display: block;
+        background-color: #ffffff;
+        border-radius: 9999px;
+        transition: all 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+      }
+      .switch__indicator::before {
+        top: 7px;
+        left: 7px;
+        width: 9px;
+        height: 9px;
+        background-color: #ffffff;
+        opacity: 0.6;
+      }
+      .switch__indicator::after {
+        bottom: 8px;
+        right: 6px;
+        width: 14px;
+        height: 14px;
+        background-color: #ffffff;
+        opacity: 0.8;
+      }
+      .switch__decoration {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #ffffff;
+        border-radius: 9999px;
+        animation: twinkle 0.8s infinite -0.6s;
+      }
+      .switch__decoration::before,
+      .switch__decoration::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #ffffff;
+        border-radius: 9999px;
+      }
+      .switch__decoration::before {
+        top: -20px;
+        left: 10px;
+        opacity: 1;
+        animation: twinkle 0.6s infinite;
+      }
+      .switch__decoration::after {
+        top: -7px;
+        left: 30px;
+        animation: twinkle 0.6s infinite -0.2s;
+      }
+      @keyframes twinkle {
+        50% {
+          opacity: 0.2;
+        }
+      }
+      .switch__input:checked + .switch__label {
+        background-color: #8fb5f5; /* Light blue for light mode */
+        border-color: #347cf8;
+      }
+      .switch__input:checked + .switch__label .switch__indicator {
+        background-color: #ecd21f; /* Yellow sun for light mode */
+        box-shadow: none;
+        transform: translate(-50%, -50%) translateX(72%);
+      }
+      .switch__input:checked + .switch__label .switch__decoration {
+        top: 50%;
+        transform: translate(0%, -50%);
+        animation: cloud 8s linear infinite;
+        width: 20px;
+        height: 20px;
+      }
+      .switch__input:checked + .switch__label .switch__decoration::before {
+        width: 10px;
+        height: 10px;
+        top: auto;
+        bottom: 0;
+        left: -8px;
+        animation: none;
+      }
+      .switch__input:checked + .switch__label .switch__decoration::after {
+        width: 15px;
+        height: 15px;
+        top: auto;
+        bottom: 0;
+        left: 16px;
+        animation: none;
+      }
+      .switch__input:checked + .switch__label .switch__decoration,
+      .switch__input:checked + .switch__label .switch__decoration::before,
+      .switch__input:checked + .switch__label .switch__decoration::after {
+        border-radius: 9999px 9999px 0 0;
+      }
+      .switch__input:checked + .switch__label .switch__decoration::after {
+        border-bottom-right-radius: 9999px;
+      }
+      @keyframes cloud {
+        0% {
+          transform: translate(0%, -50%);
+        }
+        50% {
+          transform: translate(-50%, -50%);
+        }
+        100% {
+          transform: translate(0%, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body class="light-mode">
+    <!-- Custom Theme Toggle -->
+    <div class="switch">
+      <input type="checkbox" class="switch__input" id="themeToggle" />
+      <label aria-hidden="true" class="switch__label" for="themeToggle">
+        <span aria-hidden="true" class="switch__indicator"></span>
+        <span aria-hidden="true" class="switch__decoration"></span>
+      </label>
+    </div>
+    <div class="brightness" id="brightnessDisplay"></div>
+    <div class="contrast" id="contrastDisplay"></div>
+    <div class="container">
+      <h1>Sign Language Detection</h1>
+      <!-- Model Selection Dropdown -->
+      {% if model_files|length > 1 %}
+      <div class="mb-3">
+        <label for="modelSelect" class="form-label">Select Model:</label>
+        <select class="form-select" id="modelSelect">
+          {% for model_file in model_files %}
+          <option value="{{ model_file }}" {% if model_file == selected_model %}selected{% endif %}>
+            {{ model_file }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      {% endif %}
+      <div id="predictionDisplay">Waiting...</div>
+      <div id="errorDisplay" class="error"></div>
+      <div id="remarkDisplay" class="remark"></div>
+      <div class="video-container">
+        <img id="videoFeed" src="{{ url_for('video_feed') }}" />
+      </div>
+      <footer>
+        © 2024
+        <a href="https://github.com/VKrishna04" target="_blank">@VKrishna04</a>
+        Sign Language Detection. All rights reserved.
+      </footer>
+    </div>
+    <script>
+      const predictionDisplay = document.getElementById("predictionDisplay");
+      const errorDisplay = document.getElementById("errorDisplay");
+      const remarkDisplay = document.getElementById("remarkDisplay");
+      const brightnessDisplay = document.getElementById("brightnessDisplay");
+      const contrastDisplay = document.getElementById("contrastDisplay");
+      const videoFeed = document.getElementById("videoFeed");
+      const themeToggle = document.getElementById("themeToggle");
+      const modelSelect = document.getElementById("modelSelect");
+
+      // Handle video errors
+      videoFeed.onerror = () => {
+        errorDisplay.textContent = "Video stream error. Reloading...";
+        setTimeout(() => location.reload(), 2000);
+      };
+
+      const POLL_INTERVAL = 150; // 150ms
+
+      async function updatePrediction() {
+        try {
+          const response = await fetch("/predictions");
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
+          const data = await response.json();
+          if (data.prediction) {
+            predictionDisplay.textContent = data.prediction;
+            errorDisplay.textContent = "";
+          } else {
+            errorDisplay.textContent = "No prediction received";
+          }
+          if (data.low_brightness) {
+            remarkDisplay.textContent =
+              "Remark: Low brightness detected. Please increase the lighting.";
+            brightnessDisplay.textContent = `Brightness: ${data.brightness.toFixed(2)}`;
+            if (!data.prediction) {
+              errorDisplay.textContent = "No prediction due to low brightness.";
+            }
+          } else {
+            remarkDisplay.textContent = "";
+            brightnessDisplay.textContent = "";
+          }
+          contrastDisplay.textContent = `Contrast: ${data.contrast.toFixed(2)}`;
+        } catch (e) {
+          console.error("Prediction error:", e);
+          errorDisplay.textContent = "Prediction error: " + e.message;
+        }
+        setTimeout(updatePrediction, POLL_INTERVAL);
+      }
+
+      function loadTheme() {
+        const isDarkMode = localStorage.getItem("darkMode") === "true";
+        themeToggle.checked = !isDarkMode; // Checked = light mode, unchecked = dark mode
+        if (isDarkMode) {
+          document.body.classList.remove("light-mode");
+          document.body.classList.add("dark-mode");
+        } else {
+          document.body.classList.remove("dark-mode");
+          document.body.classList.add("light-mode");
+        }
+      }
+
+      // Load theme on startup
+      loadTheme();
+
+      // Model selection
+      if (modelSelect) {
+        modelSelect.addEventListener("change", async (event) => {
+          const modelName = event.target.value;
+          try {
+            const response = await fetch(`/select_model/${modelName}`);
+            if (response.ok) {
+              console.log("Model selected:", modelName);
+              // Reload the page to apply the new model
+              location.reload();
+            } else {
+              console.error("Failed to select model");
+              errorDisplay.textContent = "Failed to select model.";
+            }
+          } catch (error) {
+            console.error("Error selecting model:", error);
+            errorDisplay.textContent = "Error selecting model: " + error.message;
+          }
+        });
+      }
+
+      updatePrediction();
+
+      // Toggle theme
+      function toggleTheme() {
+        if (themeToggle.checked) {
+          // Checked = Light mode
+          document.body.classList.remove("dark-mode");
+          document.body.classList.add("light-mode");
+        } else {
+          // Unchecked = Dark mode
+          document.body.classList.remove("light-mode");
+          document.body.classList.add("dark-mode");
+        }
+        localStorage.setItem("darkMode", !themeToggle.checked); // Store inverse: true for dark mode
+      }
+
+      themeToggle.addEventListener("change", toggleTheme);
+    </script>
+    <!-- Add Shutdown Button -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1050;">
+      <button id="shutdownBtn" class="btn btn-danger">Shutdown Server</button>
+    </div>
+    <script>
+      document.getElementById("shutdownBtn").addEventListener("click", async function() {
+        if (confirm("Are you sure you want to shutdown the server?")) {
+          try {
+            const response = await fetch("/shutdown", { method: "POST" });
+            const message = await response.text();
+            alert(message);
+          } catch (error) {
+            alert("Error shutting down server: " + error);
+          }
+        }
+      });
+    </script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

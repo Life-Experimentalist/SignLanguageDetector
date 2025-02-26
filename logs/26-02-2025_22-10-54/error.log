@@ -1,0 +1,2 @@
+Stream error: Failed to read frame
+Server error: [WinError 32] The process cannot access the file because it is being used by another process: 'v:\\Code\\ProjectCode\\SignLanguageDetector\\logs\\26-02-2025_22-10-54\\debug.log'
