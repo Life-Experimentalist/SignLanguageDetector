@@ -1,16 +1,43 @@
-import pickle
-import cv2
+# Project: Sign Language Detector
+# Repository: https://github.com/Life-Experimentalist/SignLanguageDetector
+# Owner: VKrishna04
+# Organization: Life-Experimentalist
+# Licensed under the Apache License, Version 2.0 (the "License")
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 import os
+import sys
+
+# Add the parent directory (project root) to sys.path so that utils can be found.
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+import pickle
+
+import cv2
 import mediapipe as mp
 import numpy as np
-from utils import get_directory_paths, print_info, print_error, MODELS_DIR, NUM_CLASSES
+
+from utils import MODELS_DIR, NUM_CLASSES, get_directory_paths, print_error, print_info
+
+
+def initialize_hands():
+    """Initialize and return the MediaPipe Hands object."""
+    mp_hands = mp.solutions.hands  # type: ignore
+    return mp_hands.Hands(
+        static_image_mode=False, min_detection_confidence=0.3, max_num_hands=2
+    )
 
 
 def run_inference():
     directories = get_directory_paths()
     model_path = os.path.join(directories["models"], "model.p")
     model_dict = pickle.load(open(model_path, "rb"))
-    model = model_dict["models"]
+    model = model_dict["model"]
 
     print_info(f"Using a model trained on {NUM_CLASSES} classes")
 
@@ -23,9 +50,7 @@ def run_inference():
     mp_drawing = mp.solutions.drawing_utils  # type: ignore
     mp_drawing_styles = mp.solutions.drawing_styles  # type: ignore
 
-    hands = mp_hands.Hands(
-        static_image_mode=False, min_detection_confidence=0.3, max_num_hands=2
-    )
+    hands = initialize_hands()
 
     labels_dict = {
         0: "A",

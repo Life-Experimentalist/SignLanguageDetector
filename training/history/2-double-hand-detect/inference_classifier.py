@@ -1,3 +1,17 @@
+# Project: Sign Language Detector
+# Repository: https://github.com/Life-Experimentalist/SignLanguageDetector
+# Owner: VKrishna04
+# Organization: Life-Experimentalist
+# Licensed under the Apache License, Version 2.0 (the "License")
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import pickle
 
 import cv2
@@ -5,7 +19,7 @@ import mediapipe as mp
 import numpy as np
 
 model_dict = pickle.load(open("./model.p", "rb"))
-model = model_dict["models"]
+model = model_dict["model"]
 
 cap = cv2.VideoCapture(0)  # Try different camera index if 2 doesn't work
 
@@ -71,6 +85,27 @@ two_hand_classes = {
     "Z",
 }  # Add classes that require two hands
 
+
+def draw_prediction(frame, predicted_character, x_, y_, W, H):
+    """Draw the prediction results on the frame."""
+    x1 = int(min(x_) * W) - 10
+    y1 = int(min(y_) * H) - 10
+    x2 = int(max(x_) * W) - 10
+    y2 = int(max(y_) * H) - 10
+
+    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 0), 4)
+    cv2.putText(
+        frame,
+        predicted_character,
+        (x1, y1 - 10),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        1.3,
+        (0, 0, 0),
+        3,
+        cv2.LINE_AA,
+    )
+
+
 while True:
     data_aux = []
     x_ = []
@@ -134,23 +169,7 @@ while True:
                 print("Error")
             else:
                 print(predicted_character)
-                x1 = int(min(x_) * W) - 10
-                y1 = int(min(y_) * H) - 10
-
-                x2 = int(max(x_) * W) - 10
-                y2 = int(max(y_) * H) - 10
-
-                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 0), 4)
-                cv2.putText(
-                    frame,
-                    predicted_character,
-                    (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    1.3,
-                    (0, 0, 0),
-                    3,
-                    cv2.LINE_AA,
-                )
+                draw_prediction(frame, predicted_character, x_, y_, W, H)
 
     cv2.imshow("frame", frame)
     if cv2.waitKey(1) & 0xFF == ord("q"):
