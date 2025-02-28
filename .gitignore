@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 *.pyo
+/logs/*
+.logs/*
+*.log
+training/history/3-GUI-flask/*

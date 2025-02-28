@@ -1,10 +1,10 @@
 # Sign Language Detector
 
-A real-time application for detecting and recognizing sign language gestures using machine learning and computer vision.
+A real-time Flask application for detecting and recognizing Indian Sign Language gestures using machine learning and computer vision.
 
 ## Project Overview
 
-This project uses MediaPipe for hand landmark detection and machine learning to recognize American Sign Language (ASL) alphabets. It includes:
+This project uses MediaPipe for hand landmark detection and machine learning to recognize Indian Sign Language (ISL) alphabet. It includes:
 
 1. Data Collection (collect_imgs.py)
 2. Dataset Creation (create_dataset.py)
@@ -12,6 +12,8 @@ This project uses MediaPipe for hand landmark detection and machine learning to 
 4. Real-time Inference (inference_classifier.py)
 5. An Interactive CLI tool for training operations (interactive_cli.py)
 6. A Flask web application (app.py)
+
+The training component can be used for any hand gesture recognition, not limited to sign language.
 
 ## Directory Structure
 
@@ -48,8 +50,10 @@ SignLanguageDetector/
    ```
 3. Install dependencies:
    ```
-   pip install numpy opencv-python mediapipe flask scikit-learn colorama
+   pip install numpy opencv-python mediapipe flask scikit-learn colorama paho-mqtt
    ```
+4. Install Mosquitto:
+   - Follow the instructions on the [Mosquitto website](https://mosquitto.org/download/) to install Mosquitto on your system.
 
 ## Usage
 

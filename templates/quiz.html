@@ -1,0 +1,273 @@
+<!--
+Project: Sign Language Detector
+Repository: https://github.com/Life-Experimentalist/SignLanguageDetector
+Owner: VKrishna04
+Organization: Life-Experimentalist
+Licensed under the Apache License, Version 2.0 (the "License")
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+{% extends "layout.html" %} {% block title %}Sign Language Quiz{% endblock %} {%
+block content %}
+<div class="container">
+  <h1>Sign Language Quiz</h1>
+  <div id="startContainer">
+    <button id="startButton" class="btn btn-primary">Start Quiz</button>
+  </div>
+  <div id="quizContainer" style="display: none">
+    <div id="letter" class="letter"></div>
+    <div id="result" class="result"></div>
+    <div id="countdown" class="result"></div>
+    <div class="video-container">
+      <img id="quizVideoFeed" src="{{ url_for('quiz_video_feed') }}" />
+    </div>
+    <div class="button-container mt-3">
+      <button id="nextQuestionButton" class="btn btn-secondary">
+        Next Question
+      </button>
+      <button id="showAnswerButton" class="btn btn-info">Show Answer</button>
+      <button id="backToIndexButton" class="btn btn-danger">
+        Back to Index
+      </button>
+    </div>
+    <div id="answerCard" class="card mt-3" style="display: none">
+      <div class="card-body">
+        <h5 class="card-title">Correct Answer</h5>
+        <img id="answerImage" src="" alt="Answer Image" class="img-fluid" />
+        <p
+          id="currentPrediction"
+          class="text-muted"
+          style="position: absolute; bottom: 10px; right: 10px"
+        ></p>
+      </div>
+    </div>
+  </div>
+  <div id="congratulationsContainer" style="display: none">
+    <h2>Congratulations!</h2>
+    <p>You have completed the quiz.</p>
+    <p id="summary"></p>
+    <button id="backToIndexButtonFinal" class="btn btn-primary">
+      Back to Index
+    </button>
+  </div>
+  <footer>
+    © 2025
+    <a href="https://github.com/VKrishna04" target="_blank">@VKrishna04</a>
+    Sign Language Detection. All rights reserved.
+  </footer>
+</div>
+{% endblock %} {% block extra_styles %}
+<style>
+  .letter {
+    font-size: 5em;
+    margin-bottom: 20px;
+  }
+  .result {
+    font-size: 2em;
+    margin-top: 20px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+  }
+  #debugButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+  }
+</style>
+{% endblock %} {% block extra_scripts %}
+<script>
+  const startButton = document.getElementById("startButton");
+  const startContainer = document.getElementById("startContainer");
+  const quizContainer = document.getElementById("quizContainer");
+  const letterDisplay = document.getElementById("letter");
+  const resultDisplay = document.getElementById("result");
+  const countdownDisplay = document.getElementById("countdown");
+  const quizVideoFeed = document.getElementById("quizVideoFeed");
+  const reloadBtn = document.getElementById("reloadButton");
+  const nextQuestionButton = document.getElementById("nextQuestionButton");
+  const showAnswerButton = document.getElementById("showAnswerButton");
+  const backToIndexButton = document.getElementById("backToIndexButton");
+  const backToIndexButtonFinal = document.getElementById(
+    "backToIndexButtonFinal"
+  );
+  const answerCard = document.getElementById("answerCard");
+  const answerImage = document.getElementById("answerImage");
+  const currentPrediction = document.getElementById("currentPrediction");
+  const congratulationsContainer = document.getElementById(
+    "congratulationsContainer"
+  );
+  const summary = document.getElementById("summary");
+  const debugButton = document.getElementById("debugButton");
+
+  const QUIZ_DURATION = parseInt("{{ quiz_duration }}");
+  const QUIZ_NUM_GUESSES = parseInt("{{ quiz_num_guesses }}");
+  const QUIZ_RELOAD_INTERVAL = parseInt("{{ quiz_reload_interval }}");
+  const DEBUG_MODE = "{{ debug_mode }}" === "true";
+  let currentLetter = "";
+  let correctGuesses = 0;
+  let skippedQuestions = 0;
+  let totalQuestions = 0;
+  let lastPrediction = "";
+  let lastPredictionTime = null;
+  let predictionCount = 0;
+  let reloadCount = 0;
+
+  function handlePrediction(prediction) {
+    currentPrediction.textContent = `Current Prediction: ${prediction}`;
+    console.log(`Prediction: ${prediction}, Current Letter: ${currentLetter}`);
+    if (prediction === currentLetter) {
+      if (lastPrediction === prediction) {
+        const now = new Date().getTime();
+        if (now - lastPredictionTime >= QUIZ_DURATION * 1000) {
+          predictionCount++;
+          console.log(`Prediction Count: ${predictionCount}`);
+          if (predictionCount >= 2) {
+            correctGuesses++;
+            resultDisplay.textContent = `Correct! ${correctGuesses}/${QUIZ_NUM_GUESSES}`;
+            if (correctGuesses >= QUIZ_NUM_GUESSES) {
+              showCongratulations();
+              return;
+            }
+            setTimeout(nextLetter, 1000);
+          }
+        }
+      } else {
+        lastPrediction = prediction;
+        lastPredictionTime = new Date().getTime();
+        predictionCount = 1;
+      }
+    } else {
+      lastPrediction = "";
+      lastPredictionTime = null;
+      predictionCount = 0;
+    }
+  }
+
+  async function nextLetter() {
+    const letters = Object.values(
+      JSON.parse(
+        '{"0": "A", "1": "B", "2": "C", "3": "D", "4": "E", "5": "F", "6": "G", "7": "H", "8": "I", "9": "J", "10": "K", "11": "L", "12": "M", "13": "N", "14": "O", "15": "P", "16": "Q", "17": "R", "18": "S", "19": "T", "20": "U", "21": "V", "22": "W", "23": "X", "24": "Y", "25": "Z"}'
+      )
+    );
+    currentLetter = letters[Math.floor(Math.random() * letters.length)];
+    letterDisplay.textContent = currentLetter;
+    resultDisplay.textContent = "";
+    lastPrediction = "";
+    lastPredictionTime = null;
+    predictionCount = 0;
+    reloadCount++;
+    totalQuestions++;
+    if (QUIZ_RELOAD_INTERVAL > 0 && reloadCount >= QUIZ_RELOAD_INTERVAL) {
+      await reloadModel();
+      reloadCount = 0;
+    }
+  }
+
+  async function showAnswer() {
+    try {
+      const response = await fetch(`/get_answer_image/${currentLetter}`);
+      const data = await response.json();
+      answerImage.src = data.image_url;
+      answerCard.style.display = "block";
+      setTimeout(() => {
+        answerCard.style.display = "none";
+      }, 5000);
+    } catch (error) {
+      alert("Error fetching answer image: " + error);
+    }
+  }
+
+  function startQuiz() {
+    console.log("Start button clicked");
+    startContainer.style.display = "none";
+    quizContainer.style.display = "block";
+    nextLetter();
+    updatePrediction();
+  }
+
+  function showCongratulations() {
+    quizContainer.style.display = "none";
+    congratulationsContainer.style.display = "block";
+    summary.textContent = `You skipped ${skippedQuestions} questions and attempted ${totalQuestions} questions in total.`;
+  }
+
+  quizVideoFeed.onerror = () => {
+    console.error("Video stream error. Reloading...");
+    setTimeout(() => location.reload(), 2000);
+  };
+
+  quizVideoFeed.addEventListener("loadeddata", () => {
+    console.log("Video feed loaded successfully");
+  });
+
+  async function reloadModel() {
+    try {
+      const response = await fetch("/reload_model", { method: "POST" });
+      const data = await response.json();
+      alert(data.status);
+      // Restart the video feed
+      quizVideoFeed.src =
+        "{{ url_for('quiz_video_feed') }}?t=" + new Date().getTime();
+    } catch (error) {
+      alert("Error reloading model: " + error);
+    }
+  }
+
+  async function updatePrediction() {
+    try {
+      const response = await fetch("/predictions");
+      if (!response.ok)
+        throw new Error(`HTTP error! status: ${response.status}`);
+      const data = await response.json();
+      handlePrediction(data.prediction);
+    } catch (e) {
+      console.error("Prediction error:", e);
+    }
+    setTimeout(updatePrediction, 500); // Poll every 500ms
+  }
+
+  startButton.addEventListener("click", startQuiz);
+  reloadBtn.addEventListener("click", reloadModel);
+  nextQuestionButton.addEventListener("click", () => {
+    skippedQuestions++;
+    nextLetter();
+  });
+  showAnswerButton.addEventListener("click", showAnswer);
+  backToIndexButton.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+  backToIndexButtonFinal.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+
+  // Debug button to simulate correct answer
+  if (DEBUG_MODE) {
+    const debugButton = document.createElement("button");
+    debugButton.id = "debugButton";
+    debugButton.className = "btn btn-warning";
+    debugButton.textContent = "Simulate Correct Answer";
+    document.body.appendChild(debugButton);
+    debugButton.addEventListener("click", () => {
+      handlePrediction(currentLetter);
+    });
+  }
+
+  // Start the video feed initially
+  quizVideoFeed.src = "{{ url_for('quiz_video_feed') }}";
+</script>
+{% endblock %}

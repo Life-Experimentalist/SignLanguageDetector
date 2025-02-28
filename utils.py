@@ -1,11 +1,27 @@
+# Project: Sign Language Detector
+# Repository: https://github.com/Life-Experimentalist/SignLanguageDetector
+# Owner: VKrishna04
+# Organization: Life-Experimentalist
+# Licensed under the Apache License, Version 2.0 (the "License")
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import ast
+import itertools
+import os
+import pickle
+import re
+
 import cv2
 import mediapipe as mp
 import numpy as np
-import os
-import pickle
 from colorama import Fore, Style
-import re
-import itertools
 from dotenv import load_dotenv
 
 # Import MediaPipe drawing utilities
@@ -22,12 +38,27 @@ DATA_DIR = os.getenv(
 )
 MODELS_DIR = os.getenv(
     "MODELS_DIR",
-    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "models"),
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "models"),
 )
 N_ESTIMATORS = int(os.getenv("N_ESTIMATORS", "100"))
 RANDOM_STATE = int(os.getenv("RANDOM_STATE", "42"))
 PORT = int(os.getenv("PORT", "5000"))
 BRIGHTNESS_THRESHOLD = float(os.getenv("BRIGHTNESS_THRESHOLD", "85"))
+
+
+def get_labels_dict():
+    raw_labels = os.getenv("LABELS_DICT", "{}")
+    str_dict = ast.literal_eval(
+        raw_labels
+    )  # e.g., {"0": "A", "1": "B", ..., "25": "Z"}
+    return {
+        int(k): v for k, v in str_dict.items()
+    }  # Convert keys to integers: {0: "A", 1: "B", ..., 25: "Z"}
+
+
+def get_two_hand_classes():
+    raw_classes = os.getenv("TWO_HAND_CLASSES", "[]")
+    return set(ast.literal_eval(raw_classes))
 
 
 def get_project_dir():
@@ -62,6 +93,12 @@ def calculate_contrast(frame):
     lab = cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
     l_channel, a, b = cv2.split(lab)
     return l_channel.std()
+
+
+def calculate_saturation(frame):
+    """Calculate the saturation of the frame"""
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    return np.mean(hsv[:, :, 1])
 
 
 def load_model(model_path):
@@ -158,6 +195,43 @@ def print_error(msg):
     base = Fore.RED
     formatted = format_numbers(msg, base)
     print(base + formatted + Style.RESET_ALL)
+
+
+def get_landmark_style():
+    """Get the landmark drawing style based on .env configuration"""
+    style = os.getenv("LANDMARK_STYLE", "default")
+
+    if style == "default":
+        return (
+            mp.solutions.drawing_styles.get_default_hand_landmarks_style(),  # type: ignore
+            mp.solutions.drawing_styles.get_default_hand_connections_style(),  # type: ignore
+        )
+    else:
+        # Parse custom colors from .env
+        landmark_color = tuple(
+            map(int, os.getenv("LANDMARK_COLOR", "0,255,0").split(","))
+        )
+        connection_color = tuple(
+            map(int, os.getenv("CONNECTION_COLOR", "0,0,255").split(","))
+        )
+        thickness = int(os.getenv("LANDMARK_THICKNESS", "2"))
+        circle_radius = int(os.getenv("LANDMARK_CIRCLE_RADIUS", "2"))
+
+        return (
+            mp_drawing.DrawingSpec(
+                color=landmark_color, thickness=thickness, circle_radius=circle_radius
+            ),
+            mp_drawing.DrawingSpec(color=connection_color, thickness=thickness),
+        )
+
+
+def read_missing_landmarks_log():
+    """Read the missing landmarks log and return a set of missing images."""
+    log_path = os.path.join(get_directory_paths()["logs"], "missing_landmarks.log")
+    if not os.path.exists(log_path):
+        return set()
+    with open(log_path, "r") as f:
+        return set(line.strip() for line in f)
 
 
 class Spinner:
