@@ -22,7 +22,13 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-from utils import MODELS_DIR, NUM_CLASSES, get_directory_paths, print_error, print_info
+from utils.utils import (
+    MODELS_DIR,
+    NUM_CLASSES,
+    get_directory_paths,
+    print_error,
+    print_info,
+)
 
 
 def initialize_hands():

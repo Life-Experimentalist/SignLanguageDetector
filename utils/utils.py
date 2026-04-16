@@ -24,11 +24,46 @@ import numpy as np
 from colorama import Fore, Style
 from dotenv import load_dotenv
 
+# Support both legacy and newer MediaPipe package layouts.
+try:
+    MP_SOLUTIONS = mp.solutions  # type: ignore[attr-defined]
+except AttributeError:
+    from mediapipe.python import solutions as MP_SOLUTIONS  # type: ignore
+
 # Import MediaPipe drawing utilities
-mp_drawing = mp.solutions.drawing_utils  # type: ignore
+mp_drawing = MP_SOLUTIONS.drawing_utils
 
 # Load variables from .env in the project root
 load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env"))
+
+# Setup logger directly - don't import from config
+import logging
+
+
+def get_logger(name):
+    """Set up logger with proper formatting."""
+    logger = logging.getLogger(name)
+    if not logger.handlers:
+        logger.setLevel(logging.INFO)
+        formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
+
+        # Create a file handler
+        log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "logs")
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir)
+
+        log_file = os.path.join(log_dir, f"{name}.log")
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+
+    return logger
+
+
+# Setup logger
+logger = get_logger(__name__)
 
 # Expose environment variables for other modules
 IMAGES_PER_CLASS = int(os.getenv("IMAGES_PER_CLASS", "500"))
@@ -38,7 +73,7 @@ DATA_DIR = os.getenv(
 )
 MODELS_DIR = os.getenv(
     "MODELS_DIR",
-    os.path.join(os.path.dirname(os.path.abspath(__file__)), "models"),
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "models"),
 )
 N_ESTIMATORS = int(os.getenv("N_ESTIMATORS", "100"))
 RANDOM_STATE = int(os.getenv("RANDOM_STATE", "42"))
@@ -63,7 +98,7 @@ def get_two_hand_classes():
 
 def get_project_dir():
     """Get the absolute path to the project root directory."""
-    return os.path.dirname(os.path.abspath(__file__))
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def get_directory_paths():
@@ -114,7 +149,7 @@ def load_model(model_path):
 
 def mediapipe_hands():
     """Initialize and return the MediaPipe Hands object."""
-    mp_hands = mp.solutions.hands  # type: ignore
+    mp_hands = MP_SOLUTIONS.hands
     return mp_hands.Hands(
         static_image_mode=False, min_detection_confidence=0.3, max_num_hands=2
     )
@@ -197,14 +232,20 @@ def print_error(msg):
     print(base + formatted + Style.RESET_ALL)
 
 
+def print_success(msg):
+    base = Fore.GREEN
+    formatted = format_numbers(msg, base)
+    print(base + formatted + Style.RESET_ALL)
+
+
 def get_landmark_style():
     """Get the landmark drawing style based on .env configuration"""
     style = os.getenv("LANDMARK_STYLE", "default")
 
     if style == "default":
         return (
-            mp.solutions.drawing_styles.get_default_hand_landmarks_style(),  # type: ignore
-            mp.solutions.drawing_styles.get_default_hand_connections_style(),  # type: ignore
+            MP_SOLUTIONS.drawing_styles.get_default_hand_landmarks_style(),
+            MP_SOLUTIONS.drawing_styles.get_default_hand_connections_style(),
         )
     else:
         # Parse custom colors from .env

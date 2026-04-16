@@ -19,26 +19,30 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 import time
+
 import cv2
 import mediapipe as mp
 from tqdm import tqdm  # for progress bar
-from utils import (
-    save_data,
-    mediapipe_hands,
+
+from utils.utils import (
+    IMAGES_PER_CLASS,  # configurable target
     get_directory_paths,
+    mediapipe_hands,
+    print_error,
     print_info,
     print_warning,
-    print_error,
-    IMAGES_PER_CLASS,  # configurable target
+    save_data,
 )
 
 # Each class is expected to have 500 valid images.
 DATASET_TARGET = IMAGES_PER_CLASS
+BLUR_VARIANCE_THRESHOLD = 80.0
 
 
 def create_dataset():
     directories = get_directory_paths()
     LOG_FILE = os.path.join(directories["data"], "missing_landmarks.log")
+    QUALITY_LOG_FILE = os.path.join(directories["data"], "rejected_images.log")
     DATA_DIR = directories["data"]
 
     mp_hands = mp.solutions.hands  # type: ignore
@@ -56,6 +60,16 @@ def create_dataset():
             return False
         # Resize image to lower resolution
         img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
+
+        gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        blur_score = cv2.Laplacian(gray_img, cv2.CV_64F).var()
+        if blur_score < BLUR_VARIANCE_THRESHOLD:
+            with open(QUALITY_LOG_FILE, "a", encoding="utf-8") as logf:
+                logf.write(
+                    f"Blurry image discarded (score={blur_score:.2f}): {dir_name} {img_full_path}\n"
+                )
+            return False
+
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         results = hands.process(img_rgb)
         if not results.multi_hand_landmarks:

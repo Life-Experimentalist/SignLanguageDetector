@@ -16,127 +16,406 @@ limitations under the License.
 {% extends "layout.html" %}
 {% block title %}Sign Language Detector{% endblock %}
 {% block content %}
-<div class="brightness" id="brightnessDisplay"></div>
-<div class="contrast" id="contrastDisplay"></div>
 <div class="container">
-  <h1>Sign Language Detection</h1>
-  <!-- Model Selection Dropdown -->
-  <div class="mb-3 d-flex align-items-center gap-3">
-    {% if model_files|length > 1 %}
-    <div class="flex-grow-1">
-      <label for="modelSelect" class="form-label">Select Model:</label>
-      <select class="form-select" id="modelSelect">
-        {% for model_file in model_files %}
-        <option value="{{ model_file }}" {% if model_file == selected_model %}selected{% endif %}>
-          {{ model_file }}
-        </option>
-        {% endfor %}
-      </select>
+    <h1>Sign Language Detector</h1>
+    
+    <!-- Model selection dropdown -->
+    <div class="row mb-3">
+        <div class="col-md-6 mx-auto">
+            <div class="form-group">
+                <label for="modelSelect" class="form-label">Select Model:</label>
+                <select id="modelSelect" class="form-select">
+                    <option value="">Select a model</option>
+                    {% for model in model_files %}
+                    <option value="{{ model }}" {% if model == selected_model %}selected{% endif %}>{{ model }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
     </div>
-    {% endif %}
-    <div class="d-flex align-items-end">
-      <a href="/quiz" class="btn btn-primary">Take Quiz</a>
+
+    <!-- Prediction display -->
+    <div id="predictionDisplay"></div>
+    
+    <!-- Video container with canvas -->
+    <div class="video-container">
+        <canvas id="videoCanvas" width="640" height="480"></canvas>
     </div>
-  </div>
-  <div id="predictionDisplay">Loading..</div>
-  <div id="errorDisplay" class="error"></div>
-  <div id="remarkDisplay" class="remark"></div>
-  <div class="video-container">
-    <img id="videoFeed" src="{{ url_for('video_feed') }}" />
-  </div>
-  <footer>
-    © 2025
-    <a href="https://github.com/VKrishna04" target="_blank">@VKrishna04</a>
-    Sign Language Detection. All rights reserved.
-  </footer>
+    
+    <!-- Camera controls -->
+    <div class="camera-controls mt-3">
+        <button id="startCamera" class="btn btn-primary">Start Camera</button>
+        <button id="stopCamera" class="btn btn-danger" disabled>Stop Camera</button>
+        <button id="captureFrame" class="btn btn-success" disabled>Capture Frame</button>
+    </div>
+
+    <!-- Error message container -->
+    <div id="errorMsg" class="error mt-3"></div>
 </div>
-<!-- Add Shutdown Button -->
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1050;">
-  <button id="shutdownBtn" class="btn btn-danger">Shutdown Server</button>
-</div>
+
 {% endblock %}
+
+{% block extra_styles %}
+<style>
+  /* Updated card styling for floating to the right */
+  .floating-card {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .floating-card .card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+  }
+  
+  .floating-card .card-body {
+    padding: 15px;
+  }
+  
+  .model-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+  }
+  
+  .model-info {
+    font-size: 0.9rem;
+  }
+  
+  /* Accuracy display */
+  .accuracy-display {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .accuracy-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  /* Top classes display */
+  .top-classes {
+    margin-top: 15px;
+  }
+  
+  .top-classes h3 {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .top-class-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .top-class-item:last-child {
+    border-bottom: none;
+  }
+  
+  .class-label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .class-value {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .class-badge {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    color: #212529;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .floating-card {
+      position: static;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .container {
+      padding-right: 15px; /* Reset padding for mobile */
+    }
+  }
+  
+  /* Dark mode adjustments */
+  .dark-mode .floating-card {
+    background-color: #444;
+    border-color: #666;
+  }
+  
+  .dark-mode .floating-card .card-header {
+    background-color: #1a6cb4;
+    border-color: #666;
+  }
+  
+  .dark-mode .top-class-item {
+    border-color: #555;
+  }
+  
+  .dark-mode .class-badge {
+    background-color: #555;
+    color: #f8f9fa;
+  }
+  
+  .dark-mode .model-title {
+    color: #adb5bd;
+  }
+  
+  /* Container adjustment to make space for the floating card */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 320px; /* Make space for the floating card */
+  }
+  
+  /* Hide loader animation after it's loaded */
+  .model-info .spinner-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+ 
+  /* Adjust overall zoom (optional) */
+  body {
+      zoom: 0.9; /* scales down the entire page */
+  }
+  
+  /* Reduce container max-width */
+  .container {
+      max-width: 1000px; /* reduced from 1200px */
+      padding-right: 30px; /* adjust as needed */
+      padding-left: 30px;
+  }
+  
+  /* Adjust floating card dimensions */
+  .floating-card {
+      width: 240px; /* reduced from 280px */
+      top: 20px;
+      right: 20px;
+  }
+  
+  /* Decrease font sizes in card and info elements */
+  .model-title {
+      font-size: 0.8rem; /* reduced from 0.9rem */
+  }
+  
+  .model-info {
+      font-size: 0.8rem; /* reduced from 0.9rem */
+  }
+  
+  /* Optionally, adjust header sizes if needed */
+  h1 {
+      font-size: 2rem; /* adjust as needed */
+  }
+</style>
+{% endblock %}
+
 {% block extra_scripts %}
 <script>
-  const predictionDisplay = document.getElementById("predictionDisplay");
-  const errorDisplay = document.getElementById("errorDisplay");
-  const remarkDisplay = document.getElementById("remarkDisplay");
-  const brightnessDisplay = document.getElementById("brightnessDisplay");
-  const contrastDisplay = document.getElementById("contrastDisplay");
-  const videoFeed = document.getElementById("videoFeed");
-  const modelSelect = document.getElementById("modelSelect");
+document.addEventListener("DOMContentLoaded", function() {
+    const app = window.SignLanguageApp || {};
+    const videoCanvas = document.getElementById("videoCanvas");
+    const startButton = document.getElementById("startCamera");
+    const stopButton = document.getElementById("stopCamera");
+    const captureButton = document.getElementById("captureFrame");
+    const predictionDisplay = document.getElementById("predictionDisplay");
+    const errorMsg = document.getElementById("errorMsg");
+    const cameraSelect = document.getElementById("cameraSelectSidebar") || document.createElement("select");
+    const modelSelect = document.getElementById("modelSelect");
 
-  // Handle video errors
-  videoFeed.onerror = () => {
-    errorDisplay.textContent = "Video stream error. Reloading...";
-    setTimeout(() => location.reload(), 2000);
-  };
-
-  const POLL_INTERVAL = 150; // 150ms
-
-  async function updatePrediction() {
-    try {
-      const response = await fetch("/predictions");
-      if (!response.ok)
-        throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
-      if (data.prediction) {
-        predictionDisplay.textContent = data.prediction;
-        errorDisplay.textContent = "";
-      } else {
-        errorDisplay.textContent = "No prediction received";
-      }
-      if (data.low_brightness) {
-        remarkDisplay.textContent =
-          "Remark: Low brightness detected. Please increase the lighting.";
-        brightnessDisplay.textContent = `Brightness: ${data.brightness.toFixed(2)}`;
-        if (!data.prediction) {
-          errorDisplay.textContent = "No prediction due to low brightness.";
-        }
-      } else {
-        remarkDisplay.textContent = "";
-        brightnessDisplay.textContent = "";
-      }
-      contrastDisplay.textContent = `Contrast: ${data.contrast.toFixed(2)}`;
-    } catch (e) {
-      console.error("Prediction error:", e);
-      errorDisplay.textContent = "Prediction error: " + e.message;
+    // Check if elements exist to prevent null reference errors
+    if (!videoCanvas || !startButton || !stopButton) {
+        console.error("Required elements not found on page");
+        return;
     }
-    setTimeout(updatePrediction, POLL_INTERVAL);
-  }
 
-  // Model selection
-  if (modelSelect) {
-    modelSelect.addEventListener("change", async (event) => {
-      const modelName = event.target.value;
-      try {
-        const response = await fetch(`/select_model/${modelName}`);
-        if (response.ok) {
-          console.log("Model selected:", modelName);
-          location.reload();
-        } else {
-          console.error("Failed to select model");
-          errorDisplay.textContent = "Failed to select model.";
+    // Initialize canvas
+    if (videoCanvas) {
+        app.videoCanvas = videoCanvas;
+        app.ctx = videoCanvas.getContext("2d");
+    }
+
+    // Add event listeners with error handling
+    startButton.addEventListener("click", async () => {
+        try {
+            if (errorMsg) errorMsg.textContent = "";
+            const deviceId = cameraSelect.value;
+            
+            if (typeof startCamera === 'function') {
+                const success = await startCamera(deviceId);
+                
+                if (success) {
+                    startButton.disabled = true;
+                    stopButton.disabled = false;
+                    if (captureButton) captureButton.disabled = false;
+                    if (app.animationId) {
+                        cancelAnimationFrame(app.animationId);
+                    }
+                    app.animationId = requestAnimationFrame(processFrame);
+                } else {
+                    throw new Error("Failed to start camera");
+                }
+            } else {
+                throw new Error("Camera functions not available");
+            }
+        } catch (err) {
+            console.error("Camera start error:", err);
+            if (errorMsg) errorMsg.textContent = `Error: ${err.message}`;
         }
-      } catch (error) {
-        console.error("Error selecting model:", error);
-        errorDisplay.textContent = "Error selecting model: " + error.message;
-      }
     });
-  }
 
-  updatePrediction();
-
-  // Shutdown button
-  document.getElementById("shutdownBtn").addEventListener("click", async function() {
-    if (confirm("Are you sure you want to shutdown the server?")) {
-      try {
-        const response = await fetch("/shutdown", { method: "POST" });
-        const message = await response.text();
-        alert(message);
-      } catch (error) {
-        alert("Error shutting down server: " + error);
-      }
+    if (stopButton) {
+        stopButton.addEventListener("click", () => {
+            try {
+                if (typeof stopCamera === 'function') {
+                    const success = stopCamera();
+                    
+                    if (success) {
+                        startButton.disabled = false;
+                        stopButton.disabled = true;
+                        if (captureButton) captureButton.disabled = true;
+                        if (predictionDisplay) predictionDisplay.textContent = "";
+                    }
+                } else {
+                    throw new Error("Camera functions not available");
+                }
+            } catch (err) {
+                console.error("Camera stop error:", err);
+                if (errorMsg) errorMsg.textContent = `Error: ${err.message}`;
+            }
+        });
     }
-  });
+
+    if (captureButton) {
+        captureButton.addEventListener("click", async () => {
+            // Capture a single frame
+            try {
+                if (!app.videoCanvas) {
+                    throw new Error("Video canvas not initialized");
+                }
+                
+                const frameData = app.videoCanvas.toDataURL('image/jpeg', 0.8);
+                const response = await fetch("/process_client_frame", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ frame: frameData })
+                });
+                
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                } else if (predictionDisplay) {
+                    predictionDisplay.textContent = `Prediction: ${data.prediction}`;
+                }
+            } catch (err) {
+                console.error("Frame capture error:", err);
+                if (errorMsg) errorMsg.textContent = `Error: ${err.message}`;
+            }
+        });
+    }
+
+    // Update prediction when prediction event is dispatched
+    document.addEventListener("signPrediction", function(e) {
+        if (predictionDisplay) {
+            predictionDisplay.textContent = `Prediction: ${e.detail.prediction}`;
+            
+            // Clear error message
+            if (errorMsg) errorMsg.textContent = "";
+        }
+    });
+
+    // Handle prediction errors
+    document.addEventListener("signPredictionError", function(e) {
+        if (errorMsg) errorMsg.textContent = e.detail.error;
+    });
+
+    // Model select change event
+    if (modelSelect) {
+        modelSelect.addEventListener("change", function() {
+            try {
+                // Update sidebar with selected model
+                if (typeof loadModelInfoSidebar === 'function') {
+                    loadModelInfoSidebar(this.value);
+                }
+                
+                // Reload the model on the server
+                fetch("/select_model", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ model_name: this.value })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        if (window.showCustomAlert) {
+                            window.showCustomAlert(`Model switched to ${this.value}`);
+                        } else {
+                            console.log(`Model switched to ${this.value}`);
+                        }
+                    } else {
+                        throw new Error(data.message || "Failed to switch model");
+                    }
+                })
+                .catch(err => {
+                    console.error("Model selection error:", err);
+                    if (errorMsg) errorMsg.textContent = `Error: ${err.message}`;
+                });
+            } catch (err) {
+                console.error("Model select error:", err);
+            }
+        });
+    }
+
+    // Initial model info load
+    try {
+        const currentModel = document.getElementById("currentModelName");
+        if (currentModel && currentModel.textContent && 
+            currentModel.textContent !== "No model selected" && 
+            typeof loadModelInfoSidebar === 'function') {
+            
+            loadModelInfoSidebar(currentModel.textContent);
+        }
+    } catch (err) {
+        console.error("Initial model load error:", err);
+    }
+});
 </script>
 {% endblock %}

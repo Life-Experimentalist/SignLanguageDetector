@@ -14,206 +14,266 @@
 
 import base64
 import os
-import pickle
 import signal
 import sys
-from functools import lru_cache
 
-import cv2
-import mediapipe as mp
-import numpy as np
-from dotenv import load_dotenv
 from flask import (
     Flask,
-    Response,
     jsonify,
     render_template,
     request,
     send_from_directory,
 )
 
+# Import directly from utils package - all the needed functions and variables
 from utils import (
+    DEBUG_MODE,
+    DEMO_QUIZ_LETTERS,
+    DISABLE_ANONYMOUS_TELEMETRY,
     MODELS_DIR,
-    NUM_CLASSES,
-    calculate_brightness,
-    calculate_contrast,
-    convert_numpy_types,
-    draw_landmarks,
+    PORT,
+    QUIZ_DURATION,
+    QUIZ_NUM_GUESSES,
+    QUIZ_RELOAD_INTERVAL,
+    TELEMETRY_COUNTER_BASE_URL,
+    TELEMETRY_PROJECT_NAME,
+    # Import shared app utilities
+    AppInitializer,
     get_directory_paths,
     get_labels_dict,
-    get_landmark_style,
-    get_two_hand_classes,
-    mediapipe_hands,
+    get_logger,
+    handle_signal,
+    parse_classification_report,
     print_error,
     print_info,
+    print_warning,
+    process_frame_data,
+    shutdown_server,
 )
 
-# Load environment variables
-load_dotenv()
+# Setup logger
+logger = get_logger(__name__)
 
 app = Flask(__name__)
 
-# Load model
-model_path = os.path.join(MODELS_DIR, "model.p")
-if not os.path.exists(model_path):
-    print_error(f"Model file not found: {model_path}")
-    sys.exit(1)
+# Global flag to track shutdown status
+shutdown_flag = False
 
-
-@lru_cache(maxsize=None)
-def load_model(model_path):
-    try:
-        with open(model_path, "rb") as f:
-            model_dict = pickle.load(f)
-        return model_dict["data"]["model"]
-    except Exception as e:
-        print_error(f"Error loading model: {e}")
-        sys.exit(1)
-
-
-model = load_model(model_path)
+# Initialize application components
+app_initializer = AppInitializer()
+model, hands, landmark_style, connection_style = app_initializer.initialize()
 labels_dict = get_labels_dict()
-two_hand_classes = get_two_hand_classes()
-hands = mediapipe_hands()
-landmark_style, connection_style = get_landmark_style()
+two_hand_classes = app_initializer.two_hand_classes
+model_path = app_initializer.model_path
 
-cap = cv2.VideoCapture(0)
-if not cap.isOpened():
-    print_error("Error: Could not open video capture device.")
-    sys.exit(1)
+print_info("Mediapipe initialized successfully")
 
 
-def generate_frames():
-    try:
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                print_error("Error: Could not read frame.")
-                continue
+@app.context_processor
+def inject_telemetry_config():
+    return {
+        "disable_anonymous_telemetry": DISABLE_ANONYMOUS_TELEMETRY,
+        "telemetry_counter_base_url": TELEMETRY_COUNTER_BASE_URL,
+        "telemetry_project_name": TELEMETRY_PROJECT_NAME,
+    }
 
-            frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            results = hands.process(frame_rgb)
-            if results.multi_hand_landmarks:
-                if len(results.multi_hand_landmarks) > 2:
-                    results.multi_hand_landmarks = results.multi_hand_landmarks[:2]
-                for hand_landmarks in results.multi_hand_landmarks:
-                    draw_landmarks(
-                        frame,
-                        hand_landmarks,
-                        mp.solutions.hands.HAND_CONNECTIONS,  # type: ignore
-                        landmark_style,
-                        connection_style,
-                    )
-            ret, buffer = cv2.imencode(".jpg", frame)
-            frame = buffer.tobytes()
-            yield (b"--frame\r\n" b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n")
-    except Exception as e:
-        print_error(f"Error during frame generation: {e}")
+
+@app.context_processor
+def inject_label_config():
+    return {"labels_dict": labels_dict}
 
 
 @app.route("/")
 def index():
-    model_files = [f for f in os.listdir(MODELS_DIR) if f.endswith(".p")]
-    selected_model = os.path.basename(model_path)
+    model_files = [f for f in os.listdir(MODELS_DIR) if f.endswith(".pkl")]
+    selected_model = os.path.basename(str(model_path))
     return render_template(
         "index.html", model_files=model_files, selected_model=selected_model
     )
 
 
-@app.route("/video_feed")
-def video_feed():
-    return Response(
-        generate_frames(), mimetype="multipart/x-mixed-replace; boundary=frame"
-    )
-
-
-@app.route("/predictions", methods=["GET"])
-def predictions():
+@app.route("/process_client_frame", methods=["POST"])
+def process_client_frame():
+    """Process a frame sent from the client's browser camera"""
     try:
-        ret, frame = cap.read()
-        if not ret:
-            return jsonify({"error": "Could not read frame."}), 500
+        data = request.json
+        if not data or "frame" not in data:
+            return jsonify({"error": "No frame data provided"}), 400
 
-        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = hands.process(frame_rgb)
-        brightness = calculate_brightness(frame)
-        contrast = calculate_contrast(frame)
-        low_brightness = brightness < float(os.getenv("BRIGHTNESS_THRESHOLD", "85"))
-
-        data_aux = []
-        predicted_character = ""
-        if results.multi_hand_landmarks:
-            if len(results.multi_hand_landmarks) > 2:
-                results.multi_hand_landmarks = results.multi_hand_landmarks[:2]
-            for hand_landmarks in results.multi_hand_landmarks:
-                x_ = [lm.x for lm in hand_landmarks.landmark]
-                y_ = [lm.y for lm in hand_landmarks.landmark]
-                min_x, min_y = min(x_), min(y_)
-                for lm in hand_landmarks.landmark:
-                    data_aux.append(lm.x - min_x)
-                    data_aux.append(lm.y - min_y)
-            if len(results.multi_hand_landmarks) == 1:
-                data_aux.extend([0] * (len(hand_landmarks.landmark) * 2))
-            if data_aux:
-                data_aux = np.asarray(data_aux)
-                try:
-                    prediction = model.predict([data_aux])
-                    predicted_character = labels_dict.get(int(prediction[0]), "Unknown")
-                    if (
-                        predicted_character in two_hand_classes
-                        and len(results.multi_hand_landmarks) < 2
-                    ):
-                        predicted_character = ""
-                except Exception as e:
-                    print_error(f"Error during prediction: {e}")
-                    return jsonify({"error": f"Error during prediction: {e}"}), 500
-        return jsonify(
-            {
-                "prediction": predicted_character,
-                "brightness": convert_numpy_types(brightness),
-                "contrast": convert_numpy_types(contrast),
-                "low_brightness": convert_numpy_types(low_brightness),
-            }
+        # Get landmark options if provided
+        options = data.get(
+            "options", {"showLandmarks": True, "landmarkStyle": "default"}
         )
+
+        # Process the frame with options using shared function
+        result = process_frame_data(
+            data["frame"],
+            options,
+            model,
+            hands,
+            labels_dict,
+            two_hand_classes,
+            landmark_style,
+            connection_style,
+        )
+
+        if "error" in result:
+            return jsonify({"error": result["error"]}), 500
+
+        return jsonify(result)
+
     except Exception as e:
-        print_error(f"Error in /predictions endpoint: {e}")
-        return jsonify({"error": f"Error in /predictions endpoint: {e}"}), 500
+        print_error(f"Error in process_client_frame: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
+@app.route("/api/predict", methods=["POST"])
+def api_predict():
+    """Predict sign output from a single image without using the webpage."""
+    try:
+        options = {"showLandmarks": False, "landmarkStyle": "none"}
+        include_visuals = False
+
+        if request.files and "image" in request.files:
+            image_file = request.files.get("image")
+            if image_file is None or image_file.filename == "":
+                return jsonify(
+                    {"error": "Image file is required in field 'image'."}
+                ), 400
+
+            image_bytes = image_file.read()
+            if not image_bytes:
+                return jsonify({"error": "Uploaded image is empty."}), 400
+
+            show_landmarks = (
+                request.form.get("show_landmarks", "false").strip().lower() == "true"
+            )
+            include_visuals = (
+                request.form.get("include_visuals", "false").strip().lower() == "true"
+            )
+        else:
+            payload = request.get_json(silent=True) or {}
+            image_base64 = payload.get("image_base64") or payload.get("frame")
+            if not image_base64:
+                return (
+                    jsonify(
+                        {
+                            "error": "Provide an image via multipart field 'image' or JSON key 'image_base64'."
+                        }
+                    ),
+                    400,
+                )
+
+            show_landmarks = bool(payload.get("show_landmarks", False))
+            include_visuals = bool(payload.get("include_visuals", False))
+
+            if "," in image_base64:
+                data_uri = image_base64
+            else:
+                data_uri = f"data:image/jpeg;base64,{image_base64}"
+
+            image_bytes = data_uri.split(",", 1)[1].encode("utf-8")
+            image_bytes = base64.b64decode(image_bytes)
+
+        encoded_image = base64.b64encode(image_bytes).decode("utf-8")
+        frame_data = f"data:image/jpeg;base64,{encoded_image}"
+
+        options["showLandmarks"] = show_landmarks
+        options["landmarkStyle"] = "default" if show_landmarks else "none"
+
+        result = process_frame_data(
+            frame_data,
+            options,
+            model,
+            hands,
+            labels_dict,
+            two_hand_classes,
+            landmark_style,
+            connection_style,
+        )
+
+        if "error" in result:
+            return jsonify({"error": result["error"]}), 500
+
+        response = {
+            "prediction": result.get("prediction", ""),
+            "brightness": result.get("brightness"),
+            "contrast": result.get("contrast"),
+            "low_brightness": result.get("low_brightness"),
+            "model": os.path.basename(str(model_path)),
+        }
+
+        if include_visuals:
+            response["processed_frame"] = result.get("processed_frame")
+            if "original_frame" in result:
+                response["original_frame"] = result["original_frame"]
+
+        return jsonify(response)
+    except Exception as e:
+        print_error(f"Error in api_predict: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+# The select_model route is important and should be kept
+# It allows changing models without restarting the server
 @app.route("/select_model/<model_name>", methods=["GET"])
 def select_model(model_name):
+    """
+    Change the active model used for predictions.
+
+    This endpoint allows users to switch between different trained models
+    without needing to restart the application. It's used by the model dropdown
+    in the UI.
+    """
     global model, model_path
-    model_path = os.path.join(MODELS_DIR, model_name)
-    model = load_model(model_path)
-    return jsonify({"status": "Model selected", "model_name": model_name})
+    try:
+        new_model_path = os.path.join(MODELS_DIR, model_name)
+        if not os.path.exists(new_model_path):
+            return jsonify({"error": f"Model file not found: {model_name}"}), 404
+
+        model_path = new_model_path
+        # Clear cache to ensure model is reloaded
+        app_initializer.load_model.cache_clear()
+        model = app_initializer.load_model(model_path)
+        return jsonify({"status": "Model selected", "model_name": model_name})
+    except Exception as e:
+        print_error(f"Error selecting model: {e}")
+        return jsonify({"error": f"Error selecting model: {e}"}), 500
 
 
 @app.route("/reload_model", methods=["POST"])
 def reload_model():
     global model
-    load_model.cache_clear()
-    model = load_model(model_path)
-    return jsonify({"status": "Model reloaded"})
+    try:
+        app_initializer.load_model.cache_clear()
+        model = app_initializer.load_model(model_path)
+        return jsonify({"status": "Model reloaded successfully"})
+    except Exception as e:
+        print_error(f"Error reloading model: {e}")
+        return jsonify({"error": f"Error reloading model: {e}"}), 500
 
 
 @app.route("/quiz")
 def quiz():
-    quiz_duration = int(os.getenv("QUIZ_DURATION", "2"))
-    quiz_num_guesses = int(os.getenv("QUIZ_NUM_GUESSES", "5"))
-    quiz_reload_interval = int(os.getenv("QUIZ_RELOAD_INTERVAL", "0"))
     return render_template(
         "quiz.html",
-        labels_dict=labels_dict,
-        quiz_duration=quiz_duration,
-        quiz_num_guesses=quiz_num_guesses,
-        quiz_reload_interval=quiz_reload_interval,
+        labels_dict=get_labels_dict(),
+        quiz_duration=QUIZ_DURATION,
+        quiz_num_guesses=QUIZ_NUM_GUESSES,
+        quiz_reload_interval=QUIZ_RELOAD_INTERVAL,
+        debug_mode=DEBUG_MODE,
     )
 
 
-@app.route("/quiz_video_feed")
-def quiz_video_feed():
-    return Response(
-        generate_frames(), mimetype="multipart/x-mixed-replace; boundary=frame"
+# Add the new quiz-demo route
+@app.route("/quiz-demo")
+def quiz_demo():
+    """Demo quiz with limited letter selection from environment variable"""
+    return render_template(
+        "quiz_demo.html",  # Use the quiz_demo template
+        allowed_letters=DEMO_QUIZ_LETTERS,
+        quiz_duration=QUIZ_DURATION,
+        debug_mode=DEBUG_MODE,
     )
 
 
@@ -223,13 +283,14 @@ def get_answer_image(letter):
         data_dir = get_directory_paths()["data"]
         class_dir = os.path.join(data_dir, letter)
         if not os.path.exists(class_dir):
-            return jsonify({"error": "Class directory not found"}), 404
+            return (
+                jsonify({"error": f"Class directory not found for letter: {letter}"}),
+                404,
+            )
 
         images = [f for f in os.listdir(class_dir) if f.endswith(".jpg")]
         if not images:
-            return jsonify({"error": "No images found for this class"}), 404
-
-        image_path = os.path.join(class_dir, images[0])
+            return jsonify({"error": f"No images found for class: {letter}"}), 404
         image_url = f"/data/{letter}/{images[0]}"
         return jsonify({"image_url": image_url})
     except Exception as e:
@@ -247,45 +308,47 @@ def serve_data(filename):
     return send_from_directory(get_directory_paths()["data"], filename)
 
 
+# The process_frame route is deprecated and can be removed
+# It's only kept for backward compatibility with older frontends
+# Consider adding a deprecation warning or removing it in the future
 @app.route("/process_frame", methods=["POST"])
 def process_frame():
+    """
+    DEPRECATED: Legacy endpoint for compatibility with older frontends.
+
+    New implementations should use /process_client_frame instead, which provides
+    more features and better error handling.
+    """
+    # (Keep the implementation but add deprecation warning)
+    print_warning(
+        "Deprecated /process_frame endpoint used. Consider migrating to /process_client_frame."
+    )
     try:
         data = request.get_json()
-        frame_data = data["frame"].split(",")[1]
-        frame = np.frombuffer(base64.b64decode(frame_data), dtype=np.uint8)
-        frame = cv2.imdecode(frame, cv2.IMREAD_COLOR)
+        if not data or "frame" not in data:
+            return (
+                jsonify(
+                    {"error": "Invalid request data. 'frame' parameter is required."}
+                ),
+                400,
+            )
 
-        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = hands.process(frame_rgb)
+        result = process_frame_data(
+            data["frame"],
+            None,
+            model,
+            hands,
+            labels_dict,
+            two_hand_classes,
+            landmark_style,
+            connection_style,
+        )
 
-        data_aux = []
-        predicted_character = ""
-        if results.multi_hand_landmarks:
-            if len(results.multi_hand_landmarks) > 2:
-                results.multi_hand_landmarks = results.multi_hand_landmarks[:2]
-            for hand_landmarks in results.multi_hand_landmarks:
-                x_ = [lm.x for lm in hand_landmarks.landmark]
-                y_ = [lm.y for lm in hand_landmarks.landmark]
-                min_x, min_y = min(x_), min(y_)
-                for lm in hand_landmarks.landmark:
-                    data_aux.append(lm.x - min_x)
-                    data_aux.append(lm.y - min_y)
-            if len(results.multi_hand_landmarks) == 1:
-                data_aux.extend([0] * (len(hand_landmarks.landmark) * 2))
-            if data_aux:
-                data_aux = np.asarray(data_aux)
-                try:
-                    prediction = model.predict([data_aux])
-                    predicted_character = labels_dict.get(int(prediction[0]), "Unknown")
-                    if (
-                        predicted_character in two_hand_classes
-                        and len(results.multi_hand_landmarks) < 2
-                    ):
-                        predicted_character = ""
-                except Exception as e:
-                    print_error(f"Error during prediction: {e}")
-                    predicted_character = "Error"
-        return jsonify({"prediction": predicted_character})
+        if "error" in result:
+            return jsonify({"error": result["error"]}), 500
+
+        return jsonify({"prediction": result["prediction"]})
+
     except Exception as e:
         print_error(f"Error processing frame: {e}")
         return jsonify({"error": f"Error processing frame: {e}"}), 500
@@ -293,34 +356,226 @@ def process_frame():
 
 @app.route("/shutdown", methods=["POST"])
 def shutdown():
-    shutdown_server()
+    global shutdown_flag
+    shutdown_flag = True
+    handle_signal(signal.SIGINT, None, shutdown_flag, app)
     return "Server shutting down..."
 
 
-def shutdown_server():
-    func = request.environ.get("werkzeug.server.shutdown")
-    if func is None:
-        raise RuntimeError("Not running with the Werkzeug Server")
-    func()
+@app.route("/model_info/<model_name>")
+def model_info(model_name):
+    """Get information about a specific model from its associated text file"""
+    try:
+        # Get model name without extension
+        model_basename = os.path.splitext(model_name)[0]
+        model_info_path = os.path.join(MODELS_DIR, f"{model_basename}.txt")
+
+        # Check if info file exists
+        if not os.path.exists(model_info_path):
+            return jsonify({"error": "Model info not found"}), 404
+
+        with open(model_info_path, "r") as f:
+            info_content = f.read()
+
+        # Try to parse the content as a classification report table using shared function
+        result = parse_classification_report(info_content)
+
+        # If parsing failed, return the raw content
+        if not result:
+            result = {"raw_info": info_content}
+
+        return jsonify(result)
+
+    except Exception as e:
+        print_error(f"Error getting model info: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
-def handle_signal(signal, frame):
-    print_info("Received signal to terminate. Shutting down...")
-    shutdown_server()
-    cap.release()
-    sys.exit(0)
+@app.route("/simplified_model_info/<model_name>")
+def simplified_model_info(model_name):
+    """
+    Get simplified information about a model for the sidebar display.
+
+    Returns key model performance metrics in a structured format:
+    - Overall accuracy
+    - Top 3 highest performing classes (by F1 score)
+    - Worst performing class (by F1 score)
+    - Macro and weighted averages (if available)
+    """
+    try:
+        # Get model name without extension
+        model_basename = os.path.splitext(model_name)[0]
+        model_info_path = os.path.join(MODELS_DIR, f"{model_basename}.txt")
+
+        # Check if info file exists
+        if not os.path.exists(model_info_path):
+            return jsonify({"error": "Model info not found"}), 404
+
+        with open(model_info_path, "r") as f:
+            info_content = f.read()
+
+        # Parse the content as a classification report table
+        full_result = parse_classification_report(info_content)
+
+        # Create a simplified version with just the highlights
+        result = {
+            "model_name": model_name,
+            "highlights": {},
+        }
+
+        # Add accuracy if available
+        if full_result:
+            if "accuracy" in full_result:
+                accuracy = full_result["accuracy"]
+                if isinstance(accuracy, dict):
+                    accuracy_value = accuracy.get("score", 0)
+                else:
+                    accuracy_value = accuracy
+                result["highlights"]["accuracy"] = {
+                    "value": accuracy_value,
+                    "formatted": f"{accuracy_value * 100:.1f}%",
+                }
+            elif "metrics" in full_result and "accuracy" in full_result["metrics"]:
+                accuracy = full_result["metrics"]["accuracy"]
+                if isinstance(accuracy, dict):
+                    accuracy_value = accuracy.get("score", 0)
+                else:
+                    accuracy_value = accuracy
+                result["highlights"]["accuracy"] = {
+                    "value": accuracy_value,
+                    "formatted": f"{accuracy_value * 100:.1f}%",
+                }
+
+        # Add top 3 classes by F1 score
+        if (
+            full_result
+            and "class_report" in full_result
+            and full_result["class_report"]
+        ):
+            # Sort classes by F1 score
+            classes = []
+            for cls, metrics in full_result["class_report"].items():
+                if cls not in ["macro avg", "weighted avg"] and "f1Score" in metrics:
+                    classes.append((cls, metrics["f1Score"]))
+
+            # Sort by F1 score in descending order
+            classes.sort(key=lambda x: x[1], reverse=True)
+
+            # Get top 3 and worst class
+            result["highlights"]["top_classes"] = []
+            for i, (cls, f1_score) in enumerate(classes[:3]):
+                label = labels_dict.get(int(cls), cls) if cls.isdigit() else cls
+                result["highlights"]["top_classes"].append(
+                    {
+                        "class": cls,
+                        "label": label,
+                        "f1_score": f1_score,
+                        "formatted": f"{f1_score * 100:.1f}%",
+                    }
+                )
+
+            # Add worst class if there are more than 3 classes
+            if len(classes) > 3:
+                worst_cls, worst_f1 = classes[-1]
+                label = (
+                    labels_dict.get(int(worst_cls), worst_cls)
+                    if worst_cls.isdigit()
+                    else worst_cls
+                )
+                result["highlights"]["worst_class"] = {
+                    "class": worst_cls,
+                    "label": label,
+                    "f1_score": worst_f1,
+                    "formatted": f"{worst_f1 * 100:.1f}%",
+                }
+
+        # Add macro and weighted averages
+        if full_result and "metrics" in full_result:
+            result["highlights"]["averages"] = {}
+            for avg_type in ["macro avg", "weighted avg"]:
+                if (
+                    avg_type in full_result["metrics"]
+                    and "f1" in full_result["metrics"][avg_type]
+                ):
+                    f1 = full_result["metrics"][avg_type]["f1"]
+                    result["highlights"]["averages"][avg_type.replace(" ", "_")] = {
+                        "f1_score": f1,
+                        "formatted": f"{f1 * 100:.1f}%",
+                    }
+
+        return jsonify(result)
+
+    except Exception as e:
+        print_error(f"Error getting simplified model info: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
-signal.signal(signal.SIGINT, handle_signal)
-signal.signal(signal.SIGTERM, handle_signal)
+def get_file_creation_date(file_path):
+    """Get the file creation date formatted nicely"""
+    try:
+        import datetime
+
+        timestamp = os.path.getctime(file_path)
+        date = datetime.datetime.fromtimestamp(timestamp)
+        return date.strftime("%Y-%m-%d %H:%M")
+    except Exception:
+        return "Unknown"
+
+
+# Add route to serve the JSON model report files
+@app.route("/models/<path:filename>")
+def serve_models(filename):
+    """Serve model report files (JSON, txt) from the models directory"""
+    return send_from_directory(MODELS_DIR, filename)
+
+
+# Register signal handlers with the custom handler that includes shutdown_flag
+signal.signal(
+    signal.SIGINT, lambda sig, frame: handle_signal(sig, frame, shutdown_flag, app)
+)
+signal.signal(
+    signal.SIGTERM, lambda sig, frame: handle_signal(sig, frame, shutdown_flag, app)
+)
+
 
 if __name__ == "__main__":
+    # Reloader is disabled below, so avoid an expensive filesystem walk on startup.
+    extra_files = []
+
+    import signal
+
+    # Register signal handlers
+    signal.signal(
+        signal.SIGINT,
+        lambda sig, frame: (
+            print_info("Ctrl+C pressed, shutting down..."),
+            shutdown_server(shutdown_flag, app),
+            sys.exit(0),
+        ),
+    )
+    signal.signal(
+        signal.SIGTERM,
+        lambda sig, frame: (
+            print_info("SIGTERM received, shutting down..."),
+            shutdown_server(shutdown_flag, app),
+            sys.exit(0),
+        ),
+    )
+
     try:
-        app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)), debug=True)
+        print_info("All components initialized. Starting Flask server...")
+        # Disable the reloader so the main process can capture Ctrl+C
+        app.run(
+            host="0.0.0.0",
+            port=PORT,
+            debug=DEBUG_MODE,
+            use_reloader=False,  # Disable reloader for proper signal handling
+        )
     except Exception as e:
         print_error(f"Error running the app: {e}")
+        shutdown_server(shutdown_flag, app)
+        sys.exit(1)
     except KeyboardInterrupt:
         print_info("Keyboard interrupt received. Shutting down...")
-        shutdown_server()
-        cap.release()
+        shutdown_server(shutdown_flag, app)
         sys.exit(0)

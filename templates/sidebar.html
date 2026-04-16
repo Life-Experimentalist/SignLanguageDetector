@@ -1,0 +1,604 @@
+<div class="sidebar">
+  <h2>Controls</h2>
+
+  <!-- Camera Controls Section -->
+  <div class="mb-5">
+    <h3 class="h5 mb-3">Camera Settings</h3>
+    <div class="mb-3">
+      <label for="cameraSelectSidebar" class="form-label">Select Camera:</label>
+      <select id="cameraSelectSidebar" class="form-select form-select-sm">
+        <option value="">Loading cameras...</option>
+      </select>
+    </div>
+    <div class="d-grid gap-2">
+      <button id="startCameraSidebar" class="btn btn-success btn-sm">
+        Start Camera
+      </button>
+      <button id="stopCameraSidebar" class="btn btn-danger btn-sm" disabled>
+        Stop Camera
+      </button>
+    </div>
+  </div>
+
+  <!-- Model Settings Section -->
+  <div class="mb-5">
+    <h3 class="h5 mb-3">Model Settings</h3>
+    <div class="form-check mb-2">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="showLandmarksSidebar"
+        checked
+      />
+      <label class="form-check-label" for="showLandmarksSidebar">
+        Show Hand Landmarks
+      </label>
+    </div>
+    <!-- Add Reload Button here -->
+    <div class="mt-3">
+      <button id="reloadButton" class="btn btn-primary btn-sm w-100">
+        Reload Model
+      </button>
+    </div>
+  </div>
+
+  <!-- Model Info Section -->
+  <div class="mt-5">
+    <h3 class="h5 mb-3">Model Information</h3>
+    <div id="modelInfoSidebar" class="model-info-sidebar">
+      {% if model_files|length > 0 %}
+      <div class="model-name small mb-2">
+        <strong>Current: </strong
+        ><span id="currentModelName"
+          >{{ selected_model if selected_model else "No model selected" }}</span
+        >
+      </div>
+      <div id="modelAccuracy" class="model-stat"></div>
+      <div id="modelTabs" class="my-2">
+        <ul class="nav nav-tabs nav-tabs-sm" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active py-1 px-2 small"
+              id="highlights-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#highlights"
+              type="button"
+              role="tab"
+            >
+              Highlights
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link py-1 px-2 small"
+              id="details-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#details"
+              type="button"
+              role="tab"
+            >
+              Details
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content border-start border-end border-bottom p-2">
+          <div
+            class="tab-pane fade show active"
+            id="highlights"
+            role="tabpanel"
+          >
+            <!-- Top classes panel -->
+            <div class="mt-2">
+              <strong class="small">Top Classes:</strong>
+              <ul id="topClassesList" class="list-unstyled small ps-2 mb-2">
+                <li class="placeholder-glow">
+                  <span class="placeholder col-8"></span>
+                </li>
+                <li class="placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </li>
+                <li class="placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                </li>
+              </ul>
+            </div>
+            <div id="worstClass" class="small"></div>
+            <div id="avgMetrics" class="small mt-2"></div>
+          </div>
+          <div class="tab-pane fade" id="details" role="tabpanel">
+            <!-- Detailed metrics panel -->
+            <div id="detailedMetrics" class="small">
+              <div class="placeholder-glow">
+                <span class="placeholder col-12"></span>
+              </div>
+              <div class="placeholder-glow">
+                <span class="placeholder col-12"></span>
+              </div>
+              <div class="placeholder-glow">
+                <span class="placeholder col-10"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="alert alert-warning small">
+        No models found in the models directory. Please add models to get
+        started.
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Add model info loading script -->
+<script>
+  const labelsDict = {{ labels_dict | default({}) | tojson }};
+
+  function getClassLabel(className) {
+    if (className === null || className === undefined) {
+      return "Unknown";
+    }
+
+    const normalized = String(className);
+    if (Object.prototype.hasOwnProperty.call(labelsDict, normalized)) {
+      return labelsDict[normalized];
+    }
+
+    const numericValue = Number.parseInt(normalized, 10);
+    if (!Number.isNaN(numericValue) && numericValue >= 0 && numericValue < 26) {
+      return String.fromCharCode(65 + numericValue);
+    }
+
+    return normalized;
+  }
+
+  // Load model information on document ready
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentModel = document.getElementById("currentModelName");
+    if (
+      currentModel &&
+      currentModel.textContent &&
+      currentModel.textContent !== "No model selected"
+    ) {
+      loadModelInfoSidebar(currentModel.textContent);
+    }
+  });
+
+  // Update info when model is changed
+  if (typeof modelSelect !== "undefined") {
+    modelSelect.addEventListener("change", function () {
+      loadModelInfoSidebar(this.value);
+    });
+  }
+
+  function loadModelInfoSidebar(modelName) {
+    const accuracyElement = document.getElementById("modelAccuracy");
+    const topClassesElement = document.getElementById("topClassesList");
+    const worstClassElement = document.getElementById("worstClass");
+    const avgMetricsElement = document.getElementById("avgMetrics");
+    const detailedMetricsElement = document.getElementById("detailedMetrics");
+
+    // Show loading state
+    showLoadingState();
+
+    // First try to load from JSON (new format)
+    fetch(`/models/${modelName.replace(".p", ".json")}`)
+      .then((response) => {
+        if (!response.ok) {
+          // If JSON not found, fall back to simplified API
+          return fetch(`/simplified_model_info/${modelName}`)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Model info not available");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              // This is the simplified data format
+              updateModelHighlights(
+                data.highlights,
+                accuracyElement,
+                topClassesElement,
+                worstClassElement,
+                avgMetricsElement
+              );
+
+              // Limited detailed view with simplified data
+              updateDetailedView(data, detailedMetricsElement);
+            });
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Check if we got comprehensive JSON data
+        if (data.model_info && data.performance) {
+          // This is the comprehensive format from JSON file
+          const highlights = extractHighlightsFromJson(data);
+
+          updateModelHighlights(
+            highlights,
+            accuracyElement,
+            topClassesElement,
+            worstClassElement,
+            avgMetricsElement
+          );
+
+          // Show detailed metrics
+          updateDetailedViewFromJson(data, detailedMetricsElement);
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading model info:", error);
+        if (accuracyElement) accuracyElement.innerHTML = "";
+        if (topClassesElement)
+          topClassesElement.innerHTML =
+            '<li class="text-danger">Error loading model data</li>';
+        if (detailedMetricsElement)
+          detailedMetricsElement.innerHTML =
+            '<div class="alert alert-danger py-1">Error loading model data</div>';
+      });
+  }
+
+  function showLoadingState() {
+    const elements = ["modelAccuracy", "topClassesList", "detailedMetrics"];
+
+    document.getElementById("topClassesList").innerHTML =
+      '<li class="placeholder-glow"><span class="placeholder col-8"></span></li>'.repeat(
+        3
+      );
+
+    document.getElementById("detailedMetrics").innerHTML =
+      '<div class="placeholder-glow"><span class="placeholder col-12"></span></div>'.repeat(
+        3
+      );
+  }
+
+  function extractHighlightsFromJson(data) {
+    // Extract highlights from comprehensive JSON data
+    const highlights = {
+      accuracy: {
+        value: data.performance.accuracy,
+        formatted: `${(data.performance.accuracy * 100).toFixed(1)}%`,
+      },
+      top_classes: [],
+      averages: {},
+    };
+
+    // Extract class metrics
+    const classMetrics = [];
+    for (const [className, metrics] of Object.entries(
+      data.performance.classes
+    )) {
+      classMetrics.push({
+        class: className,
+        label: getClassLabel(className),
+        f1_score: metrics.f1,
+        formatted: `${(metrics.f1 * 100).toFixed(1)}%`,
+      });
+    }
+
+    // Sort by F1 score
+    classMetrics.sort((a, b) => b.f1_score - a.f1_score);
+
+    // Get top 3
+    highlights.top_classes = classMetrics.slice(0, 3);
+
+    // Get worst class
+    if (classMetrics.length > 3) {
+      highlights.worst_class = classMetrics[classMetrics.length - 1];
+    }
+
+    // Add averages
+    if (data.performance.weighted_avg) {
+      highlights.averages.weighted_avg = {
+        f1_score: data.performance.weighted_avg["f1-score"],
+        formatted: `${(data.performance.weighted_avg["f1-score"] * 100).toFixed(
+          1
+        )}%`,
+      };
+    }
+
+    return highlights;
+  }
+
+  function updateModelHighlights(
+    highlights,
+    accuracyElement,
+    topClassesElement,
+    worstClassElement,
+    avgMetricsElement
+  ) {
+    // Update accuracy
+    if (highlights && highlights.accuracy && accuracyElement) {
+      accuracyElement.innerHTML = `<div class="text-center"><span class="badge bg-success px-2 py-1">
+                ${highlights.accuracy.formatted} Accuracy</span></div>`;
+    }
+
+    // Update top classes
+    if (highlights && highlights.top_classes && topClassesElement) {
+      let classesHTML = "";
+      highlights.top_classes.forEach((cls) => {
+        classesHTML += `<li><span class="badge bg-primary me-1">${getClassLabel(
+          cls.label || cls.class
+        )}</span> ${cls.formatted}</li>`;
+      });
+      topClassesElement.innerHTML =
+        classesHTML || "<li>No class data available</li>";
+    }
+
+    // Update worst class
+    if (highlights && highlights.worst_class && worstClassElement) {
+      worstClassElement.innerHTML = `<strong>Needs Work:</strong> <span class="badge bg-warning text-dark">${getClassLabel(
+        highlights.worst_class.label || highlights.worst_class.class
+      )}</span> ${highlights.worst_class.formatted}`;
+    }
+
+    // Update averages
+    if (highlights && highlights.averages && avgMetricsElement) {
+      let avgHTML = "<strong>Averages:</strong> ";
+      if (highlights.averages.weighted_avg) {
+        avgHTML += `Weighted F1: ${highlights.averages.weighted_avg.formatted}`;
+      }
+      avgMetricsElement.innerHTML = avgHTML;
+    }
+  }
+
+  function updateDetailedViewFromJson(data, detailedElement) {
+    if (!detailedElement) return;
+
+    let html = `
+            <div class="mb-2">
+                <strong>Model Type:</strong> ${data.model_info.type}<br>
+                <strong>Samples:</strong> Train ${
+                  data.model_info.training_samples
+                }, Test ${data.model_info.test_samples}
+            </div>
+
+            <div class="mb-3">
+                <strong>Performance:</strong>
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped table-hover table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Accuracy</td>
+                                <td><span class="badge bg-success">${(
+                                  data.performance.accuracy * 100
+                                ).toFixed(1)}%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Macro Avg F1</td>
+                                <td><span class="badge bg-info">${(
+                                  data.performance.macro_avg.f1 * 100
+                                ).toFixed(1)}%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Weighted Avg F1</td>
+                                <td><span class="badge bg-primary">${(
+                                  data.performance.weighted_avg["f1-score"] *
+                                  100
+                                ).toFixed(1)}%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <strong>Class Performance:</strong>
+                <div class="table-responsive" style="max-height: 150px; overflow-y: auto;">
+                    <table class="table table-sm table-striped table-hover table-bordered mb-0">
+                        <thead class="table-secondary sticky-top">
+                            <tr>
+                                <th>Class</th>
+                                <th>F1</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+
+    // Add rows for each class - colorize based on performance
+    for (const [className, metrics] of Object.entries(
+      data.performance.classes
+    )) {
+      // Determine color class based on F1 score
+      let f1ColorClass = "text-success fw-bold";
+      let precisionColorClass = "text-success";
+      let recallColorClass = "text-success";
+
+      if (metrics.f1 < 0.7) f1ColorClass = "text-warning fw-bold";
+      if (metrics.f1 < 0.5) f1ColorClass = "text-danger fw-bold";
+
+      if (metrics.precision < 0.7) precisionColorClass = "text-warning";
+      if (metrics.precision < 0.5) precisionColorClass = "text-danger";
+
+      if (metrics.recall < 0.7) recallColorClass = "text-warning";
+      if (metrics.recall < 0.5) recallColorClass = "text-danger";
+
+      html += `
+                <tr>
+                    <td class="fw-bold">${getClassLabel(className)}</td>
+                    <td class="${f1ColorClass}">${(metrics.f1 * 100).toFixed(
+        1
+      )}%</td>
+                    <td class="${precisionColorClass}">${(
+        metrics.precision * 100
+      ).toFixed(1)}%</td>
+                    <td class="${recallColorClass}">${(
+        metrics.recall * 100
+      ).toFixed(1)}%</td>
+                </tr>
+            `;
+    }
+
+    html += `
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+
+    detailedElement.innerHTML = html;
+  }
+
+  function updateDetailedView(data, detailedElement) {
+    if (!detailedElement) return;
+
+    // Build a simpler view when we only have simplified data
+    detailedElement.innerHTML = `
+            <div class="alert alert-info py-1">
+                <i class="bi bi-info-circle"></i>
+                Detailed model information is only available with the new JSON report format.
+                Train models with the updated train_classifier.py to access detailed metrics.
+            </div>
+
+            <div class="mb-2">
+                <div class="card card-body bg-light p-2">
+                    <strong>Available Metrics:</strong>
+                    <ul class="mt-1 mb-0 ps-3">
+                        <li>Accuracy: ${
+                          data.highlights?.accuracy?.formatted || "N/A"
+                        }</li>
+                        <li>Classes: ${
+                          data.highlights?.top_classes?.length || 0
+                        } available</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+  }
+</script>
+
+<!-- Add additional model sidebar styles -->
+<style>
+  .model-info-sidebar {
+    font-size: 0.85rem;
+  }
+
+  .model-stat {
+    margin-bottom: 0.5rem;
+  }
+
+  .model-info-sidebar .badge {
+    font-weight: normal;
+  }
+
+  .model-info-sidebar ul {
+    margin-bottom: 0.5rem;
+  }
+
+  .model-info-sidebar ul li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Placeholder loading styles */
+  .placeholder-glow .placeholder {
+    display: inline-block;
+    min-height: 1em;
+    vertical-align: middle;
+    cursor: wait;
+    background-color: currentColor;
+    opacity: 0.5;
+  }
+
+  /* Nav tabs styles */
+  .nav-tabs-sm .nav-link {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Table styles for detailed view */
+  .model-info-sidebar .table {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .model-info-sidebar .table td,
+  .model-info-sidebar .table th {
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Beautiful table styling */
+  .table-responsive {
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.075);
+  }
+
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  /* Badge styling in tables */
+  .table .badge {
+    width: 100%;
+  }
+
+  /* Dark mode adjustments */
+  .dark-mode .model-info-sidebar .badge.bg-warning {
+    color: #212529 !important;
+  }
+
+  .dark-mode .nav-tabs {
+    border-color: #555;
+  }
+
+  .dark-mode .nav-tabs .nav-link {
+    color: #aaa;
+  }
+
+  .dark-mode .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #333;
+    border-color: #555 #555 #333;
+  }
+
+  .dark-mode .tab-content {
+    border-color: #555;
+    background-color: #333;
+  }
+
+  .dark-mode .table {
+    color: #f4f4f9;
+  }
+
+  .dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .dark-mode .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-mode .table-primary,
+  .dark-mode .table-primary > th,
+  .dark-mode .table-primary > td {
+    background-color: #375a7f;
+  }
+
+  .dark-mode .table-secondary,
+  .dark-mode .table-secondary > th,
+  .dark-mode .table-secondary > td {
+    background-color: #444;
+  }
+
+  .dark-mode .card-body.bg-light {
+    background-color: #444 !important;
+  }
+
+  /* Bootstrap icons */
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+</style>

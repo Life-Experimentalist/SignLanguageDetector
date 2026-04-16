@@ -1,0 +1,12 @@
+.git/
+.#*
+__pycache__/
+*.pyc
+env/
+venv/
+node_modules/
+dist/
+build/
+docs/
+tests/
+flask_sessions/

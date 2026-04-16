@@ -18,7 +18,6 @@ import pickle
 import signal
 import sys
 from functools import lru_cache
-from time import sleep
 
 import cv2
 import mediapipe as mp
@@ -32,9 +31,8 @@ from flask import (
     request,
     send_from_directory,
 )
-from tqdm import tqdm
 
-from utils import (
+from utils.utils import (
     MODELS_DIR,
     NUM_CLASSES,
     calculate_brightness,
@@ -79,33 +77,9 @@ two_hand_classes = get_two_hand_classes()
 hands = mediapipe_hands()
 landmark_style, connection_style = get_landmark_style()
 
-shutdown_flag = False
-
-
-def get_available_camera_index():
-    """
-    Finds the first available camera index.
-    """
-    index = 0
-    while True:
-        cap = cv2.VideoCapture(index)
-        if not cap.isOpened():
-            cap.release()
-            return index - 1 if index > 0 else None
-        cap.release()
-        index += 1
-
-
-camera_index = get_available_camera_index()
-
-if camera_index is None:
-    print_error("Error: No camera found.")
-    sys.exit(1)
-
-cap = cv2.VideoCapture(camera_index)
-
+cap = cv2.VideoCapture(0)
 if not cap.isOpened():
-    print_error(f"Error: Could not open video capture device at index {camera_index}.")
+    print_error("Error: Could not open video capture device.")
     sys.exit(1)
 
 
@@ -222,19 +196,17 @@ def reload_model():
     return jsonify({"status": "Model reloaded"})
 
 
-@app.route("/quiz")  # Renamed route
+@app.route("/quiz")
 def quiz():
-    allowed_letters_str = os.getenv(
-        "DEMO_QUIZ_LETTERS", "V,B,C"
-    )  # Use DEMO_QUIZ_LETTERS
-    allowed_letters = [
-        letter.strip().upper() for letter in allowed_letters_str.split(",")
-    ]
     quiz_duration = int(os.getenv("QUIZ_DURATION", "2"))
+    quiz_num_guesses = int(os.getenv("QUIZ_NUM_GUESSES", "5"))
+    quiz_reload_interval = int(os.getenv("QUIZ_RELOAD_INTERVAL", "0"))
     return render_template(
-        "quiz_demo.html",  # Keep the quiz_demo template
-        allowed_letters=allowed_letters,
+        "quiz.html",
+        labels_dict=labels_dict,
         quiz_duration=quiz_duration,
+        quiz_num_guesses=quiz_num_guesses,
+        quiz_reload_interval=quiz_reload_interval,
     )
 
 
@@ -281,7 +253,7 @@ def process_frame():
         data = request.get_json()
         frame_data = data["frame"].split(",")[1]
         frame = np.frombuffer(base64.b64decode(frame_data), dtype=np.uint8)
-        frame = cv2.imdecode(frame, cv2.COLOR_BGR2RGB)
+        frame = cv2.imdecode(frame, cv2.IMREAD_COLOR)
 
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = hands.process(frame_rgb)
@@ -321,25 +293,21 @@ def process_frame():
 
 @app.route("/shutdown", methods=["POST"])
 def shutdown():
-    handle_signal(signal.SIGINT, None)
+    shutdown_server()
     return "Server shutting down..."
 
 
 def shutdown_server():
-    global shutdown_flag
-    if not shutdown_flag:
-        shutdown_flag = True
-        func = request.environ.get("werkzeug.server.shutdown")
-        if func is None:
-            raise RuntimeError("Not running with the Werkzeug Server")
-        func()
-        cap.release()
-        print_info("Server shut down successfully.")
+    func = request.environ.get("werkzeug.server.shutdown")
+    if func is None:
+        raise RuntimeError("Not running with the Werkzeug Server")
+    func()
 
 
 def handle_signal(signal, frame):
     print_info("Received signal to terminate. Shutting down...")
     shutdown_server()
+    cap.release()
     sys.exit(0)
 
 
@@ -348,9 +316,6 @@ signal.signal(signal.SIGTERM, handle_signal)
 
 if __name__ == "__main__":
     try:
-        # Add a progress bar to indicate the delay before starting the Flask app
-        for _ in tqdm(range(100), desc="Starting Flask app", ncols=100):
-            sleep(0.05)  # Adjust the sleep duration as needed
         app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)), debug=True)
     except Exception as e:
         print_error(f"Error running the app: {e}")

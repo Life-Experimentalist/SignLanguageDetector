@@ -1,0 +1,350 @@
+/**
+ * Styles for the model info sidebar
+ */
+
+/* Alert styling for model info notifications */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    min-width: 250px;
+    max-width: 400px;
+    animation: fade-in 0.3s;
+}
+
+/* Alert types */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Dark mode alert styles */
+.dark-mode .alert-success {
+    background-color: #1e392a;
+    color: #8fd19e;
+    border-color: #2a5738;
+}
+
+.dark-mode .alert-danger {
+    background-color: #3e1c24;
+    color: #ea868f;
+    border-color: #572a34;
+}
+
+.dark-mode .alert-info {
+    background-color: #0e3740;
+    color: #8bdbe5;
+    border-color: #166b7b;
+}
+
+/* Model info loading animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Current model highlight */
+.current-model {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 3px;
+    font-weight: 500;
+}
+
+.dark-mode .current-model {
+    border-bottom-color: #66b2ff;
+}
+
+/**
+ * Model Information Styling
+ *
+ * Project: Sign Language Detector
+ * Repository: https://github.com/Life-Experimentalist/SignLanguageDetector
+ * Owner: VKrishna04
+ * Organization: Life-Experimentalist
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ */
+
+/* Model info container */
+.model-info-container {
+    margin-top: 20px;
+    padding: 15px;
+}
+
+/* Model info card */
+.model-info-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.model-info-card .card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.model-info-card .card-body {
+    padding: 15px;
+}
+
+/* Model metrics */
+.model-metric {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.metric-value {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.metric-value.good {
+    color: #28a745;
+}
+
+.metric-value.medium {
+    color: #ffc107;
+}
+
+.metric-value.poor {
+    color: #dc3545;
+}
+
+/* Model accuracy badge */
+.accuracy-badge {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    background-color: #28a745;
+    margin-bottom: 15px;
+}
+
+/* Class performance table */
+.class-performance {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.class-performance table {
+    width: 100%;
+    font-size: 0.9rem;
+    border-collapse: collapse;
+}
+
+.class-performance th,
+.class-performance td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.class-performance th {
+    background-color: #f5f5f5;
+    color: #555;
+    font-weight: 500;
+}
+
+.class-performance tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Model info sidebar */
+.model-info-sidebar .card {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.model-info-sidebar .card-header {
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    background-color: #f5f5f5;
+}
+
+.model-info-sidebar .card-body {
+    padding: 12px;
+    font-size: 0.85rem;
+}
+
+/* Table styles for detailed metrics */
+.model-metrics-table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+}
+
+.model-metrics-table th,
+.model-metrics-table td {
+    padding: 6px 10px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.model-metrics-table th {
+    background-color: #f8f9fa;
+    font-weight: 500;
+}
+
+/* Badge styles */
+.badge-metric {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.badge-metric.accuracy {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.badge-metric.f1 {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.badge-metric.precision {
+    background-color: #e2e3e5;
+    color: #41464b;
+}
+
+.badge-metric.recall {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+/* Loading states */
+.model-info-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark mode styles */
+.dark-mode .model-info-card {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.dark-mode .model-info-card .card-header {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.dark-mode .metric-label {
+    color: #adb5bd;
+}
+
+.dark-mode .class-performance th {
+    background-color: #444;
+    color: #e9ecef;
+}
+
+.dark-mode .class-performance td {
+    border-bottom: 1px solid #444;
+}
+
+.dark-mode .class-performance tr:hover {
+    background-color: #444;
+}
+
+.dark-mode .model-info-sidebar .card-header {
+    background-color: #444;
+    color: #e9ecef;
+}
+
+.dark-mode .model-metrics-table th {
+    background-color: #444;
+    color: #e9ecef;
+}
+
+.dark-mode .model-metrics-table td,
+.dark-mode .model-metrics-table th {
+    border-color: #444;
+}
+
+.dark-mode .badge-metric.accuracy {
+    background-color: #195436;
+    color: #d1e7dd;
+}
+
+.dark-mode .badge-metric.f1 {
+    background-color: #084298;
+    color: #cfe2ff;
+}
+
+.dark-mode .badge-metric.precision {
+    background-color: #41464b;
+    color: #e2e3e5;
+}
+
+.dark-mode .badge-metric.recall {
+    background-color: #664d03;
+    color: #fff3cd;
+}

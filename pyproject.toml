@@ -1,0 +1,49 @@
+[project]
+name = "sign-language-detector"
+version = "1.0.0"
+description = "Real-time sign language detection and model training platform with Flask web interfaces."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+authors = [
+  { name = "VKrishna04" }
+]
+license = { text = "Apache-2.0" }
+keywords = ["sign-language", "computer-vision", "flask", "mediapipe", "machine-learning"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Framework :: Flask",
+  "Topic :: Scientific/Engineering :: Image Recognition"
+]
+dependencies = [
+  "colorama==0.4.6",
+  "Flask==3.1.0",
+  "Flask-Session==0.8.0",
+  "matplotlib==3.10.0",
+  "mediapipe==0.10.14",
+  "numpy==1.26.4",
+  "opencv-contrib-python==4.11.0.86",
+  "opencv-python==4.10.0.84",
+  "protobuf==4.25.9",
+  "python-dotenv==1.0.1",
+  "scikit-learn==1.6.0",
+  "tabulate==0.9.0",
+  "tqdm==4.67.1"
+]
+
+[project.urls]
+Homepage = "https://github.com/Life-Experimentalist/SignLanguageDetector"
+Repository = "https://github.com/Life-Experimentalist/SignLanguageDetector"
+Documentation = "https://github.com/Life-Experimentalist/SignLanguageDetector/tree/main/docs"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.5",
+  "ruff>=0.11.0"
+]

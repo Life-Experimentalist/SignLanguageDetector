@@ -1,111 +1,167 @@
 # Sign Language Detector
 
-A real-time Flask application for detecting and recognizing Indian Sign Language gestures using machine learning and computer vision.
+Real-time sign language detection with a Flask web UI, model management endpoints, and a training pipeline.
 
-## Project Overview
+![Project Views](https://counter.vkrishna04.me/api/views/sign-language-detector/badge?style=flat-square&color=brightgreen&label=views)
 
-This project uses MediaPipe for hand landmark detection and machine learning to recognize Indian Sign Language (ISL) alphabet. It includes:
+## Why This Exists (STAR)
 
-1. Data Collection (collect_imgs.py)
-2. Dataset Creation (create_dataset.py)
-3. Model Training (train_classifier.py)
-4. Real-time Inference (inference_classifier.py)
-5. An Interactive CLI tool for training operations (interactive_cli.py)
-6. A Flask web application (app.py)
+### Situation
+Sign language accessibility tools are often fragmented between research scripts and production apps, making it hard to train, ship, and test models in one place.
 
-The training component can be used for any hand gesture recognition, not limited to sign language.
+### Task
+Provide a practical end-to-end system that supports:
+- image collection and dataset generation,
+- model training and report conversion,
+- real-time browser-based inference with model switching.
 
-## Directory Structure
+### Action
+This project implements:
+- a training framework under `training/` for dataset and model lifecycle,
+- Flask applications (`app.py`, `app_multi_client.py`) for single and multi-client usage,
+- shared utilities in `utils/` for consistent processing and configuration,
+- model report parsing and UI display for model quality visibility.
+
+### Result
+You get a workflow that can move from data collection to live inference quickly, with configurable runtime behavior and reusable scripts for local development.
+
+## Project Structure
 
 ```
 SignLanguageDetector/
-├── app.py                       # Flask web application
-├── training/                    # Training scripts
-│   ├── collect_imgs.py          # Data collection script
-│   ├── create_dataset.py        # Dataset creation script
-│   ├── train_classifier.py      # Model training script
-│   ├── inference_classifier.py  # Inference script
-├── interactive_cli.py           # CLI tool for training pipeline
-├── data/                        # Training data directory
-├── models/                      # Saved model files directory
-├── logs/                        # Application logs directory
-├── templates/                   # Web application templates
-│   └── index.html               # Main web interface
-├── test_cv.py                   # Test OpenCV installation
-└── README.md                    # Project overview and usage
-
+├── app.py
+├── app_multi_client.py
+├── training/
+├── utils/
+├── models/
+├── templates/
+├── static/
+└── docs/
 ```
 
-## Installation
+## Quick Start (4 Steps, uv Recommended)
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd SignLanguageDetector
-   ```
-2. Create a virtual environment:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # Windows: venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```
-   pip install numpy opencv-python mediapipe flask scikit-learn colorama paho-mqtt
-   ```
-4. Install Mosquitto:
-   - Follow the instructions on the [Mosquitto website](https://mosquitto.org/download/) to install Mosquitto on your system.
+1. Clone repository
 
-## Usage
-
-### Data Collection
-
-```
-python training/collect_imgs.py
+```powershell
+git clone https://github.com/Life-Experimentalist/SignLanguageDetector.git
+Set-Location SignLanguageDetector
 ```
 
-### Create Dataset
+2. Create a fresh uv environment
 
-```
-python training/create_dataset.py
-```
-
-### Train Classifier
-
-```
-python training/train_classifier.py
+```powershell
+uv venv --python 3.12 .venv
 ```
 
-### Test Inference
+If your machine only has Python 3.13 installed, uv can still provision Python 3.12 for this project automatically.
 
-```
-python training/inference_classifier.py
-```
+3. Install dependencies
 
-### Interactive CLI
-
-```
-python interactive_cli.py
+```powershell
+uv sync --python .venv\Scripts\python.exe
 ```
 
-### Run Web Application
+4. Run app
 
+```powershell
+uv run --python .venv\Scripts\python.exe python app.py
 ```
-python app.py
+
+Open the app in your browser:
+
+`http://localhost:5000`
+
+## Alternative (requirements.txt)
+
+```powershell
+uv venv --python 3.12 .venv
+uv pip install --python .venv\Scripts\python.exe -r requirements.txt
+.\.venv\Scripts\python.exe app.py
 ```
 
-Then open your browser at `http://127.0.0.1:5000`.
+## Documentation
 
-## Logging
+- [Docs Overview](docs/README.md)
+- [Contributing Guide](docs/CONTRIBUTING.md)
+- [Roadmap](docs/ROADMAP.md)
+- [API Reference](docs/API.md)
+- [Release Notes](docs/RELEASE_NOTES.md)
+- [Scripts and Commands](docs/SCRIPTS.md)
+- [Project TODO](docs/TODO.md)
+- [Integration Guide](docs/INTEGRATION.md)
+- [Telemetry Integration](docs/TELEMETRY.md)
 
-Logs are stored in `logs/`, organized by session timestamps. Files include:
+## Useful uv Commands
 
-- performance.log (timing data)
-- debug.log (debug messages)
-- error.log (errors)
-- access.log (HTTP access logs)
+```powershell
+uv run --python .venv\Scripts\python.exe python app.py
+uv run --python .venv\Scripts\python.exe python app_multi_client.py
+uv run --python .venv\Scripts\python.exe python training_pipeline.py
+uv run --python .venv\Scripts\python.exe python training/convert_model_reports.py
+```
 
-## Notes
+## Inference API (No Webpage Required)
 
-- Ensure proper lighting for improved detection.
-- A physical camera is required.
-- Some gestures need two hands for accurate recognition.
+After starting the server, you can call a direct API endpoint:
+
+- `POST /api/predict`
+
+Supported input formats:
+
+- `multipart/form-data` with file field `image`
+- `application/json` with `image_base64`
+
+Optional flags:
+
+- `show_landmarks` (`true`/`false`, default `false`)
+- `include_visuals` (`true`/`false`, default `false`)
+
+PowerShell example (multipart upload):
+
+```powershell
+$form = @{
+  image = Get-Item .\data\0\sample.jpg
+  show_landmarks = "false"
+  include_visuals = "false"
+}
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/api/predict" -Method Post -Form $form
+```
+
+PowerShell example (base64 JSON):
+
+```powershell
+$bytes = [System.IO.File]::ReadAllBytes(".\data\0\sample.jpg")
+$payload = @{
+  image_base64 = [System.Convert]::ToBase64String($bytes)
+  show_landmarks = $false
+  include_visuals = $false
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/api/predict" -Method Post -ContentType "application/json" -Body $payload
+```
+
+## Telemetry and Stats
+
+This project is linked with [CFlair-Counter](https://github.com/Life-Experimentalist/CFlair-Counter?tab=readme-ov-file#cflair-counter) hosted at `https://counter.vkrishna04.me`.
+
+- Increment endpoint used by this app:
+  `POST https://counter.vkrishna04.me/api/views/sign-language-detector`
+- Badge endpoint:
+  `https://counter.vkrishna04.me/api/views/sign-language-detector/badge?style=flat-square&color=brightgreen&label=views`
+
+## License
+
+Licensed under Apache License 2.0. See [LICENSE.md](LICENSE.md).
+
+## Warning
+
+Anonymized telemetry is collected using the CFlair-Counter project and is used only to display project stats.
+
+Training quality matters: better capture quality produces better predictions. The dataset builder automatically skips images without detectable hand landmarks and discards blurry frames before training.
+
+To disable it, create a `.env` file and set:
+
+```env
+DISABLE_ANONYMOUS_TELMETRY=true
+```

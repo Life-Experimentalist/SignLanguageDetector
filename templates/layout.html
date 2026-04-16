@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,6 +28,11 @@ limitations under the License.
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
+    />
+    <!-- Add this to the head section to include the new CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/model-info.css') }}"
     />
     <style>
       /* Explicit Light Mode Styles */
@@ -106,49 +111,57 @@ limitations under the License.
         width: 100%;
         margin: 20px;
         text-align: center;
-        padding: 20px;
+        padding: 15px; /* Reduced padding */
       }
       h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
+        font-size: 2em; /* Reduced font size */
+        margin-bottom: 15px; /* Reduced margin */
         color: inherit;
       }
       #predictionDisplay {
-        font-size: 2em;
-        margin: 20px 0;
-        min-height: 60px;
+        font-size: 1.5em; /* Reduced font size */
+        margin: 15px 0; /* Reduced margin */
+        min-height: 50px; /* Reduced min-height */
       }
       .video-container {
-        margin-top: 20px;
+        margin-top: 15px; /* Reduced margin */
+        position: relative;
       }
-      #videoFeed, #video {
+      #videoCanvas {
         max-width: 100%;
         border: 2px solid #333;
         border-radius: 8px;
       }
       .error {
-        font-size: 1.5em;
+        font-size: 1.2em; /* Reduced font size */
         margin-top: 10px;
       }
       .remark {
-        font-size: 1.2em;
+        font-size: 1em; /* Reduced font size */
         margin-top: 10px;
       }
+      .brightness,
+      .contrast {
+        position: fixed;
+        left: 20px; /* Move back to left side */
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.9em;
+        z-index: 1200;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        min-width: 140px;
+        text-align: center;
+        display: none; /* Hide by default */
+      }
       .brightness {
-        position: absolute;
         top: 20px;
-        left: 20px;
-        font-size: 1.2em;
       }
       .contrast {
-        position: absolute;
-        top: 50px;
-        left: 20px;
-        font-size: 1.2em;
+        top: 60px; /* Increased spacing between indicators */
       }
       footer {
-        margin-top: 20px;
-        font-size: 0.9em;
+        margin-top: 15px; /* Reduced margin */
+        font-size: 0.8em; /* Reduced font size */
         transition: background-color 0.3s, color 0.3s;
       }
       footer a {
@@ -157,6 +170,16 @@ limitations under the License.
       }
       footer a:hover {
         text-decoration: underline;
+      }
+
+      /* Camera Controls */
+      .camera-controls {
+        margin-top: 10px; /* Reduced margin */
+      }
+
+      /* Video elements */
+      #webcam {
+        display: none;
       }
 
       /* Custom Switch Styles */
@@ -179,10 +202,10 @@ limitations under the License.
       .switch__label {
         position: relative;
         display: inline-block;
-        width: 120px;
-        height: 60px;
+        width: 100px; /* Reduced width */
+        height: 50px; /* Reduced height */
         background-color: #2b2b2b;
-        border: 5px solid #5b5b5b;
+        border: 4px solid #5b5b5b; /* Reduced border */
         border-radius: 9999px;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
@@ -193,8 +216,8 @@ limitations under the License.
         left: 50%;
         transform: translate(-50%, -50%) translateX(-72%);
         display: block;
-        width: 40px;
-        height: 40px;
+        width: 35px; /* Reduced width */
+        height: 35px; /* Reduced height */
         background-color: #7b7b7b;
         border-radius: 9999px;
         box-shadow: 10px 0px 0 0 rgba(0, 0, 0, 0.2) inset;
@@ -212,15 +235,15 @@ limitations under the License.
       .switch__indicator::before {
         top: 7px;
         left: 7px;
-        width: 9px;
-        height: 9px;
+        width: 8px; /* Reduced width */
+        height: 8px; /* Reduced height */
         opacity: 0.6;
       }
       .switch__indicator::after {
         bottom: 8px;
         right: 6px;
-        width: 14px;
-        height: 14px;
+        width: 12px; /* Reduced width */
+        height: 12px; /* Reduced height */
         opacity: 0.8;
       }
       .switch__decoration {
@@ -312,7 +335,7 @@ limitations under the License.
         top: 20px;
         right: 20px;
         z-index: 1050;
-        padding: 15px;
+        padding: 10px; /* Reduced padding */
         background-color: #007bff;
         color: white;
         border-radius: 5px;
@@ -324,14 +347,202 @@ limitations under the License.
         top: 5px;
         right: 10px;
         cursor: pointer;
-        font-size: 1.2em;
+        font-size: 1em; /* Reduced font size */
+      }
+
+      /* Card Layout styles */
+      .card {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px; /* Reduced margin */
+      }
+
+      .card-header {
+        padding: 10px 15px;
+      }
+
+      .card-body {
+        padding: 10px; /* Reduced padding */
+      }
+
+      /* Model info styles */
+      .model-info {
+        max-height: 350px; /* Reduced max-height */
+        overflow-y: auto;
+        font-size: 0.8em; /* Reduced font size */
+      }
+
+      .model-info pre {
+        white-space: pre-wrap;
+        font-size: 0.7em; /* Reduced font size */
+      }
+
+      .model-info table {
+        width: 100%;
+        font-size: 0.7em; /* Reduced font size */
+        border-collapse: collapse;
+      }
+
+      .model-info table, .model-info th, .model-info td {
+        border: 1px solid #ddd;
+      }
+
+      .model-info th, .model-info td {
+        padding: 3px; /* Reduced padding */
+        text-align: center;
+      }
+
+      .model-info th {
+        background-color: #f2f2f2;
+      }
+
+      /* Dark mode adjustments for cards */
+      .dark-mode .card {
+        background-color: #444;
+        border-color: #666;
+      }
+
+      .dark-mode .card-header {
+        background-color: #333;
+        border-color: #666;
+      }
+
+      .dark-mode .model-info th {
+        background-color: #555;
+      }
+
+      .dark-mode .model-info table,
+      .dark-mode .model-info th,
+      .dark-mode .model-info td {
+        border-color: #666;
+      }
+
+      .dark-mode .alert-info {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        border-color: #34495e;
+      }
+
+      .dark-mode .alert-warning {
+        background-color: #5e4934;
+        color: #ecf0f1;
+        border-color: #7d5f3f;
+      }
+
+      .wrapper {
+        display: flex;
+        min-height: 100vh;
+        position: relative;
+        align-items: center; /* Center vertically */
+      }
+
+      #sidebarContainer {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        background-color: #f5f5f5;
+        border-right: 1px solid #ddd;
+        padding: 80px 15px 15px; /* Added top padding for toggle button */
+        transition: transform 0.3s ease;
+        z-index: 1000;
+      }
+
+      .dark-mode #sidebarContainer {
+        background-color: #333;
+        border-color: #555;
+        color: #f4f4f9;
+      }
+
+      #sidebarContainer.collapsed {
+        transform: translateX(-100%);
+      }
+
+      .content {
+        flex: 1;
+        padding: 15px;
+        margin-left: 250px; /* Match sidebar width */
+        display: flex;           /* Add flex display */
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        min-height: 100vh;      /* Full viewport height */
+        transition: margin-left 0.3s ease;
+      }
+
+      .collapsed ~ .content {
+        margin-left: 0;
+      }
+
+      /* Center content container */
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%;
+        position: relative;     /* For proper stacking */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #sidebarContainer {
+          position: fixed;
+          width: 100%;
+          height: auto;
+          max-height: 80vh;
+          overflow-y: auto;
+        }
+
+        .content {
+          margin-left: 0;
+          margin-top: 60px; /* Space for toggle button */
+        }
+      }
+
+      .dark-mode .brightness,
+      .dark-mode .contrast {
+        background-color: rgba(58, 128, 233, 0.6);
+        color: white;
+      }
+
+      /* Light mode specific colors */
+      .light-mode .brightness,
+      .light-mode .contrast {
+        color: #007bff; /* Match prediction color */
+        background-color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* Dark mode specific colors */
+      .dark-mode .brightness,
+      .dark-mode .contrast {
+        color: #66b2ff; /* Match dark mode prediction color */
+        background-color: rgba(51, 51, 51, 0.85);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Media query for small screens */
+      @media (max-width: 768px) {
+        .brightness {
+          top: 120px; /* Move down to avoid mobile conflicts */
+        }
+        .contrast {
+          top: 160px; /* Move down to avoid mobile conflicts */
+        }
+      }
+
+      .sidebar {
+        padding-top: 40px; /* Add padding at the top of sidebar */
       }
 
       {% block extra_styles %}
       {% endblock %}
     </style>
+    <!-- Add reference to camera utilities -->
+    <script src="{{ url_for('static', filename='js/camera-utils.js') }}"></script>
   </head>
   <body class="light-mode">
+    <!-- Brightness and Contrast displays -->
+    <div class="brightness" id="brightnessDisplay"></div>
+    <div class="contrast" id="contrastDisplay"></div>
+
     <!-- Custom Theme Toggle -->
     <div class="switch">
       <input type="checkbox" class="switch__input" id="themeToggle" />
@@ -340,6 +551,35 @@ limitations under the License.
         <span aria-hidden="true" class="switch__decoration"></span>
       </label>
     </div>
+
+    <!-- Custom Alert Box -->
+    <div id="customAlert" class="custom-alert">
+      <span
+        class="close-btn"
+        onclick="this.parentElement.style.display = 'none'"
+        >&times;</span
+      >
+      <span id="alertMessage"></span>
+    </div>
+
+    <!-- Hidden Video Element -->
+    <video id="webcam" autoplay playsinline></video>
+
+    <!-- Main Layout -->
+    <div class="wrapper">
+      <div id="sidebarContainer">{% include 'sidebar.html' %}</div>
+      <div class="content">{% block content %}{% endblock %}</div>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <button
+      id="sidebarToggleBtn"
+      class="btn btn-secondary"
+      style="position: fixed; bottom: 20px; left: 20px; z-index: 1100"
+    >
+      <i class="bi bi-list"></i> Toggle Sidebar
+    </button>
+
     <!-- Reload Button -->
     <button
       id="reloadButton"
@@ -348,18 +588,19 @@ limitations under the License.
     >
       Reload
     </button>
-    <!-- Custom Alert Box -->
-    <div id="customAlert" class="custom-alert">
-      <span class="close-btn" onclick="this.parentElement.style.display='none';"
-        >&times;</span
-      >
-      <span id="alertMessage"></span>
-    </div>
-    <!-- Brightness and Contrast Display -->
-    <div class="brightness" id="brightnessDisplay"></div>
-    <div class="contrast" id="contrastDisplay"></div>
-    {% block content %}{% endblock %}
+
     <script>
+      // Global camera variables
+      window.SignLanguageApp = {
+        stream: null,
+        isStreaming: false,
+        animationId: null,
+        ctx: null,
+        videoCanvas: null,
+        webcam: null,
+      };
+
+      // Theme toggle functionality
       const themeToggle = document.getElementById("themeToggle");
 
       function loadTheme() {
@@ -400,51 +641,458 @@ limitations under the License.
           const response = await fetch("/reload_model", { method: "POST" });
           const data = await response.json();
           showCustomAlert(data.status);
-          // Restart the video feed for 1 second
-          const videoFeed = document.getElementById("videoFeed");
-          if (videoFeed) {
-            videoFeed.src =
-              "{{ url_for('video_feed') }}?t=" + new Date().getTime();
-            setTimeout(() => {
-              videoFeed.src = "{{ url_for('video_feed') }}";
-            }, 1000); // Restart for 1 second
-          }
         } catch (error) {
           showCustomAlert("Error reloading model: " + error);
         }
       }
 
+      // Initialize camera handling
+      function initializeCamera() {
+        const app = window.SignLanguageApp;
+
+        app.webcam = document.getElementById("webcam");
+
+        // Only initialize if the page has a canvas element
+        app.videoCanvas = document.getElementById("videoCanvas");
+        if (app.videoCanvas) {
+          app.ctx = app.videoCanvas.getContext("2d");
+        }
+      }
+
+      // Get available cameras
+      async function loadCameras(cameraSelect) {
+        try {
+          const devices = await navigator.mediaDevices.enumerateDevices();
+          const videoDevices = devices.filter(
+            (device) => device.kind === "videoinput",
+          );
+
+          // Clear previous options
+          cameraSelect.innerHTML = '<option value="">Select Camera</option>';
+
+          // Add options for each camera
+          videoDevices.forEach((device, index) => {
+            const option = document.createElement("option");
+            option.value = device.deviceId;
+            option.text = device.label || `Camera ${index + 1}`;
+            cameraSelect.appendChild(option);
+          });
+
+          // If only one camera available, select it
+          if (videoDevices.length === 1) {
+            cameraSelect.value = videoDevices[0].deviceId;
+          }
+
+          return videoDevices.length > 0;
+        } catch (err) {
+          console.error(`Error loading cameras: ${err.message}`);
+          return false;
+        }
+      }
+
+      // Start camera stream
+      async function startCamera(deviceId) {
+        const app = window.SignLanguageApp;
+        try {
+          const constraints = {
+            video: {
+              width: { ideal: 640 },
+              height: { ideal: 480 },
+            },
+          };
+          // If a specific camera is selected
+          if (deviceId) {
+            constraints.video.deviceId = { exact: deviceId };
+          }
+          // Stop any existing stream
+          if (app.stream) {
+            app.stream.getTracks().forEach((track) => track.stop());
+          }
+          // Start new stream
+          app.stream = await navigator.mediaDevices.getUserMedia(constraints);
+          app.webcam.srcObject = app.stream;
+
+          return new Promise((resolve) => {
+            app.webcam.onloadedmetadata = () => {
+              app.isStreaming = true;
+              resolve(true);
+            };
+            app.webcam.onerror = () => {
+              app.isStreaming = false;
+              resolve(false);
+            };
+          });
+        } catch (err) {
+          console.error(`Camera error: ${err.message}`);
+          return false;
+        }
+      }
+
+      // Stop camera stream
+      function stopCamera() {
+        const app = window.SignLanguageApp;
+        if (app.stream) {
+          app.stream.getTracks().forEach((track) => track.stop());
+          app.isStreaming = false;
+
+          if (app.animationId) {
+            cancelAnimationFrame(app.animationId);
+            app.animationId = null;
+          }
+
+          if (app.ctx && app.videoCanvas) {
+            app.ctx.clearRect(
+              0,
+              0,
+              app.videoCanvas.width,
+              app.videoCanvas.height,
+            );
+          }
+
+          return true;
+        }
+        return false;
+      }
+
+      // Process a single frame
+      async function processFrame() {
+        const app = window.SignLanguageApp;
+        if (!app.isStreaming || !app.ctx || !app.videoCanvas || !app.webcam)
+          return;
+
+        try {
+          // Draw the current webcam frame to canvas
+          app.ctx.drawImage(
+            app.webcam,
+            0,
+            0,
+            app.videoCanvas.width,
+            app.videoCanvas.height,
+          );
+
+          // Convert canvas to base64 image
+          const frameData = app.videoCanvas.toDataURL("image/jpeg", 0.8);
+
+          // Send to server for processing
+          const response = await fetch("/process_client_frame", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ frame: frameData }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          if (data.error) {
+            throw new Error(data.error);
+          }
+
+          // Display the processed image
+          const processedImage = new Image();
+          processedImage.onload = () => {
+            app.ctx.drawImage(
+              processedImage,
+              0,
+              0,
+              app.videoCanvas.width,
+              app.videoCanvas.height,
+            );
+
+            // Update metrics display
+            const brightnessDisplay =
+              document.getElementById("brightnessDisplay");
+            const contrastDisplay = document.getElementById("contrastDisplay");
+
+            if (data.low_brightness && brightnessDisplay) {
+              brightnessDisplay.textContent = `Brightness: ${data.brightness.toFixed(2)}`;
+              brightnessDisplay.style.display = "block"; // Show when content is available
+            } else if (brightnessDisplay) {
+              brightnessDisplay.textContent = "";
+              brightnessDisplay.style.display = "none"; // Hide when empty
+            }
+
+            if (contrastDisplay) {
+              contrastDisplay.textContent = `Contrast: ${data.contrast.toFixed(2)}`;
+              contrastDisplay.style.display = "block"; // Show when content is available
+            } else {
+              contrastDisplay.style.display = "none"; // Hide when empty
+            }
+
+            // Dispatch a custom event with the prediction data
+            const predictionEvent = new CustomEvent("signPrediction", {
+              detail: {
+                prediction: data.prediction,
+                brightness: data.brightness,
+                contrast: data.contrast,
+                low_brightness: data.low_brightness,
+              },
+            });
+            document.dispatchEvent(predictionEvent);
+
+            // Continue processing frames
+            app.animationId = requestAnimationFrame(processFrame);
+          };
+          processedImage.src = data.processed_frame;
+        } catch (err) {
+          console.error("Error processing frame:", err);
+
+          // Dispatch error event
+          const errorEvent = new CustomEvent("signPredictionError", {
+            detail: { error: err.message },
+          });
+          document.dispatchEvent(errorEvent);
+
+          // Retry after a delay
+          setTimeout(() => {
+            app.animationId = requestAnimationFrame(processFrame);
+          }, 1000);
+        }
+      }
+
+      // Load theme and setup event listeners
       loadTheme();
       themeToggle.addEventListener("change", toggleTheme);
       document
         .getElementById("reloadButton")
         .addEventListener("click", reloadModel);
 
-      const brightnessDisplay = document.getElementById("brightnessDisplay");
-      const contrastDisplay = document.getElementById("contrastDisplay");
+      // Initialize camera when document is loaded
+      document.addEventListener("DOMContentLoaded", initializeCamera);
 
-      async function updatePrediction() {
-        try {
-          const response = await fetch("/predictions");
-          if (!response.ok)
-            throw new Error(`HTTP error! status: ${response.status}`);
-          const data = await response.json();
-          if (data.low_brightness) {
-            brightnessDisplay.textContent = `Brightness: ${data.brightness.toFixed(
-              2
-            )}`;
-          } else {
-            brightnessDisplay.textContent = "";
+      // Sidebar toggle functionality
+      const sidebarToggleBtn = document.getElementById("sidebarToggleBtn");
+      const sidebarContainer = document.getElementById("sidebarContainer");
+
+      sidebarToggleBtn.addEventListener("click", () => {
+        sidebarContainer.classList.toggle("collapsed");
+      });
+
+      // Load sidebar controls (e.g. camera selection)
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Initialize sidebar camera select if present
+        const cameraSelectSidebar = document.getElementById(
+          "cameraSelectSidebar",
+        );
+        if (cameraSelectSidebar) {
+          try {
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            const videoDevices = devices.filter(
+              (device) => device.kind === "videoinput",
+            );
+
+            // Clear previous options
+            cameraSelectSidebar.innerHTML =
+              '<option value="">Select Camera</option>';
+
+            videoDevices.forEach((device, index) => {
+              const option = document.createElement("option");
+              option.value = device.deviceId;
+              option.text = device.label || `Camera ${index + 1}`;
+              cameraSelectSidebar.appendChild(option);
+            });
+
+            if (videoDevices.length === 1) {
+              cameraSelectSidebar.value = videoDevices[0].deviceId;
+            }
+          } catch (err) {
+            console.error(`Error loading sidebar cameras: ${err.message}`);
           }
-          contrastDisplay.textContent = `Contrast: ${data.contrast.toFixed(2)}`;
-        } catch (e) {
-          console.error("Prediction error:", e);
         }
-        setTimeout(updatePrediction, 500); // Poll every 500ms
-      }
+      });
 
-      updatePrediction();
+      // Document ready event handler
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Initialize camera controls
+        const startCameraBtn = document.getElementById("startCameraSidebar");
+        const stopCameraBtn = document.getElementById("stopCameraSidebar");
+        const cameraSelect = document.getElementById("cameraSelectSidebar");
+        const showLandmarks = document.getElementById("showLandmarksSidebar");
+
+        // Load cameras
+        if (cameraSelect) {
+          try {
+            const hasCameras = await loadCameras(cameraSelect);
+            if (!hasCameras) {
+              showCustomAlert("No cameras detected");
+              if (startCameraBtn) startCameraBtn.disabled = true;
+            }
+          } catch (err) {
+            showCustomAlert(`Error: ${err.message}`);
+            if (startCameraBtn) startCameraBtn.disabled = true;
+          }
+        }
+
+        // Start camera button
+        if (startCameraBtn) {
+          startCameraBtn.addEventListener("click", async () => {
+            const deviceId = cameraSelect ? cameraSelect.value : "";
+            try {
+              const success = await startCamera(deviceId);
+              if (success) {
+                if (startCameraBtn) startCameraBtn.disabled = true;
+                if (stopCameraBtn) stopCameraBtn.disabled = false;
+                if (cameraSelect) cameraSelect.disabled = true;
+                window.SignLanguageApp.animationId =
+                  requestAnimationFrame(processFrame);
+              } else {
+                showCustomAlert("Failed to start camera");
+              }
+            } catch (err) {
+              showCustomAlert(`Camera error: ${err.message}`);
+            }
+          });
+        }
+
+        // Stop camera button
+        if (stopCameraBtn) {
+          stopCameraBtn.addEventListener("click", () => {
+            if (stopCamera()) {
+              if (startCameraBtn) startCameraBtn.disabled = false;
+              if (stopCameraBtn) stopCameraBtn.disabled = true;
+              if (cameraSelect) cameraSelect.disabled = false;
+            }
+          });
+        }
+
+        // Camera select change
+        if (cameraSelect) {
+          cameraSelect.addEventListener("change", function () {
+            if (window.SignLanguageApp.isStreaming) {
+              stopCamera();
+              if (startCameraBtn) startCameraBtn.click(); // Auto restart with new camera
+            }
+          });
+        }
+
+        // Show landmarks toggle
+        if (showLandmarks) {
+          showLandmarks.addEventListener("change", function () {
+            // Update the options sent with frame processing
+            window.SignLanguageApp.showLandmarks = this.checked;
+          });
+        }
+      });
+
+      // Fixed loadModelInfoSidebar function - was truncated in the original
+      function loadModelInfoSidebar(modelName) {
+        if (!modelName) return;
+
+        const accuracyElement = document.getElementById("modelAccuracy");
+        const topClassesElement = document.getElementById("topClassesList");
+        const worstClassElement = document.getElementById("worstClass");
+        const avgMetricsElement = document.getElementById("avgMetrics");
+        const detailedMetricsElement =
+          document.getElementById("detailedMetrics");
+        const currentModelNameElement =
+          document.getElementById("currentModelName");
+
+        // Update the current model name
+        if (currentModelNameElement) {
+          currentModelNameElement.textContent = modelName;
+        }
+
+        // Skip further processing if elements don't exist
+        if (!accuracyElement && !topClassesElement && !detailedMetricsElement) {
+          return;
+        }
+
+        // Show loading state
+        if (typeof showLoadingState === "function") {
+          showLoadingState();
+        }
+
+        // First try to load from JSON (new format)
+        fetch(`/models/${modelName.replace(".p", ".json")}`)
+          .then((response) => {
+            if (!response.ok) {
+              // If JSON not found, fall back to simplified API
+              return fetch(`/simplified_model_info/${modelName}`)
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error("Model info not available");
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  if (typeof updateModelHighlights === "function") {
+                    // This is the simplified data format
+                    updateModelHighlights(
+                      data.highlights,
+                      accuracyElement,
+                      topClassesElement,
+                      worstClassElement,
+                      avgMetricsElement,
+                    );
+                  }
+
+                  if (typeof updateDetailedView === "function") {
+                    // Limited detailed view with simplified data
+                    updateDetailedView(data, detailedMetricsElement);
+                  }
+                });
+            }
+            return response.json();
+          })
+          .then((data) => {
+            // Check if we got comprehensive JSON data
+            if (data && data.model_info && data.performance) {
+              if (
+                typeof extractHighlightsFromJson === "function" &&
+                typeof updateModelHighlights === "function"
+              ) {
+                // This is the comprehensive format from JSON file
+                const highlights = extractHighlightsFromJson(data);
+
+                updateModelHighlights(
+                  highlights,
+                  accuracyElement,
+                  topClassesElement,
+                  worstClassElement,
+                  avgMetricsElement,
+                );
+              }
+
+              if (typeof updateDetailedViewFromJson === "function") {
+                // Show detailed metrics
+                updateDetailedViewFromJson(data, detailedMetricsElement);
+              }
+            }
+          })
+          .catch((error) => {
+            console.error("Error loading model info:", error);
+            if (accuracyElement) accuracyElement.innerHTML = "";
+            if (topClassesElement)
+              topClassesElement.innerHTML =
+                '<li class="text-danger">Error loading model data</li>';
+            if (detailedMetricsElement)
+              detailedMetricsElement.innerHTML =
+                '<div class="alert alert-danger py-1">Error loading model data</div>';
+          });
+      }
     </script>
+    {% if not disable_anonymous_telemetry %}
+    <script>
+      (function () {
+        const baseUrl = "{{ telemetry_counter_base_url }}";
+        const project = "{{ telemetry_project_name }}";
+        if (!baseUrl || !project) return;
+
+        const endpoint = `${baseUrl}/api/views/${encodeURIComponent(project)}`;
+        fetch(endpoint, {
+          method: "POST",
+          mode: "no-cors",
+          keepalive: true,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ source: "web-ui" }),
+        }).catch(() => {
+          // Telemetry must never block app functionality.
+        });
+      })();
+    </script>
+    {% endif %}
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     {% block extra_scripts %}{% endblock %}

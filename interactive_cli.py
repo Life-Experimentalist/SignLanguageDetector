@@ -13,16 +13,62 @@
 # limitations under the License.
 
 from training.collect_imgs import create_img
+from training.convert_model_reports import (
+    convert_all_models,
+    convert_existing_model_reports,
+    convert_txt_to_json,
+    generate_missing_json_reports,
+)
 from training.create_dataset import create_dataset
-from training.train_classifier import train_classifier
 from training.inference_classifier import run_inference
-from utils import print_info, print_warning
+from training.train_classifier import train_classifier
+
+# Import directly from utils package (no circular dependency)
+from utils import print_error, print_info, print_success, print_warning
 
 
+def model_tools_menu():
+    """Menu for model manipulation tools"""
+    print_info("\nModel Tools")
+    print_info("===========")
+    print_info("1. Train a new model")
+    print_info("2. Generate model reports")
+    print_info("3. Test model with inference")
+    print_info("4. Return to main menu")
+
+    choice = input("\nEnter your choice (1-4): ").strip()
+
+    if choice == "1":
+        train_classifier()
+    elif choice == "2":
+        print_info("\nModel Report Generation Options:")
+        print_info("1. Standard mode - Test models and generate accurate reports")
+        print_info("2. Fast mode - Use existing text reports (less comprehensive)")
+
+        report_mode = input("\nSelect mode (1-2): ").strip()
+
+        if report_mode == "1":
+            convert_existing_model_reports(lazy=False)
+        elif report_mode == "2":
+            convert_existing_model_reports(lazy=True)
+        else:
+            print_error("Invalid choice")
+    elif choice == "3":
+        run_inference()
+    elif choice == "4":
+        return
+    else:
+        print_error("Invalid choice")
+
+
+# Rename enhanced_training_pipeline to just training_pipeline
 def training_pipeline():
+    """
+    Complete training pipeline that includes model analysis stage.
+    """
     print_info("Training Pipeline Started")
     print_warning(
-        "This pipeline will guide you through the data collection, dataset creation, and classifier training process."
+        "This pipeline will guide you through the complete model development process."
     )
     print("Training Pipeline Details:")
     print_info(
@@ -35,18 +81,22 @@ def training_pipeline():
         "Stage 3: Classifier Training - Trains a machine learning model on your dataset"
     )
     print_info(
-        "Stage 4: Inference - Tests the trained model by making predictions on new input"
+        "Stage 4: Model Analysis - Analyzes model performance and generates reports"
+    )
+    print_info(
+        "Stage 5: Inference - Tests the trained model by making predictions on new input"
     )
     print_info("Let's begin!")
     print_warning("Please ensure that you have a webcam connected to the system.")
     print_info("If you have already collected images, you can skip the first stage.")
+
+    # Stage 1: Data Collection
     cont = (
         input("Proceed with the First Stage for Dataset Collection? (y/n): ")
         .strip()
         .lower()
     )
     if cont == "y":
-        # Stage 1: Data Collection
         print_info("\nStage 1: Data Collection (collect_imgs)")
         create_img()
 
@@ -63,13 +113,15 @@ def training_pipeline():
             .strip()
             .lower()
         )
+
+    # Stage 2: Dataset Creation
     if cont == "y":
-        # Stage 2: Create Dataset
         print_info("\nStage 2: Create Dataset (create_dataset)")
         create_dataset()
     else:
         print_info("Skipping dataset creation. Proceeding to Train Classifier...")
 
+    # Stage 3: Classifier Training
     cont = (
         input("Proceed with the Third Stage to train classifier? (y/n): ")
         .strip()
@@ -79,21 +131,56 @@ def training_pipeline():
         print_info("Exiting pipeline.")
         return
 
-    # Stage 3: Train Classifier
     print_info("\nStage 3: Train Classifier (train_classifier)")
     train_classifier()
 
+    # NEW - Stage 4: Model Analysis
     cont = (
-        input("Classifier training complete. Do you want to run inference? (y/n): ")
+        input(
+            "Classifier training complete. Do you want to analyze the model performance? (y/n): "
+        )
         .strip()
         .lower()
     )
     if cont == "y":
-        print_info("Running Inference...")
+        print_info("\nStage 4: Model Analysis (convert_model_reports)")
+        convert_existing_model_reports(
+            lazy=False
+        )  # Use accurate model testing mode by default
+
+    # Stage 5: Inference
+    cont = (
+        input("Do you want to run inference with your model? (y/n): ").strip().lower()
+    )
+    if cont == "y":
+        print_info("\nStage 5: Running Inference...")
         run_inference()
-    else:
-        print_info("Exiting pipeline.")
+
+    print_info("Pipeline completed successfully!")
+
+
+# Update main menu with option for enhanced pipeline
+def main_menu():
+    """Main menu for the interactive CLI"""
+    while True:
+        print_info("\nSign Language Detector - Interactive CLI")
+        print_info("=====================================")
+        print_info("1. Training Pipeline")
+        print_info("2. Model Tools")
+        print_info("3. Exit")
+
+        choice = input("\nEnter your choice (1-3): ").strip()
+
+        if choice == "1":
+            training_pipeline()  # Renamed to simply "training_pipeline"
+        elif choice == "2":
+            model_tools_menu()
+        elif choice == "3":
+            print_info("Exiting...")
+            break
+        else:
+            print_error("Invalid choice. Please enter 1, 2, or 3.")
 
 
 if __name__ == "__main__":
-    training_pipeline()
+    main_menu()

@@ -6,3 +6,6 @@ __pycache__/
 .logs/*
 *.log
 training/history/3-GUI-flask/*
+.combined.txt
+.venv*
+data/

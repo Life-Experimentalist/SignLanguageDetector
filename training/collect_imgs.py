@@ -19,7 +19,12 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 import cv2
-from utils import get_project_dir, get_directory_paths, print_info, IMAGES_PER_CLASS
+from utils.utils import (
+    get_project_dir,
+    get_directory_paths,
+    print_info,
+    IMAGES_PER_CLASS,
+)
 
 
 def create_img():
@@ -56,7 +61,7 @@ def create_img():
                 cv2.LINE_AA,
             )
             cv2.imshow("frame", frame)
-            if cv2.waitKey(25) == ord("q"):
+            if cv2.waitKey(25) == ord("3"):
                 break
 
         # Capture training images for current class
