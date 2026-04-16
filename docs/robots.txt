@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sign.vkrishna04.me/sitemap.xml

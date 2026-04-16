@@ -83,14 +83,28 @@ uv pip install --python .venv\Scripts\python.exe -r requirements.txt
 ## Documentation
 
 - [Docs Overview](docs/README.md)
+- [Landing Page](docs/index.html)
 - [Contributing Guide](docs/CONTRIBUTING.md)
 - [Roadmap](docs/ROADMAP.md)
 - [API Reference](docs/API.md)
+- [Architecture Charts](docs/ARCHITECTURE.md)
+- [Branding Prompts](docs/BRANDING_PROMPTS.md)
 - [Release Notes](docs/RELEASE_NOTES.md)
 - [Scripts and Commands](docs/SCRIPTS.md)
 - [Project TODO](docs/TODO.md)
 - [Integration Guide](docs/INTEGRATION.md)
 - [Telemetry Integration](docs/TELEMETRY.md)
+
+## GitHub Pages Setup
+
+The landing page is ready in the `docs/` folder for GitHub Pages.
+
+- Entry file: `docs/index.html`
+- Styles: `docs/styles.css`
+- Stats integration: `docs/landing.js`
+- SEO files: `docs/robots.txt`, `docs/sitemap.xml`
+- Custom domain file: `docs/CNAME` (set to `sign.vkrishna04.me`)
+- Branding asset target: `docs/static/branding/`
 
 ## Useful uv Commands
 
