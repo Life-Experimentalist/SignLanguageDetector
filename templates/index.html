@@ -377,21 +377,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
                 // Reload the model on the server
-                fetch("/select_model", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ model_name: this.value })
+                fetch(`/select_model/${encodeURIComponent(this.value)}`, {
+                    method: "GET"
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.status === "success") {
+                    if (!data.error) {
                         if (window.showCustomAlert) {
                             window.showCustomAlert(`Model switched to ${this.value}`);
                         } else {
                             console.log(`Model switched to ${this.value}`);
                         }
                     } else {
-                        throw new Error(data.message || "Failed to switch model");
+                        throw new Error(data.error || "Failed to switch model");
                     }
                 })
                 .catch(err => {

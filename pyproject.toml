@@ -42,6 +42,11 @@ Documentation = "https://github.com/Life-Experimentalist/SignLanguageDetector/tr
 [tool.uv]
 package = false
 
+[tool.uv.scripts]
+app = "python app.py"
+train = "python interactive_cli.py"
+convert-reports = { cmd = ["python", "-c", "from training.convert_model_reports import convert_existing_model_reports; convert_existing_model_reports(lazy=False)"] }
+
 [dependency-groups]
 dev = [
   "pytest>=8.3.5",

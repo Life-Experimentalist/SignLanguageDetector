@@ -535,8 +535,6 @@ limitations under the License.
       {% block extra_styles %}
       {% endblock %}
     </style>
-    <!-- Add reference to camera utilities -->
-    <script src="{{ url_for('static', filename='js/camera-utils.js') }}"></script>
   </head>
   <body class="light-mode">
     <!-- Brightness and Contrast displays -->
@@ -580,15 +578,6 @@ limitations under the License.
       <i class="bi bi-list"></i> Toggle Sidebar
     </button>
 
-    <!-- Reload Button -->
-    <button
-      id="reloadButton"
-      class="btn btn-primary"
-      style="position: fixed; bottom: 20px; left: 20px; z-index: 1050"
-    >
-      Reload
-    </button>
-
     <script>
       // Global camera variables
       window.SignLanguageApp = {
@@ -598,6 +587,7 @@ limitations under the License.
         ctx: null,
         videoCanvas: null,
         webcam: null,
+        showLandmarks: true,
       };
 
       // Theme toggle functionality
@@ -733,6 +723,7 @@ limitations under the License.
         const app = window.SignLanguageApp;
         if (app.stream) {
           app.stream.getTracks().forEach((track) => track.stop());
+          app.stream = null;
           app.isStreaming = false;
 
           if (app.animationId) {
@@ -777,7 +768,13 @@ limitations under the License.
           const response = await fetch("/process_client_frame", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ frame: frameData }),
+            body: JSON.stringify({
+              frame: frameData,
+              options: {
+                showLandmarks: app.showLandmarks !== false,
+                landmarkStyle: "default",
+              },
+            }),
           });
 
           if (!response.ok) {
@@ -969,11 +966,17 @@ limitations under the License.
 
         // Show landmarks toggle
         if (showLandmarks) {
+          // Sync initial state from checkbox (checked by default in sidebar)
+          window.SignLanguageApp.showLandmarks = showLandmarks.checked;
           showLandmarks.addEventListener("change", function () {
-            // Update the options sent with frame processing
             window.SignLanguageApp.showLandmarks = this.checked;
           });
         }
+
+        // Clean up camera on page unload
+        window.addEventListener("beforeunload", () => {
+          stopCamera();
+        });
       });
 
       // Fixed loadModelInfoSidebar function - was truncated in the original

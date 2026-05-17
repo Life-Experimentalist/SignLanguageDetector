@@ -39,7 +39,7 @@ SignLanguageDetector/
 └── docs/
 ```
 
-## Quick Start (4 Steps, uv Recommended)
+## Quick Start (3 Steps)
 
 1. Clone repository
 
@@ -48,36 +48,27 @@ git clone https://github.com/Life-Experimentalist/SignLanguageDetector.git
 Set-Location SignLanguageDetector
 ```
 
-2. Create a fresh uv environment
+2. Install dependencies (uv auto-provisions Python 3.12 if needed)
 
 ```powershell
-uv venv --python 3.12 .venv
+uv sync
 ```
 
-If your machine only has Python 3.13 installed, uv can still provision Python 3.12 for this project automatically.
-
-3. Install dependencies
+3. Run the app
 
 ```powershell
-uv sync --python .venv\Scripts\python.exe
+uv run app
 ```
 
-4. Run app
+Open in your browser: `http://localhost:5000`
+
+## Alternative (pip + requirements.txt)
 
 ```powershell
-uv run --python .venv\Scripts\python.exe python app.py
-```
-
-Open the app in your browser:
-
-`http://localhost:5000`
-
-## Alternative (requirements.txt)
-
-```powershell
-uv venv --python 3.12 .venv
-uv pip install --python .venv\Scripts\python.exe -r requirements.txt
-.\.venv\Scripts\python.exe app.py
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
 ```
 
 ## Documentation
@@ -106,14 +97,16 @@ The landing page is ready in the `docs/` folder for GitHub Pages.
 - Custom domain file: `docs/CNAME` (set to `sign.vkrishna04.me`)
 - Branding asset target: `docs/static/branding/`
 
-## Useful uv Commands
+## Available Commands
 
-```powershell
-uv run --python .venv\Scripts\python.exe python app.py
-uv run --python .venv\Scripts\python.exe python app_multi_client.py
-uv run --python .venv\Scripts\python.exe python training_pipeline.py
-uv run --python .venv\Scripts\python.exe python training/convert_model_reports.py
-```
+All commands run inside the managed uv environment automatically — no activation needed.
+
+| Command | What it does |
+|---|---|
+| `uv run app` | Start the web server (single-client) |
+| `uv run train` | Interactive training CLI (collect → dataset → train → infer) |
+| `uv run convert-reports` | Regenerate model JSON reports from trained `.pkl` files |
+| `uv run python app_multi_client.py` | Start the multi-client web server |
 
 ## Inference API (No Webpage Required)
 
