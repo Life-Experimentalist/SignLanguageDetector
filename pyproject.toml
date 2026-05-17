@@ -44,6 +44,7 @@ package = false
 
 [tool.uv.scripts]
 app = "python app.py"
+multi = "python app_multi_client.py"
 train = "python interactive_cli.py"
 convert-reports = { cmd = ["python", "-c", "from training.convert_model_reports import convert_existing_model_reports; convert_existing_model_reports(lazy=False)"] }
 

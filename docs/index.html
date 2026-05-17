@@ -3,45 +3,59 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sign Language Detector | Real-Time Gesture Recognition</title>
+
+    <!-- Primary meta -->
+    <title>Sign Language Detector | Real-Time Hand-Sign Recognition</title>
     <meta
       name="description"
-      content="Sign Language Detector is a real-time hand-sign recognition project with Flask, MediaPipe, RandomForest, model analytics, and direct image inference API."
+      content="Open-source real-time sign language detection. Train a classifier, run live browser inference, and call a REST API — all from one project powered by MediaPipe and Flask."
     />
     <meta
       name="keywords"
-      content="sign language, computer vision, mediapipe, flask, accessibility, machine learning, gesture recognition, random forest, api"
+      content="sign language detector, real-time gesture recognition, mediapipe, flask, computer vision, asl, accessibility, machine learning, random forest, hand landmark, python, open source"
     />
     <meta name="author" content="VKrishna04" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0c7b76" />
 
+    <!-- Canonical + icons -->
     <link rel="canonical" href="https://sign.vkrishna04.me/" />
     <link rel="icon" href="static/branding/logo-mark.png" type="image/png" />
+    <link rel="apple-touch-icon" href="static/branding/logo-mark.png" />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sign Language Detector" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Sign Language Detector" />
+    <meta property="og:title" content="Sign Language Detector | Real-Time Hand-Sign Recognition" />
     <meta
       property="og:description"
-      content="Real-time sign language recognition with an interactive web app and API-first inference endpoint."
+      content="Train a sign-language classifier, run live browser inference with landmarks, and call a headless REST API — all from one open-source project."
     />
     <meta property="og:url" content="https://sign.vkrishna04.me/" />
     <meta
       property="og:image"
       content="https://sign.vkrishna04.me/static/branding/social-banner.jpg"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sign Language Detector" />
     <meta
       name="twitter:description"
-      content="Real-time sign language recognition with Flask, MediaPipe, and API inference."
+      content="Real-time ASL recognition with Flask, MediaPipe, and a one-command uv setup."
     />
     <meta
       name="twitter:image"
       content="https://sign.vkrishna04.me/static/branding/social-banner.jpg"
     />
 
+    <!-- Structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -49,33 +63,75 @@
         "name": "Sign Language Detector",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, Linux, macOS",
-        "description": "Open-source real-time sign language detection app with web UI and direct API inference.",
+        "description": "Open-source end-to-end sign language recognition with web UI, REST API, and interactive training pipeline.",
         "url": "https://sign.vkrishna04.me/",
+        "downloadUrl": "https://github.com/Life-Experimentalist/SignLanguageDetector",
+        "softwareVersion": "1.0.0",
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "programmingLanguage": ["Python", "JavaScript"],
+        "featureList": [
+          "Real-time webcam inference in the browser",
+          "MediaPipe hand landmark extraction",
+          "RandomForest sign classifier",
+          "Interactive training CLI",
+          "REST API endpoint — POST /api/predict",
+          "Model analytics with F1 scores and per-class metrics",
+          "Runtime model switching without server restart",
+          "Dark/light mode"
+        ],
         "author": {
           "@type": "Person",
-          "name": "VKrishna04"
+          "name": "VKrishna04",
+          "url": "https://vkrishna04.me"
         },
-        "codeRepository": "https://github.com/Life-Experimentalist/SignLanguageDetector"
+        "codeRepository": "https://github.com/Life-Experimentalist/SignLanguageDetector",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
       }
     </script>
   </head>
   <body>
     <div class="mesh-bg" aria-hidden="true"></div>
+
     <header class="site-header">
       <a class="brand" href="./" aria-label="Sign Language Detector home">
-        <img
-          src="static/branding/logo-mark.png"
-          alt="Sign Language Detector logo"
-        />
+        <svg
+          class="brand-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v0" />
+          <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2" />
+          <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8" />
+          <path
+            d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"
+          />
+        </svg>
         <span>Sign Language Detector</span>
       </a>
       <div class="header-actions">
         <nav>
-          <a href="https://github.com/Life-Experimentalist/SignLanguageDetector"
+          <a
+            href="https://github.com/Life-Experimentalist/SignLanguageDetector"
             >GitHub</a
           >
-          <a href="API.md">API</a>
-          <a href="README.md">Docs</a>
+          <a
+            href="https://github.com/Life-Experimentalist/SignLanguageDetector/blob/main/docs/API.md"
+            >API</a
+          >
+          <a
+            href="https://github.com/Life-Experimentalist/SignLanguageDetector#readme"
+            >Docs</a
+          >
         </nav>
         <button
           id="themeToggle"
@@ -89,151 +145,242 @@
     </header>
 
     <main>
+      <!-- Hero -->
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Accessibility x Computer Vision</p>
-          <h1>Build and Serve Sign Recognition Faster</h1>
+          <p class="eyebrow">Accessibility &times; Computer Vision</p>
+          <h1>Sign Recognition,<br />End to End</h1>
           <p>
-            Train models, inspect performance, run live browser inference, and
-            expose API predictions from the same project.
+            Collect images, train a classifier, inspect model analytics, and
+            serve real-time browser inference — all from a single project.
+            One command gets you running.
           </p>
           <div class="cta-row">
             <a
               class="btn primary"
               href="https://github.com/Life-Experimentalist/SignLanguageDetector"
-              >View Repository</a
+              >View on GitHub</a
             >
-            <a class="btn" href="API.md">Try API Flow</a>
+            <a
+              class="btn"
+              href="https://github.com/Life-Experimentalist/SignLanguageDetector/blob/main/docs/API.md"
+              >API Reference</a
+            >
           </div>
         </div>
+
         <div class="hero-media">
-          <img
-            src="static/branding/hero-banner.jpg"
-            alt="Sign Language Detector hero artwork"
-          />
+          <div class="code-preview" role="region" aria-label="Quick start">
+            <div class="code-header" aria-hidden="true">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="code-title">terminal</span>
+            </div>
+            <pre><code><span class="cm"># clone the repo</span>
+git clone https://github.com/Life-Experimentalist/SignLanguageDetector
+cd SignLanguageDetector
+
+<span class="cm"># uv installs Python 3.12 + all deps automatically</span>
+<span class="hi">uv run app</span>
+<span class="dim">&#x25B6;  http://localhost:5000</span>
+
+<span class="cm"># train a model interactively</span>
+<span class="hi">uv run train</span>
+
+<span class="cm"># headless REST API — no browser needed</span>
+curl -F "image=@hand.jpg" http://localhost:5000/api/predict</code></pre>
+          </div>
         </div>
       </section>
 
+      <!-- Stats -->
       <section class="stats" aria-live="polite">
         <h2>Project Stats</h2>
-        <p>
-          Anonymous counters powered by
-          <a href="https://counter.vkrishna04.me">CFlair Counter</a>.
-        </p>
         <div class="stat-grid">
           <article>
             <h3>Total Views</h3>
-            <p id="viewsCount">Loading...</p>
+            <p id="viewsCount">Loading…</p>
           </article>
           <article>
-            <h3>Health</h3>
-            <p id="counterHealth">Checking...</p>
+            <h3>Counter Status</h3>
+            <p id="counterHealth">Checking…</p>
           </article>
         </div>
         <img
           class="badge"
           src="https://counter.vkrishna04.me/api/views/sign-language-detector/badge?style=flat-square&color=brightgreen&label=views"
           alt="Project view counter badge"
+          loading="lazy"
+          width="120"
+          height="20"
         />
       </section>
 
+      <!-- Features -->
       <section class="features">
-        <h2>Why This Project</h2>
+        <h2>What This Project Gives You</h2>
         <div class="feature-grid">
           <article>
-            <h3>Real-Time Pipeline</h3>
+            <h3>Real-Time Browser Inference</h3>
             <p>
-              Camera capture, hand landmarks, feature extraction, and class
-              prediction in one flow.
+              Webcam frames go from the browser to MediaPipe landmark extraction
+              to a trained classifier — all without a plugin. Works the same
+              whether the server is local or remote.
             </p>
           </article>
           <article>
-            <h3>Dual Interface</h3>
+            <h3>Interactive Training CLI</h3>
             <p>
-              Use the web UI for live interaction or the API endpoint for
-              service integrations.
+              <code>uv run train</code> walks you through image collection,
+              dataset creation, classifier training, and model analysis in a
+              guided step-by-step flow.
             </p>
           </article>
           <article>
-            <h3>Model Visibility</h3>
+            <h3>Headless REST API</h3>
             <p>
-              Highlights and report conversion help inspect top and weak classes
-              quickly.
+              <code>POST /api/predict</code> accepts a file upload or base64
+              JSON and returns a prediction, brightness, and contrast — no
+              browser, no session, pure HTTP.
+            </p>
+          </article>
+          <article>
+            <h3>Model Analytics Sidebar</h3>
+            <p>
+              Every trained model ships with a JSON report. The sidebar shows
+              accuracy, top-3 classes by F1, the weakest class, and weighted
+              averages at a glance.
+            </p>
+          </article>
+          <article>
+            <h3>Hot Model Switching</h3>
+            <p>
+              Switch between trained <code>.pkl</code> models from the UI
+              dropdown without restarting the server. The new model loads
+              instantly via <code>GET /select_model/&lt;name&gt;</code>.
+            </p>
+          </article>
+          <article>
+            <h3>One-Command Setup</h3>
+            <p>
+              <code>uv run app</code> provisions Python 3.12, creates the
+              virtual environment, installs all dependencies, and starts the
+              server — in a single command.
             </p>
           </article>
         </div>
       </section>
 
+      <!-- Pipeline -->
       <section class="pipeline">
         <h2>End-to-End Pipeline</h2>
         <p class="section-intro">
-          This is the complete project flow from collecting images to final
-          inference in the browser and API.
+          From raw webcam captures to a live inference server — every stage is
+          automated.
         </p>
 
         <div class="pipeline-grid">
           <article>
-            <p class="step-tag">Step 1</p>
-            <h3>Collect Raw Images</h3>
+            <p class="step-tag">Setup</p>
+            <h3>Install &amp; Run</h3>
             <p>
-              Capture sign-class images into class folders under data using the
-              collector script.
+              Install <a href="https://docs.astral.sh/uv/">uv</a> once, then a
+              single command handles everything else — Python version, venv, and
+              all pip packages.
             </p>
-            <pre><code>uv run --python .venv\Scripts\python.exe python training/collect_imgs.py</code></pre>
+            <pre><code>uv run app</code></pre>
+          </article>
+
+          <article>
+            <p class="step-tag">Step 1</p>
+            <h3>Collect Images</h3>
+            <p>
+              Capture webcam frames per sign class. Blurry frames and frames
+              without a detectable hand are skipped automatically.
+            </p>
+            <pre><code>uv run train
+<span class="cm"># choose Stage 1 in the menu</span></code></pre>
           </article>
 
           <article>
             <p class="step-tag">Step 2</p>
-            <h3>Create Dataset Features</h3>
+            <h3>Build the Dataset</h3>
             <p>
-              Convert images into normalized hand-landmark features. Frames with
-              no detected hand or excessive blur are rejected.
+              Extract normalized MediaPipe hand-landmark coordinates from each
+              image. The dataset is saved as a pickle file ready for training.
             </p>
-            <pre><code>uv run --python .venv\Scripts\python.exe python training/create_dataset.py</code></pre>
+            <pre><code>uv run train
+<span class="cm"># choose Stage 2 in the menu</span></code></pre>
           </article>
 
           <article>
             <p class="step-tag">Step 3</p>
-            <h3>Train Classifier</h3>
+            <h3>Train the Classifier</h3>
             <p>
-              Train the RandomForest model and export model, text report, and
-              JSON metrics.
+              Train a RandomForest classifier. The model, a text classification
+              report, and a JSON metrics file are all written to
+              <code>models/</code>.
             </p>
-            <pre><code>uv run --python .venv\Scripts\python.exe python training/train_classifier.py</code></pre>
+            <pre><code>uv run train
+<span class="cm"># choose Stage 3 in the menu</span></code></pre>
           </article>
 
           <article>
             <p class="step-tag">Step 4</p>
-            <h3>Convert and Inspect Reports</h3>
+            <h3>Generate Reports</h3>
             <p>
-              Convert existing reports and surface highlights such as top
-              classes, weak classes, and aggregate quality metrics.
+              Convert text reports to structured JSON. The sidebar loads these
+              to display per-class F1 scores, accuracy, and aggregate averages.
             </p>
-            <pre><code>uv run --python .venv\Scripts\python.exe python training/convert_model_reports.py</code></pre>
+            <pre><code>uv run convert-reports</code></pre>
           </article>
 
           <article>
             <p class="step-tag">Step 5</p>
-            <h3>Serve App + API</h3>
+            <h3>Serve &amp; Infer</h3>
             <p>
-              Launch Flask to use the live webcam interface and direct image
-              prediction API at /api/predict.
+              Open the browser for live webcam inference, switch models from
+              the dropdown, or call the REST API from any HTTP client.
             </p>
-            <pre><code>uv run --python .venv\Scripts\python.exe python app.py</code></pre>
+            <pre><code>uv run app
+<span class="cm"># → http://localhost:5000</span>
+<span class="cm"># → POST /api/predict</span></code></pre>
           </article>
+        </div>
+      </section>
 
+      <!-- API quick-ref -->
+      <section class="api-ref">
+        <h2>API Quick Reference</h2>
+        <p class="section-intro">
+          Send an image, receive a prediction. No session or browser required.
+        </p>
+        <div class="api-grid">
           <article>
-            <p class="step-tag">Step 6</p>
-            <h3>Final Inference Modes</h3>
-            <p>
-              Run inference from browser camera stream, model switching UI, or
-              backend API integration for external clients.
-            </p>
-            <ul class="mode-list">
-              <li>Web: live camera feed with landmarks</li>
-              <li>API: single image predictions without webpage</li>
-              <li>Reports: post-training performance visibility</li>
-            </ul>
+            <p class="step-tag">Multipart</p>
+            <h3>File Upload</h3>
+            <pre><code>curl -X POST http://localhost:5000/api/predict \
+  -F "image=@hand.jpg" \
+  -F "show_landmarks=false"</code></pre>
+          </article>
+          <article>
+            <p class="step-tag">JSON</p>
+            <h3>Base64 Image</h3>
+            <pre><code>curl -X POST http://localhost:5000/api/predict \
+  -H "Content-Type: application/json" \
+  -d '{"image_base64":"&lt;base64&gt;"}'</code></pre>
+          </article>
+          <article>
+            <p class="step-tag">Response</p>
+            <h3>JSON Payload</h3>
+            <pre><code>{
+  "prediction": "A",
+  "brightness": 142.5,
+  "contrast": 68.3,
+  "low_brightness": false,
+  "model": "model.pkl"
+}</code></pre>
           </article>
         </div>
       </section>
@@ -241,8 +388,14 @@
 
     <footer>
       <p>
-        Built by VKrishna04 under Life Experimentalist.
-        <a href="https://vkrishna04.me">vkrishna04.me</a>
+        Built by
+        <a href="https://vkrishna04.me">VKrishna04</a> &middot;
+        <a
+          href="https://github.com/Life-Experimentalist/SignLanguageDetector/blob/main/LICENSE.md"
+          >Apache 2.0</a
+        >
+        &middot;
+        <a href="https://github.com/Life-Experimentalist">Life Experimentalist</a>
       </p>
     </footer>
 
