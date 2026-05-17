@@ -9,3 +9,4 @@ training/history/3-GUI-flask/*
 .combined.txt
 .venv*
 data/
+.claude/*
