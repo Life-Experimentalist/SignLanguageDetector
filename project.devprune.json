@@ -1,0 +1,17 @@
+{
+  "$schema": "https://devprune.vkrishna04.me/schemas/v1/devprune.schema.json",
+  "prunable": {
+    "directories": [
+      {
+        "path": "utils/__pycache__",
+        "rebuild": "uv run python -m compileall utils",
+        "why": "CPython bytecode cache; git-ignored via __pycache__/ and regenerated on the next import of any module in utils/."
+      },
+      {
+        "path": "training/__pycache__",
+        "rebuild": "uv run python -m compileall training",
+        "why": "CPython bytecode cache; git-ignored via __pycache__/ and regenerated on the next import of any module in training/."
+      }
+    ]
+  }
+}
