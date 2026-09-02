@@ -1,0 +1,32 @@
+{
+	"$schema": "https://vkrishna04.me/schemas/project-manifest.schema.json",
+	"manifestVersion": 2,
+	"tagline": "Sign language recognition, collection to browser inference.",
+	"summary": "An end-to-end sign language recognition project: collect images, build a dataset, train a classifier, and serve real-time predictions in the browser from webcam hand landmarks. It also exposes a headless REST endpoint and swaps trained models without a restart.",
+	"status": "active",
+	"icon": "SiScikitlearn",
+	"readme": true,
+	"technologies": [
+		"Python",
+		"MediaPipe",
+		"scikit-learn",
+		"Flask",
+		"uv"
+	],
+	"tags": [
+		"computer-vision",
+		"machine-learning",
+		"mediapipe",
+		"accessibility"
+	],
+	"highlights": [
+		"Real-time inference in the browser with no plugin: webcam to MediaPipe hand landmarks to a RandomForest prediction.",
+		"Hot model switching — a different .pkl is selected from the UI dropdown without restarting the server.",
+		"A headless REST endpoint accepts either a file upload or base64 JSON, so the model is usable outside the demo UI.",
+		"One-command setup: uv run app provisions Python, creates the virtual environment, installs dependencies and starts the server.",
+		"Reports F1 scores and the strongest and weakest classes from generated JSON model reports."
+	],
+	"links": {
+		"repo": "https://github.com/Life-Experimentalist/SignLanguageDetector"
+	}
+}
